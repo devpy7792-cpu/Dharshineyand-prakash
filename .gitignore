@@ -1,0 +1,19 @@
+# Agent / tooling
+.agents/
+.claude/
+skills-lock.json
+
+# Python
+__pycache__/
+*.pyc
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Local screenshots / scratch
+shot*.png
+hero*.png
+band*.png
+full.png
