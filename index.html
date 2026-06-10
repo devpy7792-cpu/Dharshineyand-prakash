@@ -20,10 +20,11 @@
 <style>
 /* ============================================================ TOKENS */
 :root{
-  --cream:#F2ECFA; --cream-2:#E4D8F4; --paper:#FBF8FE; --panel:#D8C7EE;
-  --ink:#241636; --ink-soft:#5E5179; --ink-faint:#948AA8;
-  --terra:#6A1B9A; --terra-deep:#44108A; --sage:#7C53A5; --sage-deep:#4A2C77;
-  --gold:#CBA135; --gold-soft:#EBCD70; --line:rgba(36,22,54,.16);
+  /* warm plum → blush → cream palette (rich wedding) */
+  --cream:#FBE4D8; --cream-2:#F2D5CD; --paper:#FFF5EF; --panel:#DFB6B2;
+  --ink:#190019; --ink-soft:#522B5B; --ink-faint:#9A7686;
+  --terra:#854F6C; --terra-deep:#2B124C; --sage:#854F6C; --sage-deep:#522B5B;
+  --gold:#C9A063; --gold-soft:#E8C98F; --line:rgba(25,0,25,.14);
   --dg:#3FB950; --dd:#1F7A33;            /* dev-mode terminal greens */
   --serif:'Cormorant Garamond',Georgia,serif;
   --sans:'Jost','Inter',system-ui,sans-serif;
@@ -114,11 +115,11 @@ body.cursor-on #cur-ring.hot{width:54px;height:54px;background:rgba(106,27,154,.
   transform:translate(-50%,-50%);pointer-events:none;opacity:.85;filter:blur(3px);
   background:
     conic-gradient(from 0deg,
-      transparent 0 4%, rgba(106,27,154,.22) 9%, transparent 14% 21%,
-      rgba(203,161,53,.24) 26%, transparent 31% 38%, rgba(124,83,165,.20) 43%, transparent 48% 55%,
-      rgba(106,27,154,.22) 60%, transparent 65% 72%, rgba(203,161,53,.22) 77%, transparent 82% 89%,
-      rgba(124,83,165,.20) 94%, transparent 99%),
-    radial-gradient(circle at 50% 50%,transparent 26%,rgba(216,199,238,.28) 52%,transparent 72%);
+      transparent 0 4%, rgba(43,18,76,.26) 9%, transparent 14% 21%,
+      rgba(201,160,99,.26) 26%, transparent 31% 38%, rgba(133,79,108,.24) 43%, transparent 48% 55%,
+      rgba(43,18,76,.26) 60%, transparent 65% 72%, rgba(201,160,99,.24) 77%, transparent 82% 89%,
+      rgba(133,79,108,.24) 94%, transparent 99%),
+    radial-gradient(circle at 50% 50%,transparent 26%,rgba(223,182,178,.30) 52%,transparent 72%);
   animation:whirlSpin 20s linear infinite}
 .intro-whirl.w2{opacity:.5;width:104vmax;height:104vmax;filter:blur(6px);mix-blend-mode:multiply;
   animation:whirlSpin 13s linear infinite reverse}
@@ -164,8 +165,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;
   display:flex;align-items:center;justify-content:space-between;
   padding:1.1rem 6vw;transition:background .4s,padding .4s,box-shadow .4s,border-color .4s;
   border-bottom:1px solid transparent}
-nav.solid{background:rgba(244,240,250,.86);backdrop-filter:blur(14px) saturate(140%);
-  border-color:var(--line);padding:.7rem 6vw;box-shadow:0 6px 30px rgba(36,22,54,.05)}
+nav.solid{background:rgba(251,228,216,.82);backdrop-filter:blur(14px) saturate(140%);
+  border-color:var(--line);padding:.7rem 6vw;box-shadow:0 6px 30px rgba(25,0,25,.07)}
 .nav-logo{font-family:var(--serif);font-size:1.5rem;font-weight:400;letter-spacing:.04em}
 .nav-logo .amp{font-family:var(--script);color:var(--terra);font-size:1.2em;margin:0 .12em}
 .nav-right{display:flex;align-items:center;gap:1.4rem}
@@ -204,11 +205,11 @@ nav.solid{background:rgba(244,240,250,.86);backdrop-filter:blur(14px) saturate(1
   transition:transform .16s var(--ease-out),background .3s,color .3s,border-color .3s,box-shadow .3s}
 .btn:active{transform:scale(.97)}
 .btn-solid{background:linear-gradient(135deg,var(--terra),var(--terra-deep));color:var(--cream);
-  border-color:rgba(235,205,112,.45);
-  box-shadow:0 10px 30px rgba(68,16,138,.4),inset 0 1px 0 rgba(255,255,255,.14)}
-@media(hover:hover){.btn-solid:hover{background:linear-gradient(135deg,#7d28b3,var(--terra-deep));
-  border-color:rgba(235,205,112,.8);
-  box-shadow:0 14px 38px rgba(68,16,138,.5),0 0 18px rgba(203,161,53,.3),inset 0 1px 0 rgba(255,255,255,.2)}}
+  border-color:rgba(232,201,143,.45);
+  box-shadow:0 10px 30px rgba(25,0,25,.34),inset 0 1px 0 rgba(255,255,255,.14)}
+@media(hover:hover){.btn-solid:hover{background:linear-gradient(135deg,#9A5F7E,var(--terra-deep));
+  border-color:rgba(232,201,143,.85);
+  box-shadow:0 14px 38px rgba(25,0,25,.45),0 0 18px rgba(201,160,99,.32),inset 0 1px 0 rgba(255,255,255,.2)}}
 .btn-ghost{border-color:var(--ink);color:var(--ink)}
 @media(hover:hover){.btn-ghost:hover{background:var(--ink);color:var(--cream)}}
 .btn-light{border-color:rgba(244,240,250,.7);color:var(--cream)}
@@ -499,21 +500,30 @@ body.fx #discover{height:280vh}
 .clothesline::-webkit-scrollbar{height:6px}
 .clothesline::-webkit-scrollbar-thumb{background:var(--sage);border-radius:6px}
 .clothesline-track{position:relative;display:flex;width:max-content;
-  gap:clamp(1.2rem,3vw,2.6rem);padding:62px 6vw 0}
-.rope-img{position:absolute;top:8px;left:0;width:100%;height:64px;object-fit:fill;
-  pointer-events:none;z-index:0}
+  gap:clamp(1.2rem,3vw,2.6rem);padding:66px 6vw 46px}
+/* real draped twine image — JS hangs each photo at the thread's height */
+.rope-img{position:absolute;top:30px;left:0;width:100%;height:64px;object-fit:fill;
+  pointer-events:none;z-index:0;filter:drop-shadow(0 3px 3px rgba(25,0,25,.18))}
 .pola{position:relative;z-index:1;flex:0 0 auto;width:clamp(170px,19vw,220px);
   background:#fff;padding:11px 11px 38px;border-radius:3px;box-shadow:0 16px 30px rgba(36,22,54,.16);
   cursor:pointer;transform-origin:top center;
-  transition:transform .4s var(--ease-out),box-shadow .4s var(--ease-out)}
-.pola .peg{position:absolute;top:-16px;left:50%;width:9px;height:22px;transform:translateX(-50%);
-  background:var(--terra);border-radius:2px;box-shadow:0 2px 3px rgba(0,0,0,.25);z-index:2}
+  transform:translateY(var(--hang,0px)) rotate(var(--rot,0deg));
+  transition:transform .5s var(--ease-out),box-shadow .4s var(--ease-out)}
+/* wooden clothespin clipping the thread */
+.pola .peg{position:absolute;top:-15px;left:50%;width:11px;height:27px;transform:translateX(-50%);z-index:3;
+  background:linear-gradient(90deg,#cda773,#a4753e 52%,#cda773);border-radius:4px;
+  box-shadow:0 2px 3px rgba(0,0,0,.32),inset 0 0 0 .5px rgba(0,0,0,.14)}
+.pola .peg::before{content:'';position:absolute;left:50%;top:5px;width:1.4px;height:17px;
+  transform:translateX(-50%);background:rgba(0,0,0,.28);border-radius:1px}
+.pola .peg::after{content:'';position:absolute;left:-1px;right:-1px;top:12px;height:3px;border-radius:2px;
+  background:linear-gradient(#f3eee6,#c9bda8);box-shadow:0 0 0 .5px rgba(0,0,0,.22)}
 .pola img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:1px;background:var(--panel)}
 .pola figcaption{font-family:var(--script);color:var(--ink-soft);text-align:center;font-size:1.35rem;line-height:1;padding-top:.5rem}
-.pola:nth-child(3n+1){transform:rotate(-3deg)}
-.pola:nth-child(3n+2){transform:rotate(2deg)}
-.pola:nth-child(3n+3){transform:rotate(-1.5deg)}
-@media(hover:hover){.pola:hover{transform:rotate(0) translateY(-8px) scale(1.04);box-shadow:0 28px 50px rgba(36,22,54,.26);z-index:2}}
+.pola:nth-child(3n+1){--rot:-3deg}
+.pola:nth-child(3n+2){--rot:2deg}
+.pola:nth-child(3n+3){--rot:-1.5deg}
+@media(hover:hover){.pola:hover{transform:translateY(calc(var(--hang,0px) - 10px)) rotate(0) scale(1.04);
+  box-shadow:0 28px 50px rgba(36,22,54,.26);z-index:2}}
 
 /* ============================================================ RESPONSIVE */
 @media(max-width:880px){
@@ -799,7 +809,7 @@ body.fx #discover{height:280vh}
   <div class="clothesline-wrap" data-reveal>
     <div class="clothesline" id="gal">
       <div class="clothesline-track">
-        <img class="rope-img" src="images/string.png" alt="" aria-hidden="true">
+        <img class="rope-img" src="assest/6606d0bc26c2741b458e6e72_String.webp" alt="" aria-hidden="true">
         <figure class="pola" data-i="0"><span class="peg"></span><img src="images/proposal.jpg" alt="The proposal"><figcaption>the promise</figcaption></figure>
         <figure class="pola" data-i="1"><span class="peg"></span><img src="images/cottage-walk.jpg" alt="Walking together"><figcaption>home</figcaption></figure>
         <figure class="pola" data-i="2"><span class="peg"></span><img src="images/ghibli-bride.jpg" alt="Illustrated bride"><figcaption>her</figcaption></figure>
@@ -1080,7 +1090,7 @@ function initSite(){
   if(inited) return; inited=true;
   // visual-critical first, each isolated so one failure can't trap the rest
   [initHeroIntro, initReveals, initCountdown, initPetals, initCursor,
-   initQR, initLenis, initScrollFX].forEach(fn=>{ try{ fn(); }catch(e){ console.warn(fn.name, e); } });
+   initQR, initLenis, initScrollFX, layoutClothesline].forEach(fn=>{ try{ fn(); }catch(e){ console.warn(fn.name, e); } });
 }
 
 /* ============================ SMOOTH SCROLL ============================ */
@@ -1233,6 +1243,43 @@ const gImgs=[...document.querySelectorAll('#gal .pola img')].map(i=>i.getAttribu
 let li=0;
 const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img');
 document.querySelectorAll('#gal .pola').forEach(g=>g.addEventListener('click',()=>openLB(+g.dataset.i)));
+
+/* ---- hang each gallery photo at the draped thread's height (pins ride the thread) ---- */
+const THREAD_CURVE=[0.901,0.837,0.762,0.695,0.625,0.550,0.483,0.409,0.353,0.296,0.233,0.163,0.084,0.154,0.240,0.312,0.373,0.433,0.488,0.543,0.579,0.608,0.637,0.663,0.659,0.663,0.661,0.651,0.627,0.589,0.546,0.490,0.430,0.353,0.264,0.188,0.209,0.260,0.293,0.325,0.353,0.377,0.411,0.440,0.471,0.490,0.498,0.486];
+function sampleThread(f){
+  f=Math.max(0,Math.min(1,f)); const n=THREAD_CURVE.length-1, t=f*n, i=Math.floor(t);
+  const a=THREAD_CURVE[i], b=THREAD_CURVE[Math.min(n,i+1)]; return a+(b-a)*(t-i);
+}
+function layoutClothesline(){
+  const track=document.querySelector('#gal .clothesline-track');
+  const thread=document.querySelector('#gal .rope-img');
+  if(!track||!thread) return;
+  const polas=[...track.querySelectorAll('.pola')];
+  if(!polas.length) return;
+  const W=track.scrollWidth||track.offsetWidth||1, tH=thread.offsetHeight||64, base=polas[0].offsetTop;
+  const raw=polas.map(p=>sampleThread((p.offsetLeft+p.offsetWidth/2)/W)*tH);
+  const mean=raw.reduce((s,v)=>s+v,0)/raw.length;
+  thread.style.top=((base-11)-mean).toFixed(1)+'px';        // line passes through every pin, centred
+  polas.forEach((p,i)=>p.style.setProperty('--hang',(raw[i]-mean).toFixed(1)+'px'));
+}
+let _clTO; addEventListener('resize',()=>{ clearTimeout(_clTO); _clTO=setTimeout(layoutClothesline,150); });
+addEventListener('load',()=>setTimeout(layoutClothesline,60));
+
+/* hover a photo → the same falling-petal effect as a click */
+document.querySelectorAll('#gal .pola').forEach(p=>{
+  let last=0;
+  p.addEventListener('mouseenter',()=>{
+    if(reduce) return; const now=Date.now(); if(now-last<450) return; last=now;
+    const r=p.getBoundingClientRect();
+    for(let i=0;i<5;i++) setTimeout(()=>{
+      const f=document.createElement('span'); f.className='fall';
+      f.textContent=FALL[Math.random()*FALL.length|0];
+      f.style.left=(r.left+Math.random()*r.width)+'px'; f.style.top=(r.top+8)+'px';
+      f.style.fontSize=(.9+Math.random()*.7)+'rem';
+      document.body.appendChild(f); setTimeout(()=>f.remove(),2600);
+    },i*60);
+  });
+});
 function openLB(i){ li=i; lbImg.src=gImgs[i]; lb.classList.add('on');
   if(window.gsap) gsap.fromTo(lbImg,{scale:.9,opacity:0},{scale:1,opacity:1,duration:.4,ease:'power3.out'}); }
 function closeLB(){ lb.classList.remove('on'); }
