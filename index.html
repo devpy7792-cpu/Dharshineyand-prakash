@@ -1265,21 +1265,21 @@ function layoutClothesline(){
 let _clTO; addEventListener('resize',()=>{ clearTimeout(_clTO); _clTO=setTimeout(layoutClothesline,150); });
 addEventListener('load',()=>setTimeout(layoutClothesline,60));
 
-/* hover a photo → the same falling-petal effect as a click */
-document.querySelectorAll('#gal .pola').forEach(p=>{
-  let last=0;
-  p.addEventListener('mouseenter',()=>{
-    if(reduce) return; const now=Date.now(); if(now-last<450) return; last=now;
-    const r=p.getBoundingClientRect();
-    for(let i=0;i<5;i++) setTimeout(()=>{
-      const f=document.createElement('span'); f.className='fall';
-      f.textContent=FALL[Math.random()*FALL.length|0];
-      f.style.left=(r.left+Math.random()*r.width)+'px'; f.style.top=(r.top+8)+'px';
-      f.style.fontSize=(.9+Math.random()*.7)+'rem';
-      document.body.appendChild(f); setTimeout(()=>f.remove(),2600);
-    },i*60);
-  });
-});
+/* falling-petal trail that follows the cursor anywhere on the page */
+function galPetal(x,y){
+  const f=document.createElement('span'); f.className='fall';
+  f.textContent=FALL[Math.random()*FALL.length|0];
+  f.style.left=(x+(Math.random()-.5)*22)+'px'; f.style.top=(y-6)+'px';
+  f.style.fontSize=(.8+Math.random()*.8)+'rem';
+  document.body.appendChild(f); setTimeout(()=>f.remove(),2600);
+}
+let _trailT=0;
+addEventListener('mousemove',e=>{
+  if(reduce) return;
+  if(e.target.closest('#loader,#dev,#lb,#modal')) return;   // skip full-screen overlays
+  const now=performance.now(); if(now-_trailT<70) return; _trailT=now;
+  galPetal(e.clientX, e.clientY);
+},{passive:true});
 function openLB(i){ li=i; lbImg.src=gImgs[i]; lb.classList.add('on');
   if(window.gsap) gsap.fromTo(lbImg,{scale:.9,opacity:0},{scale:1,opacity:1,duration:.4,ease:'power3.out'}); }
 function closeLB(){ lb.classList.remove('on'); }
