@@ -135,8 +135,9 @@ body.cursor-on #cur-ring.hot{width:54px;height:54px;background:rgba(106,27,154,.
 .intro-frame.is-on{opacity:1;visibility:visible}
 /* walk-in puppets — JS slides the boy in toward the girl */
 .intro-puppet{height:92%}
-#pp-girl{left:30%}
-#pp-boy{left:90%}
+/* groom stands a touch taller; bride paints on top so his reaching hand passes behind her */
+#pp-girl{left:30%;height:88%;z-index:2}
+#pp-boy{left:90%;height:97%;z-index:1}
 .intro-puppet.gone{opacity:0;visibility:hidden}
 
 /* names + date caption */
@@ -293,7 +294,7 @@ nav.solid{background:rgba(251,228,216,.82);backdrop-filter:blur(14px) saturate(1
 #story{background:var(--cream)}
 .timeline{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(3.5rem,7vw,6rem)}
 .tl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
-.tl:nth-child(even) .tl-media{order:2}
+.tl:nth-child(even) .tl-arch{order:2}
 .tl-media{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
   box-shadow:0 20px 50px rgba(36,22,54,.1)}
 .tl-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;
@@ -458,13 +459,14 @@ footer{background:radial-gradient(ellipse 80% 120% at 50% -10%,#3a1f63 0%,var(--
 .clip-rise{transition:clip-path 1.1s var(--ease-out),transform 1s var(--ease-out)}
 .js .clip-rise{clip-path:inset(0 0 100% 0)}
 [data-reveal].in .clip-rise{clip-path:inset(0 0 0 0)}
-/* double thin-line arch outline behind story photos (parallaxes on scroll) */
+/* golden arch outlines — SVG paths injected by JS, drawn line-by-line as you scroll */
 .tl-arch{position:relative}
 .tl-arch .tl-media{position:relative;z-index:1}
-.tl-arch .arch-ol{position:absolute;border:1.4px solid var(--gold);border-bottom:0;
-  border-radius:48% 48% 0 0/30% 30% 0 0;pointer-events:none;z-index:0;will-change:transform}
-.tl-arch .arch-ol.o1{inset:-15px -15px 8% -15px;opacity:.7}
-.tl-arch .arch-ol.o2{inset:-30px -30px 8% -30px;opacity:.45}
+.arch-draw{position:absolute;pointer-events:none;z-index:0;overflow:visible}
+.arch-draw path{fill:none;stroke:var(--gold);stroke-width:1.5;vector-effect:non-scaling-stroke;
+  stroke-linecap:round;filter:drop-shadow(0 0 4px rgba(201,160,99,.35))}
+.arch-draw.o1{inset:-15px -15px -2px;opacity:.85}
+.arch-draw.o2{inset:-30px -30px -2px;opacity:.5}
 
 /* ghibli bride + groom — two halves bind together on scroll */
 .tl-media.bind{border-radius:46% 46% 16px 16px/28% 28% 5% 5%;background:var(--panel)}
@@ -474,25 +476,54 @@ footer{background:radial-gradient(ellipse 80% 120% at 50% -10%,#3a1f63 0%,var(--
 .bind-pair img.bind-r{transform-origin:left center}
 @media(hover:hover){.tl-media.bind:hover img{transform:none}}
 
-/* discover — an arch photo crossfades through the story as you scroll */
+/* discover — pinned scroll story: arch photo left, rotating quotes right, vines bloom */
 #discover{position:relative;height:100vh;background:linear-gradient(180deg,var(--cream-2),var(--cream))}
-body.fx #discover{height:280vh}
-.discover-sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 6vw}
-.discover-h{position:absolute;z-index:0;max-width:15ch;text-align:center;color:var(--ink);
-  font-family:var(--serif);font-weight:300;font-size:clamp(2rem,6.5vw,5rem);line-height:1.08}
-.discover-h em{font-family:var(--script);font-style:normal;color:var(--terra);font-size:1.12em}
-.discover-archwrap{position:relative;z-index:1;width:clamp(240px,30vw,360px);aspect-ratio:3/4.9}
+body.fx #discover{height:420vh}
+.discover-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 6vw}
+.discover-grid{position:relative;z-index:2;display:grid;align-items:center;width:100%;max-width:1020px;
+  grid-template-columns:clamp(240px,30vw,350px) 1fr;gap:clamp(2.5rem,7vw,5.5rem)}
+.discover-archwrap{position:relative;width:100%;aspect-ratio:3/4.4}
 .discover-arch{position:absolute;inset:0;border-radius:50% 50% 8px 8px/30% 30% 2% 2%;overflow:hidden;
   box-shadow:0 34px 90px rgba(36,22,54,.32)}
 .discover-arch .da{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;opacity:0}
 .discover-arch .da:first-child{opacity:1}
-/* double thin-line arch outline (sits behind, peeks around the photo) */
-.arch-ol{position:absolute;border:1.4px solid var(--gold);border-bottom:0;
-  border-radius:50% 50% 0 0/30% 30% 0 0;pointer-events:none;z-index:-1}
-.arch-ol.o1{inset:-13px -13px -1px -13px;opacity:.75}
-.arch-ol.o2{inset:-26px -26px -1px -26px;opacity:.45}
 .discover-floral{position:absolute;z-index:3;left:clamp(-40px,-3vw,-24px);bottom:-12px;
   width:clamp(96px,12vw,150px);pointer-events:none;filter:drop-shadow(0 8px 16px rgba(36,22,54,.12))}
+/* rotating quotes — one per photo, swapped in sync with the crossfade */
+.discover-right{display:flex;flex-direction:column;justify-content:center}
+.discover-right .eyebrow{margin-bottom:1.2rem}
+.discover-quotes{position:relative;min-height:clamp(15rem,34vh,20rem)}
+.dq{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  opacity:0;transform:translateY(28px);pointer-events:none;
+  transition:opacity .55s var(--ease-out),transform .55s var(--ease-out)}
+.dq.on{opacity:1;transform:none}
+.dq .dq-mark{font-family:var(--script);font-size:3.6rem;color:var(--gold);line-height:.5}
+.dq blockquote{font-family:var(--serif);font-weight:300;font-style:italic;
+  font-size:clamp(1.45rem,2.9vw,2.3rem);line-height:1.3;color:var(--ink);max-width:26ch}
+.dq .dq-tag{margin-top:1.1rem;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra)}
+.discover-dots{display:flex;gap:.55rem;margin-top:1.4rem}
+.discover-dots i{width:8px;height:8px;border-radius:50%;border:1px solid var(--terra);
+  transition:background .4s,transform .4s var(--ease-out)}
+.discover-dots i.on{background:var(--terra);transform:scale(1.3)}
+/* flowering vines (JS-generated): stems draw themselves, leaves/buds/blossoms bloom */
+.vine{position:absolute;pointer-events:none;color:var(--sage)}
+.vine .vp{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.vine .vl{fill:currentColor;opacity:.8}
+.vine .pe{stroke:#C98DA6;stroke-width:.8}
+.vine .pi{opacity:.95}
+.vine .ct{fill:var(--gold)}
+.vine .vl,.vine .vb,.vine .bud{transform-box:fill-box;transform-origin:center}
+.discover-vine{z-index:1;opacity:.9}
+.v-left{left:max(-30px,-2vw);bottom:5vh;width:clamp(130px,16vw,210px);
+  transform-origin:bottom left;animation:vineSway 7s ease-in-out infinite alternate}
+.v-right{right:max(-24px,-1.5vw);top:6vh;width:clamp(140px,17vw,230px);transform:scale(-1);
+  transform-origin:center;animation:vineSway 9s ease-in-out infinite alternate-reverse}
+/* story-chapter vines hug the arch corner and bloom as each chapter scrolls in */
+.tl-vine{z-index:2;left:-28px;bottom:-26px;width:clamp(110px,13vw,170px);
+  transform-origin:bottom left;animation:vineSway 8s ease-in-out infinite alternate;
+  filter:drop-shadow(0 6px 10px rgba(36,22,54,.16))}
+.tl:nth-child(even) .tl-vine{left:auto;right:-28px;transform:scaleX(-1);transform-origin:bottom right}
+@keyframes vineSway{from{rotate:-2.2deg}to{rotate:2.2deg}}
 
 /* polaroid clothesline gallery */
 .clothesline-wrap{position:relative}
@@ -525,6 +556,63 @@ body.fx #discover{height:280vh}
 @media(hover:hover){.pola:hover{transform:translateY(calc(var(--hang,0px) - 10px)) rotate(0) scale(1.04);
   box-shadow:0 28px 50px rgba(36,22,54,.26);z-index:2}}
 
+/* ============================================================ WOW TOUCHES */
+/* gold scroll-progress thread along the top */
+#sprog{position:fixed;top:0;left:0;width:100%;height:3px;z-index:1002;pointer-events:none;
+  background:linear-gradient(90deg,var(--terra),var(--gold),var(--terra-deep));
+  transform:scaleX(0);transform-origin:left;box-shadow:0 1px 6px rgba(201,160,99,.45)}
+
+/* names marquee divider */
+.marquee{overflow:hidden;background:var(--cream-2);padding:1.2rem 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mq-track{display:flex;width:max-content;white-space:nowrap;animation:mq 30s linear infinite;
+  font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.6rem);letter-spacing:.04em;
+  color:rgba(133,79,108,.16);-webkit-text-stroke:1px rgba(133,79,108,.55)}
+.mq-track span{padding-right:2.2rem}
+.mq-track i{font-style:normal;color:var(--gold);-webkit-text-stroke:0}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* section titles — words rise out of a mask, one by one */
+.sec-title .w{display:inline-block;overflow:hidden;vertical-align:bottom;
+  padding-bottom:.14em;margin-bottom:-.14em}
+.sec-title .ww{display:inline-block}
+.js .sec-title .ww{transform:translateY(115%);transition:transform .9s var(--ease-out)}
+.js [data-reveal].in .sec-title .ww{transform:none}
+
+/* schedule spine grows downward as it reveals */
+.js .sched::before{transform:scaleY(0);transform-origin:top;transition:transform 1.8s var(--ease-out) .25s}
+.js .sched.in::before{transform:scaleY(1)}
+
+/* polaroids sway gently on their pegs (rotate property composes with the hang transform) */
+.pola{animation:polaSway 4.2s ease-in-out infinite alternate}
+.pola:nth-child(2n){animation-duration:5.2s;animation-delay:-1.3s}
+.pola:nth-child(3n){animation-duration:6.1s;animation-delay:-2.5s}
+@keyframes polaSway{from{rotate:-1.2deg}to{rotate:1.2deg}}
+
+/* gold stars twinkling in the footer night */
+.f-star{position:absolute;color:#EBCD70;pointer-events:none;line-height:1;
+  animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.08;transform:scale(.7)}50%{opacity:.85;transform:scale(1.15)}}
+
+/* countdown digits pop when they change */
+.cd b.pop{animation:cdPop .45s var(--ease-out)}
+@keyframes cdPop{0%{transform:scale(1.22);color:var(--gold)}100%{transform:scale(1)}}
+
+/* schedule dots breathe a soft golden pulse, one after another */
+.ev-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;
+  border:1px solid var(--gold);opacity:0;animation:dotPulse 3.2s ease-out infinite}
+.ev:nth-child(2) .ev-dot::after{animation-delay:.8s}
+.ev:nth-child(3) .ev-dot::after{animation-delay:1.6s}
+.ev:nth-child(4) .ev-dot::after{animation-delay:2.4s}
+@keyframes dotPulse{0%{transform:scale(.6);opacity:.7}70%,100%{transform:scale(1.5);opacity:0}}
+
+/* soft light sweep across solid buttons */
+.btn-solid{position:relative;overflow:hidden}
+.btn-solid::after{content:'';position:absolute;top:0;bottom:0;left:-70%;width:42%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.32),transparent);
+  transform:skewX(-20deg);animation:sheen 3.8s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-70%}100%{left:140%}}
+
 /* ============================================================ RESPONSIVE */
 @media(max-width:880px){
   .nav-links{display:none}
@@ -533,7 +621,7 @@ body.fx #discover{height:280vh}
     background:var(--paper);padding:1.4rem 6vw;gap:1.2rem;border-bottom:1px solid var(--line)}
   .info-grid{grid-template-columns:1fr}
   .tl,.inv-grid,.venue-grid{grid-template-columns:1fr}
-  .tl:nth-child(even) .tl-media{order:0}
+  .tl:nth-child(even) .tl-arch{order:0}
   .tl-text{text-align:center}
   .tl-text .tl-p{margin-left:auto;margin-right:auto}
   .tl-num{line-height:1}
@@ -544,6 +632,21 @@ body.fx #discover{height:280vh}
   .inv-actions{justify-content:center}
   .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
   .gi.wide{grid-column:span 2}
+  /* discover stacks: arch above, quotes centred below */
+  .discover-grid{grid-template-columns:1fr;gap:2rem;justify-items:center;text-align:center}
+  .discover-archwrap{width:clamp(180px,44vw,280px)}
+  .discover-right{align-items:center}
+  .dq{align-items:center}
+  .dq blockquote{max-width:30ch}
+  .discover-quotes{width:100%;min-height:12rem}
+  .discover-dots{justify-content:center}
+  .v-right{display:none}
+  .v-left{width:clamp(100px,22vw,150px);bottom:2vh;opacity:.7}
+  /* story vines tuck closer to the arch on small screens */
+  .tl-vine{width:clamp(86px,20vw,120px);left:-12px;bottom:-12px}
+  .tl:nth-child(even) .tl-vine{right:-12px}
+  /* the outer arch outline stays inside the viewport */
+  .arch-draw.o2{inset:-22px -18px -2px}
 }
 /* ---- MOBILE: hero reflows to a stacked title-over-arch layout (reference image) ---- */
 @media(max-width:680px){
@@ -566,6 +669,13 @@ body.fx #discover{height:280vh}
   .cd b{font-size:1.7rem}
   nav{padding:.9rem 5vw}
   nav.solid{padding:.6rem 5vw}
+  .marquee{padding:.8rem 0}
+  .dq blockquote{font-size:1.3rem}
+  .dq .dq-mark{font-size:2.6rem}
+  .discover-quotes{min-height:11rem}
+  .pola{width:clamp(150px,52vw,190px)}
+  .btn{padding:.85rem 1.5rem;font-size:.72rem}
+  .tl-h{font-size:1.6rem}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
@@ -579,6 +689,7 @@ body.fx #discover{height:280vh}
 <script>document.documentElement.className+=' js';</script>
 
 <div id="cur"></div><div id="cur-ring"></div>
+<div id="sprog" aria-hidden="true"></div>
 
 <!-- LOADER — paper-puppet stop-motion intro (replaces old monogram loader) -->
 <div id="loader">
@@ -701,7 +812,6 @@ body.fx #discover{height:280vh}
     <div class="timeline">
       <article class="tl">
         <div class="tl-arch" data-reveal>
-          <span class="arch-ol o1"></span><span class="arch-ol o2"></span>
           <div class="tl-media arch"><img class="clip-rise" src="images/cottage-facing.jpg" alt="Dharshiny and Prakash by the cottage"></div>
         </div>
         <div class="tl-text" data-reveal data-d="1">
@@ -712,10 +822,12 @@ body.fx #discover{height:280vh}
         </div>
       </article>
       <article class="tl">
-        <div class="tl-media bind" data-reveal>
-          <div class="bind-pair">
-            <img class="bind-l" src="images/ghibli-bride.jpg" alt="Illustrated bride">
-            <img class="bind-r" src="images/ghibli-groom.jpg" alt="Illustrated groom">
+        <div class="tl-arch" data-reveal>
+          <div class="tl-media bind">
+            <div class="bind-pair">
+              <img class="bind-l" src="images/ghibli-bride.jpg" alt="Illustrated bride">
+              <img class="bind-r" src="images/ghibli-groom.jpg" alt="Illustrated groom">
+            </div>
           </div>
         </div>
         <div class="tl-text" data-reveal data-d="1">
@@ -727,7 +839,6 @@ body.fx #discover{height:280vh}
       </article>
       <article class="tl">
         <div class="tl-arch" data-reveal>
-          <span class="arch-ol o1"></span><span class="arch-ol o2"></span>
           <div class="tl-media arch"><img class="clip-rise" src="images/proposal.jpg" alt="The proposal"></div>
         </div>
         <div class="tl-text" data-reveal data-d="1">
@@ -738,7 +849,9 @@ body.fx #discover{height:280vh}
         </div>
       </article>
       <article class="tl">
-        <div class="tl-media" data-reveal><img src="images/invitation.jpg" alt="The wedding invitation"></div>
+        <div class="tl-arch" data-reveal>
+          <div class="tl-media arch"><img class="clip-rise" src="images/invitation.jpg" alt="The wedding invitation"></div>
+        </div>
         <div class="tl-text" data-reveal data-d="1">
           <div class="tl-num">04</div>
           <p class="tl-date">Chapter Four · 21 June 2026</p>
@@ -758,7 +871,7 @@ body.fx #discover{height:280vh}
       <h2 class="sec-title">The <em>Schedule</em></h2>
       <p class="sec-sub">A gentle outline of how our celebration will unfold.</p>
     </div>
-    <div class="sched">
+    <div class="sched" data-reveal>
       <div class="ev" data-reveal>
         <div class="ev-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div>
         <div><div class="ev-time">6:30 PM</div><h3 class="ev-h">Arrival &amp; Welcome</h3><p class="ev-p">Guests arrive and are welcomed with smiles, refreshments, and photographs with the couple.</p></div>
@@ -779,20 +892,60 @@ body.fx #discover{height:280vh}
   </div>
 </section>
 
-<!-- GALLERY -->
-<!-- DISCOVER (scroll crossfade) -->
+<!-- MARQUEE DIVIDER -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+  </div>
+</div>
+
+<!-- DISCOVER (pinned scroll story — photo left, quotes right) -->
 <section id="discover">
   <div class="discover-sticky">
-    <h2 class="discover-h">Discover our journey — from a chance encounter to <em>true love</em>.</h2>
-    <div class="discover-archwrap">
-      <span class="arch-ol o1"></span><span class="arch-ol o2"></span>
-      <div class="discover-arch">
-        <img class="da" src="images/tracks-walk.jpg" alt="On the railway tracks">
-        <img class="da" src="images/proposal.jpg" alt="The proposal">
-        <img class="da" src="images/cottage-facing.jpg" alt="By the cottage">
-        <img class="da" src="images/ghibli-diptych.jpg" alt="Illustrated portrait">
+    <div class="hero-petals" id="discover-petals" aria-hidden="true"></div>
+    <div class="discover-grid">
+      <div class="discover-archwrap">
+        <div class="discover-arch">
+          <img class="da" src="images/tracks-walk.jpg" alt="On the railway tracks">
+          <img class="da" src="images/proposal.jpg" alt="The proposal">
+          <img class="da" src="images/cottage-facing.jpg" alt="By the cottage">
+          <img class="da" src="images/ghibli-diptych.jpg" alt="Illustrated portrait">
+        </div>
+        <img class="discover-floral" src="images/flower.png" alt="" aria-hidden="true">
       </div>
-      <img class="discover-floral" src="images/flower.png" alt="" aria-hidden="true">
+      <div class="discover-right">
+        <span class="eyebrow">Chapters of Us</span>
+        <div class="discover-quotes">
+          <div class="dq on">
+            <span class="dq-mark">“</span>
+            <blockquote>Every walk felt shorter with you beside me — even the longest tracks.</blockquote>
+            <span class="dq-tag">Lovedale · Where it began</span>
+          </div>
+          <div class="dq">
+            <span class="dq-mark">“</span>
+            <blockquote>With flowers in hand and hope in his eyes — she said yes, and time stood still.</blockquote>
+            <span class="dq-tag">The Promise · 18 May 2026</span>
+          </div>
+          <div class="dq">
+            <span class="dq-mark">“</span>
+            <blockquote>Home was never a place. It was always wherever you were standing.</blockquote>
+            <span class="dq-tag">The Cottage · Just Us</span>
+          </div>
+          <div class="dq">
+            <span class="dq-mark">“</span>
+            <blockquote>Painted or real, in every world and every art — it was always you.</blockquote>
+            <span class="dq-tag">In Art · Forever</span>
+          </div>
+        </div>
+        <div class="discover-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
+      </div>
     </div>
   </div>
 </section>
@@ -1089,8 +1242,9 @@ setTimeout(revealSite, 9000);
 function initSite(){
   if(inited) return; inited=true;
   // visual-critical first, each isolated so one failure can't trap the rest
-  [initHeroIntro, initReveals, initCountdown, initPetals, initCursor,
-   initQR, initLenis, initScrollFX, layoutClothesline].forEach(fn=>{ try{ fn(); }catch(e){ console.warn(fn.name, e); } });
+  [initTitleSplit, injectArches, initVines, initHeroIntro, initReveals, initCountdown, initPetals, initCursor,
+   initQR, initLenis, initScrollFX, initProgress, initHeroTilt, initFooterStars, initCardTilt,
+   layoutClothesline].forEach(fn=>{ try{ fn(); }catch(e){ console.warn(fn.name, e); } });
 }
 
 /* ============================ SMOOTH SCROLL ============================ */
@@ -1122,6 +1276,151 @@ function initReveals(){
 /* ============================ HERO INTRO (CSS class toggle) ============================ */
 function initHeroIntro(){ document.getElementById('hero').classList.add('ready'); }
 
+/* ============================ TITLE WORD REVEAL ============================ */
+/* split every .sec-title into masked words that rise one-by-one when revealed */
+function initTitleSplit(){
+  document.querySelectorAll('.sec-title').forEach(t=>{
+    const frag=document.createDocumentFragment();
+    const wrap=node=>{
+      const w=document.createElement('span'); w.className='w';
+      const ww=document.createElement('span'); ww.className='ww';
+      ww.appendChild(node); w.appendChild(ww); frag.appendChild(w);
+    };
+    [...t.childNodes].forEach(n=>{
+      if(n.nodeType===3){
+        n.textContent.split(/(\s+)/).forEach(part=>{
+          if(!part) return;
+          if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(' ')); return; }
+          wrap(document.createTextNode(part));
+        });
+      } else wrap(n.cloneNode(true));
+    });
+    t.innerHTML=''; t.appendChild(frag);
+    t.querySelectorAll('.ww').forEach((ww,i)=>ww.style.transitionDelay=(.15+i*.1)+'s');
+  });
+}
+
+/* ============================ ARCH OUTLINE SVGs ============================ */
+/* two concentric golden arch paths around each framed photo — drawn on scroll */
+function injectArches(){
+  const NS='http://www.w3.org/2000/svg';
+  document.querySelectorAll('.tl-arch,.discover-archwrap').forEach(w=>{
+    ['o1','o2'].forEach(cls=>{
+      const s=document.createElementNS(NS,'svg');
+      s.setAttribute('class','arch-draw '+cls);
+      s.setAttribute('viewBox','0 0 100 132');
+      s.setAttribute('preserveAspectRatio','none');
+      s.setAttribute('aria-hidden','true');
+      const p=document.createElementNS(NS,'path');
+      p.setAttribute('pathLength','1');
+      p.setAttribute('d','M1.5,132 L1.5,40 A48.5,38 0 0 1 98.5,40 L98.5,132');
+      s.appendChild(p);
+      w.prepend(s);
+    });
+  });
+}
+
+/* ============================ FLOWERING VINES ============================ */
+/* one detailed vine: 5 stems, leaves, buds, layered five-petal blossoms in blush /
+   cream / lilac — generated once, reused for discover + every story chapter */
+function vineSVG(cls){
+  const PINK='#E8B7C8', CREAM='#F3DCC8', LILAC='#DCC0E8', IN='#F6E3EC';
+  const bloom=(x,y,s,fill)=>{
+    let p='';
+    for(let i=0;i<5;i++) p+='<ellipse class="pe" cx="0" cy="-7.5" rx="3.6" ry="6.6" fill="'+fill+'" transform="rotate('+(i*72)+')"/>';
+    for(let i=0;i<4;i++) p+='<ellipse class="pi" cx="0" cy="-4.4" rx="2.1" ry="3.9" fill="'+IN+'" transform="rotate('+(36+i*90)+')"/>';
+    p+='<circle class="ct" r="2.7"/>';
+    for(let i=0;i<5;i++) p+='<circle cx="'+(Math.cos(i*1.256)*1.7).toFixed(1)+'" cy="'+(Math.sin(i*1.256)*1.7).toFixed(1)+'" r=".55" fill="#8A6A2F"/>';
+    return '<g transform="translate('+x+','+y+') scale('+s+')"><g class="vb">'+p+'</g></g>';
+  };
+  const leaf=(x,y,rot,s)=>'<g transform="translate('+x+','+y+') rotate('+rot+') scale('+(s||1)+')"><ellipse class="vl" rx="9.5" ry="3.6"/></g>';
+  const bud=(x,y,rot)=>'<g transform="translate('+x+','+y+') rotate('+(rot||0)+')"><g class="bud">'+
+    '<ellipse cx="0" cy="-3" rx="2.6" ry="4.6" fill="'+PINK+'" stroke="#C98DA6" stroke-width=".8"/>'+
+    '<ellipse cx="0" cy="-2.2" rx="1.5" ry="3" fill="'+IN+'"/></g></g>';
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('class',cls);
+  svg.setAttribute('viewBox','0 0 200 320');
+  svg.setAttribute('aria-hidden','true');
+  svg.innerHTML=
+    '<path class="vp" pathLength="1" d="M14,314 C34,250 8,205 42,152 C72,106 58,62 96,20"/>'+
+    '<path class="vp" pathLength="1" d="M42,152 C80,144 104,116 114,88"/>'+
+    '<path class="vp" pathLength="1" d="M24,240 C58,234 84,212 92,188"/>'+
+    '<path class="vp" pathLength="1" d="M30,196 C16,176 14,156 22,136"/>'+
+    '<path class="vp" pathLength="1" d="M18,300 C46,292 72,282 92,266"/>'+
+    leaf(30,256,-32)+leaf(20,214,42)+leaf(56,172,-20)+leaf(72,120,32)+
+    leaf(60,228,-10,.85)+leaf(36,182,24,.85)+leaf(56,288,-24,.9)+leaf(78,206,-14,.8)+
+    bud(50,132,-15)+bud(86,162,20)+bud(40,272,-8)+
+    bloom(96,20,1.15,PINK)+bloom(114,88,1,LILAC)+bloom(92,188,1,PINK)+bloom(22,136,.85,CREAM)+
+    bloom(92,266,.9,LILAC)+bloom(42,152,.75,CREAM)+bloom(60,244,.8,PINK);
+  return svg;
+}
+function initVines(){
+  const sticky=document.querySelector('.discover-sticky');
+  if(sticky){
+    const grid=sticky.querySelector('.discover-grid');
+    sticky.insertBefore(vineSVG('vine discover-vine v-left'),grid);
+    sticky.insertBefore(vineSVG('vine discover-vine v-right'),grid);
+  }
+  document.querySelectorAll('.tl-arch').forEach(w=>w.appendChild(vineSVG('vine tl-vine')));
+}
+
+/* ============================ FOOTER STARS ============================ */
+function initFooterStars(){
+  if(reduce) return;
+  const f=document.querySelector('footer'); if(!f) return;
+  for(let i=0;i<26;i++){
+    const s=document.createElement('span'); s.className='f-star';
+    s.textContent=Math.random()>.5?'✦':'✧';
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*85+'%';
+    s.style.fontSize=(.4+Math.random()*.7)+'rem';
+    s.style.animationDuration=(2.2+Math.random()*3.4)+'s';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    f.appendChild(s);
+  }
+}
+
+/* ============================ INFO CARD 3D TILT ============================ */
+function initCardTilt(){
+  if(reduce||!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  document.querySelectorAll('.info-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform='perspective(720px) rotateY('+(x*7).toFixed(2)+'deg) rotateX('+(-y*7).toFixed(2)+'deg) translateY(-5px)';
+    });
+    card.addEventListener('mouseleave',()=>{ card.style.transform=''; });
+  });
+}
+
+/* ============================ SCROLL PROGRESS ============================ */
+function initProgress(){
+  const bar=document.getElementById('sprog'); if(!bar) return;
+  const upd=()=>{ const h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'; };
+  addEventListener('scroll',upd,{passive:true}); upd();
+}
+
+/* ============================ HERO MOUSE PARALLAX ============================ */
+/* the couple drifts toward the cursor while the side flowers drift away — gentle depth */
+function initHeroTilt(){
+  if(reduce||!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  const couple=document.querySelector('.hero-couple');
+  const fls=document.querySelectorAll('.hero-flower');
+  if(!couple) return;
+  let tx=0,ty=0,cx=0,cy=0;
+  addEventListener('mousemove',e=>{
+    if(scrollY>innerHeight){ tx=0; ty=0; return; }
+    tx=(e.clientX/innerWidth-.5)*2; ty=(e.clientY/innerHeight-.5)*2;
+  },{passive:true});
+  (function loop(){
+    cx+=(tx-cx)*.05; cy+=(ty-cy)*.05;
+    couple.style.transform='translate('+(cx*9).toFixed(2)+'px,'+(cy*7).toFixed(2)+'px) scale(1.06)';
+    fls.forEach((f,i)=>{ f.style.translate=(-cx*(12+i*5)).toFixed(2)+'px '+(-cy*9).toFixed(2)+'px'; });
+    requestAnimationFrame(loop);
+  })();
+}
+
 /* ============================ SCROLL FX ============================ */
 function initScrollFX(){
   if(!window.gsap||!window.ScrollTrigger||reduce) return;
@@ -1132,10 +1431,34 @@ function initScrollFX(){
   gsap.to('.hero-arch',{yPercent:-7,ease:'none',
     scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
 
-  // story arches — the back outline lines drift on scroll (depth/parallax)
+  // the giant names lift away upward as you scroll past the hero (deeper than the arch)
+  gsap.to('.hnames',{yPercent:-160,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  // side flowers drift outward + down slightly for extra depth
+  gsap.to('.hero-flower.fl-l',{xPercent:-26,yPercent:14,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero-flower.fl-r',{xPercent:26,yPercent:14,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+
+  // golden arch outlines draw themselves around each story photo as it scrolls in,
+  // and that chapter's corner vine grows + blooms right behind them
   document.querySelectorAll('.tl-arch').forEach(w=>{
-    gsap.fromTo(w.querySelectorAll('.arch-ol'),{yPercent:9},
-      {yPercent:-9,ease:'none',scrollTrigger:{trigger:w,start:'top bottom',end:'bottom top',scrub:.6}});
+    const paths=w.querySelectorAll('.arch-draw path');
+    if(paths.length){
+      gsap.set(paths,{strokeDasharray:1,strokeDashoffset:1});
+      gsap.to(paths,{strokeDashoffset:0,ease:'none',stagger:.15,
+        scrollTrigger:{trigger:w,start:'top 94%',end:'center 52%',scrub:.4}});
+    }
+    const vine=w.querySelector('.tl-vine');
+    if(vine){
+      const stems=vine.querySelectorAll('.vp');
+      const blooms=vine.querySelectorAll('.vl,.bud,.vb');
+      gsap.set(stems,{strokeDasharray:1,strokeDashoffset:1});
+      gsap.set(blooms,{scale:0,transformOrigin:'50% 50%'});
+      const vt=gsap.timeline({scrollTrigger:{trigger:w,start:'top 82%',end:'center 40%',scrub:.4}});
+      vt.to(stems,{strokeDashoffset:0,duration:1,stagger:.1,ease:'none'},0)
+        .to(blooms,{scale:1,duration:.55,stagger:.05,ease:'back.out(2.2)'},.3);
+    }
   });
 
   // ghibli bride + groom bind together
@@ -1146,14 +1469,51 @@ function initScrollFX(){
       scrollTrigger:{trigger:'.bind',start:'top 88%',end:'top 40%',scrub:.5}});
   }
 
-  // discover arch — crossfade through photos across the pinned scroll
+  // discover — bloom-gated story: a wave of flowers must blossom fully, and only THEN
+  // does the photo pass to the next one; quotes + dots swap in sync, petals burst on change
   const das=gsap.utils.toArray('.discover-arch .da');
+  const dqs=gsap.utils.toArray('#discover .dq');
+  const dots=gsap.utils.toArray('.discover-dots i');
+  let dLast=0;
+  const dActive=i=>{
+    if(i!==dLast){ dLast=i; burstPetals(); }
+    dqs.forEach((q,k)=>q.classList.toggle('on',k===i));
+    dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+  };
+  const leaves=gsap.utils.toArray('.discover-vine .vl, .discover-vine .bud');
+  const vbs=gsap.utils.toArray('.discover-vine .vb');
+  const vps=gsap.utils.toArray('.discover-vine .vp');
   if(das.length>1){
-    gsap.set(das,{opacity:0}); gsap.set(das[0],{opacity:1});
-    const tl=gsap.timeline({scrollTrigger:{trigger:'#discover',start:'top top',end:'bottom bottom',scrub:.5}});
+    gsap.set(das,{opacity:0,scale:1.08}); gsap.set(das[0],{opacity:1,scale:1});
+    if(vps.length) gsap.set(vps,{strokeDasharray:1,strokeDashoffset:1});
+    gsap.set([...leaves,...vbs],{scale:0,transformOrigin:'50% 50%'});
+    // round-robin the blossoms into one bloom-wave per photo change (both vines join every wave)
+    const waves=Array.from({length:das.length-1},()=>[]);
+    vbs.forEach((b,i)=>waves[i%waves.length].push(b));
+    const marks=[];
+    const tl=gsap.timeline({scrollTrigger:{trigger:'#discover',start:'top top',end:'bottom bottom',scrub:.5,
+      onUpdate(self){
+        const t=self.progress*tl.duration();
+        let idx=0; marks.forEach(m=>{ if(t>=m) idx++; });
+        dActive(Math.min(idx,das.length-1));
+      }}});
+    tl.to(leaves,{scale:1,duration:.7,stagger:.06,ease:'back.out(2)'},.15);   // leaves unfurl first
     for(let i=1;i<das.length;i++){
-      tl.to(das[i],{opacity:1,duration:1},'+=0.4').to(das[i-1],{opacity:0,duration:1},'<');
+      tl.to(waves[i-1],{scale:1,duration:.85,stagger:.2,ease:'back.out(2.4)'},'+=0.3'); // bloom fully…
+      marks.push(tl.duration()+.45);
+      tl.to(das[i],{opacity:1,scale:1,duration:.9},'+=0.12')                  // …then pass to the next photo
+        .to(das[i-1],{opacity:0,duration:.9},'<');
     }
+    tl.to({},{duration:.5});                                                  // settle on the last frame
+    if(vps.length) tl.to(vps,{strokeDashoffset:0,duration:tl.duration()*.75,stagger:.12,ease:'none'},0); // stems grow throughout
+  }
+
+  // discover arch outlines draw in as the section approaches
+  const dap=document.querySelectorAll('.discover-archwrap .arch-draw path');
+  if(dap.length){
+    gsap.set(dap,{strokeDasharray:1,strokeDashoffset:1});
+    gsap.to(dap,{strokeDashoffset:0,ease:'none',stagger:.15,
+      scrollTrigger:{trigger:'#discover',start:'top 85%',end:'top 15%',scrub:.4}});
   }
   ScrollTrigger.refresh();
 }
@@ -1173,8 +1533,9 @@ function initCountdown(){
     const diff=target-Date.now();
     if(diff<=0){ $('countdown').innerHTML='<p style="font-family:var(--serif);font-style:italic;font-size:1.5rem;color:#fff">The day is here 🎉</p>'; return; }
     const d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
-    $('cd-d').textContent=String(d).padStart(2,'0'); $('cd-h').textContent=String(h).padStart(2,'0');
-    $('cd-m').textContent=String(m).padStart(2,'0'); $('cd-s').textContent=String(s).padStart(2,'0');
+    const set=(id,n)=>{ const el=$(id), v=String(n).padStart(2,'0');
+      if(el.textContent!==v){ el.textContent=v; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); } };
+    set('cd-d',d); set('cd-h',h); set('cd-m',m); set('cd-s',s);
   }
   tick(); setInterval(tick,1000);
 }
@@ -1190,16 +1551,18 @@ function initQR(){
 /* ============================ HERO PETALS ============================ */
 function initPetals(){
   if(reduce) return;
-  const wrap=document.getElementById('petals');
-  for(let i=0;i<14;i++){
-    const p=document.createElement('span'); p.className='pt';
-    p.style.left=Math.random()*100+'%';
-    p.style.animationDuration=(7+Math.random()*7)+'s';
-    p.style.animationDelay=(Math.random()*8)+'s';
-    const s=6+Math.random()*8; p.style.width=p.style.height=s+'px';
-    p.style.background=Math.random()>.5?'rgba(200,165,235,.5)':'rgba(150,120,190,.45)';
-    wrap.appendChild(p);
-  }
+  [['petals',14],['discover-petals',10]].forEach(([id,n])=>{
+    const wrap=document.getElementById(id); if(!wrap) return;
+    for(let i=0;i<n;i++){
+      const p=document.createElement('span'); p.className='pt';
+      p.style.left=Math.random()*100+'%';
+      p.style.animationDuration=(7+Math.random()*7)+'s';
+      p.style.animationDelay=(Math.random()*8)+'s';
+      const s=6+Math.random()*8; p.style.width=p.style.height=s+'px';
+      p.style.background=Math.random()>.5?'rgba(200,165,235,.5)':'rgba(150,120,190,.45)';
+      wrap.appendChild(p);
+    }
+  });
 }
 
 /* ============================ CURSOR ============================ */
@@ -1264,6 +1627,21 @@ function layoutClothesline(){
 }
 let _clTO; addEventListener('resize',()=>{ clearTimeout(_clTO); _clTO=setTimeout(layoutClothesline,150); });
 addEventListener('load',()=>setTimeout(layoutClothesline,60));
+
+/* burst of petals from the discover arch each time the photo passes to the next */
+function burstPetals(){
+  if(reduce||document.hidden) return;
+  const arch=document.querySelector('.discover-arch'); if(!arch) return;
+  const r=arch.getBoundingClientRect();
+  for(let i=0;i<12;i++) setTimeout(()=>{
+    const f=document.createElement('span'); f.className='fall';
+    f.textContent=FALL[Math.random()*FALL.length|0];
+    f.style.left=(r.left+Math.random()*r.width)+'px';
+    f.style.top=(r.top+Math.random()*r.height*.55)+'px';
+    f.style.fontSize=(.85+Math.random()*.95)+'rem';
+    document.body.appendChild(f); setTimeout(()=>f.remove(),2600);
+  },i*45);
+}
 
 /* falling-petal trail that follows the cursor anywhere on the page */
 function galPetal(x,y){
