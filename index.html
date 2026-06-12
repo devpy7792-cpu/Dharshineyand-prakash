@@ -3,1782 +3,1822 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dharshiny & Prakash — Reception · June 21, 2026</title>
+<title>Dharshiny &amp; Prakash — Wedding Reception · 21 June 2026</title>
+<meta name="description" content="Together with their families, Dharshiny &amp; Prakash invite you to their Wedding Reception — Sunday, 21 June 2026, 6:30 PM, Ashirvad Hall, Coimbatore.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%236A1B9A'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='16' fill='%23F6EFE2' text-anchor='middle'%3ED%26P%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Dharshiny & Prakash — Wedding Reception">
+<meta property="og:description" content="Sunday, 21 June 2026 · 6:30 PM · Ashirvad Hall, Coimbatore">
+<meta property="og:image" content="images/invitation.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&family=Noto+Serif+Tamil:wght@300;400;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
-<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&family=Noto+Serif+Tamil:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+<script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js" defer></script>
 <style>
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
+/* ============================================================ TOKENS */
+:root{
+  /* warm plum → blush → cream palette (rich wedding) */
+  --cream:#FBE4D8; --cream-2:#F2D5CD; --paper:#FFF5EF; --panel:#DFB6B2;
+  --ink:#190019; --ink-soft:#522B5B; --ink-faint:#9A7686;
+  --terra:#854F6C; --terra-deep:#2B124C; --sage:#854F6C; --sage-deep:#522B5B;
+  --gold:#C9A063; --gold-soft:#E8C98F; --line:rgba(25,0,25,.14);
+  --dg:#3FB950; --dd:#1F7A33;            /* dev-mode terminal greens */
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost','Inter',system-ui,sans-serif;
+  --script:'Pinyon Script',cursive;
+  --tamil:'Noto Serif Tamil',serif;
+  --mono:'JetBrains Mono',monospace;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+  --maxw:1180px;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --pd:#1A0533;--pp:#6B21A8;--pm:#A855F7;--pl:#E9D5FF;
-  --blush:#F9C7D5;--gold:#F5C842;--saffron:#FF9933;
-  --dg:#00FF41;--dd:#00AA2A;--br:14px;
-  --glas:rgba(107,33,168,0.14);--glas-b:rgba(107,33,168,0.28);
-}
 html{scroll-behavior:auto}
 body{
-  background:#0D0118;color:var(--pl);
-  font-family:'Inter',sans-serif;overflow-x:hidden;
-  cursor:none;
+  background:var(--cream); color:var(--ink);
+  font-family:var(--sans); font-weight:300; line-height:1.7;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased;
 }
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:#0D0118}
-::-webkit-scrollbar-thumb{background:var(--pm);border-radius:2px}
+body.cursor-on{cursor:none}
+img{display:block;max-width:100%}
+a{color:inherit}
+::selection{background:var(--terra);color:var(--cream)}
+::-webkit-scrollbar{width:9px}
+::-webkit-scrollbar-track{background:var(--cream-2)}
+::-webkit-scrollbar-thumb{background:var(--sage);border-radius:6px;border:2px solid var(--cream-2)}
 
-/* ── CURSOR ─────────────────────────────── */
-#cursor{
-  position:fixed;width:12px;height:12px;border-radius:50%;
-  background:var(--pm);pointer-events:none;z-index:9999;
-  mix-blend-mode:screen;
-  transform:translate(-50%,-50%);
+/* shared type */
+.eyebrow{
+  font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.32em;
+  text-transform:uppercase;color:var(--terra);
 }
-#cursor-ring{
-  position:fixed;width:36px;height:36px;border-radius:50%;
-  border:1.5px solid rgba(168,85,247,.5);pointer-events:none;z-index:9998;
-  transform:translate(-50%,-50%);
-}
+.display{font-family:var(--serif);font-weight:300;line-height:1.05;letter-spacing:.01em}
+.script{font-family:var(--script);color:var(--terra)}
+.lead{color:var(--ink-soft);font-size:1.02rem;max-width:46ch}
 
-/* ── LOADER ──────────────────────────────── */
-#loader{
-  position:fixed;inset:0;z-index:10000;
-  background:radial-gradient(ellipse at 50% 50%, #2D0A5E 0%, #0D0118 70%);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2rem;
-}
-.loader-mono{
-  font-family:'Cormorant Garamond',serif;font-size:clamp(3.5rem,10vw,6rem);
-  font-weight:300;letter-spacing:.25em;color:var(--pl);
-  display:flex;align-items:center;gap:.2em;position:relative;z-index:2;
-}
-.loader-mono span{opacity:0;transform:translateY(-60px);display:inline-block}
-.loader-mono .pipe{color:var(--pm);font-weight:100}
-.loader-glow{
-  position:absolute;width:300px;height:300px;border-radius:50%;
-  background:radial-gradient(circle,rgba(168,85,247,.25) 0%,transparent 70%);
-  animation:glowPulse 2s ease-in-out infinite;
-}
-@keyframes glowPulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.4);opacity:1}}
-.loader-petals{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.petal{
-  position:absolute;bottom:-20px;font-size:1.2rem;opacity:.6;
-  animation:petalRise 3s ease-in infinite;
-}
-.petal:nth-child(1){left:15%;animation-delay:.2s}
-.petal:nth-child(2){left:30%;animation-delay:.8s}
-.petal:nth-child(3){left:50%;animation-delay:1.4s}
-.petal:nth-child(4){left:70%;animation-delay:.5s}
-.petal:nth-child(5){left:85%;animation-delay:1.1s}
-@keyframes petalRise{
-  0%{transform:translateY(0) rotate(0deg);opacity:.6}
-  100%{transform:translateY(-120vh) rotate(720deg);opacity:0}
-}
-.loader-bar-wrap{width:260px;height:3px;background:rgba(255,255,255,.1);border-radius:3px;overflow:hidden}
-.loader-bar{height:100%;width:0;background:linear-gradient(90deg,var(--pp),var(--pm),var(--gold));border-radius:3px;animation:barFill 2.2s ease-out forwards}
-@keyframes barFill{to{width:100%}}
-.loader-tag{font-family:'Inter',sans-serif;font-size:.75rem;letter-spacing:.2em;color:rgba(233,213,255,.5);text-transform:uppercase}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(4vw,5vw,6vw)}
+section{position:relative}
+.section-pad{padding:clamp(5rem,11vh,9rem) 0}
 
-/* ── NAV ─────────────────────────────────── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  padding:.9rem 2.5rem;display:flex;align-items:center;justify-content:space-between;
-  backdrop-filter:blur(20px) saturate(180%);
-  background:rgba(13,1,24,.7);
-  border-bottom:1px solid rgba(168,85,247,.15);
-}
-nav::after{
-  content:'';position:absolute;bottom:-1px;left:0;right:0;height:1px;
-  background:conic-gradient(from var(--angle),var(--pp),var(--pm),var(--gold),var(--blush),var(--pm),var(--pp));
-  animation:spinAngle 4s linear infinite;
-}
-@keyframes spinAngle{to{--angle:360deg}}
-.nav-logo{
-  font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:300;
-  letter-spacing:.15em;color:var(--pl);
-}
-.nav-logo span{color:var(--pm)}
-.nav-links{display:flex;align-items:center;gap:1.2rem}
-.nav-links a{
-  font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;
-  color:rgba(233,213,255,.6);text-decoration:none;
-  transition:color .3s;
-}
-.nav-links a:hover{color:var(--pm)}
-.nav-music-btn{
-  background:none;border:1px solid rgba(168,85,247,.4);color:var(--pm);
-  padding:.35rem .8rem;border-radius:20px;cursor:none;
-  font-size:.8rem;transition:all .3s;
-}
-.nav-music-btn:hover{background:rgba(168,85,247,.15)}
-.dev-btn{
-  background:none;border:1px solid var(--dg);color:var(--dg);
-  padding:.35rem .9rem;border-radius:6px;cursor:none;
-  font-family:'JetBrains Mono',monospace;font-size:.78rem;
-  position:relative;overflow:hidden;
-  animation:devGlitch 8s infinite;
-}
-@keyframes devGlitch{
-  0%,94%,100%{clip-path:none;color:var(--dg)}
-  95%{clip-path:polygon(0 30%,100% 30%,100% 50%,0 50%);color:#fff;transform:translateX(-2px)}
-  96%{clip-path:polygon(0 60%,100% 60%,100% 80%,0 80%);color:var(--pm);transform:translateX(2px)}
-  97%{clip-path:none;color:var(--dg)}
-}
+.sec-head{text-align:center;max-width:640px;margin:0 auto clamp(2.5rem,5vw,4rem)}
+.sec-head .eyebrow{display:block;margin-bottom:1rem}
+.sec-title{font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,6vw,4rem);line-height:1.04}
+.sec-title em{font-family:var(--script);font-style:normal;color:var(--terra);font-size:1.15em}
+.sec-sub{margin-top:1rem;color:var(--ink-soft)}
+.rule{width:120px;height:14px;border:none;margin:1.5rem auto;position:relative;
+  display:flex;align-items:center;justify-content:center}
+.rule::before,.rule::after{content:'';position:absolute;top:50%;width:46px;height:1.5px;
+  background:linear-gradient(90deg,transparent,var(--gold-soft),var(--gold));
+  box-shadow:0 0 8px rgba(203,161,53,.4)}
+.rule::before{left:0}
+.rule::after{right:0;background:linear-gradient(90deg,var(--gold),var(--gold-soft),transparent)}
+.rule i{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);
+  box-shadow:0 0 8px rgba(203,161,53,.6)}
 
-/* ── SECTIONS COMMON ─────────────────────── */
-section{position:relative;overflow:hidden}
-.section-title-wrap{position:relative;display:inline-block;margin-bottom:1rem}
-.section-title{
-  font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,5vw,3.5rem);
-  font-weight:300;letter-spacing:.08em;position:relative;z-index:1;
-}
-.section-wipe{
-  position:absolute;inset:0;background:var(--pp);
-  transform:scaleX(1);transform-origin:left;z-index:2;
-}
-.sub-title{
-  font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--pm);margin-bottom:.5rem;
-}
+/* reveal — hidden state gated on .js so content is never trapped if JS fails */
+[data-reveal]{transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.js [data-reveal]{opacity:0;transform:translateY(22px)}
+[data-reveal].in{opacity:1;transform:none}
+[data-reveal][data-d="1"]{transition-delay:.08s}
+[data-reveal][data-d="2"]{transition-delay:.16s}
+[data-reveal][data-d="3"]{transition-delay:.24s}
+[data-reveal][data-d="4"]{transition-delay:.32s}
 
-/* ── HERO ────────────────────────────────── */
-#hero{
-  min-height:100vh;display:flex;align-items:center;justify-content:center;
-  text-align:center;position:relative;
-  background-color:#0D0118;
-}
-.aurora{
-  position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1;
-}
-.aurora::before{
-  content:'';position:absolute;width:150%;height:150%;
-  top:-25%;left:-25%;
-  background:conic-gradient(from 0deg at 50% 50%,
-    rgba(107,33,168,.3) 0deg,rgba(168,85,247,.15) 60deg,
-    rgba(249,199,213,.1) 120deg,rgba(245,200,66,.08) 180deg,
-    rgba(107,33,168,.2) 240deg,rgba(26,5,51,.1) 300deg,
-    rgba(107,33,168,.3) 360deg);
-  animation:auroraRot 20s linear infinite;
-  filter:blur(60px);
-}
-@keyframes auroraRot{to{transform:rotate(360deg)}}
-#particles-js{position:absolute;inset:0;z-index:2}
-.hero-content{position:relative;z-index:3;padding:2rem}
-.hero-tag{
-  font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;
-  color:var(--blush);margin-bottom:1.5rem;opacity:.8;
-}
-.hero-title{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3rem,9vw,6.5rem);
-  font-weight:300;line-height:1.05;
-  color:var(--pl);margin-bottom:1rem;
-  display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:.15em;
-}
-.hero-title .char{display:inline-block;opacity:0;transform:translateY(-60px)}
-.hero-amp{color:var(--pm);font-style:italic;font-size:.85em}
-.hero-sub{
-  font-size:clamp(.9rem,2vw,1.15rem);
-  margin-bottom:.5rem;
-  background:linear-gradient(90deg,var(--pl),var(--pm),var(--blush),var(--pl));
-  background-size:300% 100%;
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
-  animation:shimmer 4s linear infinite;
-}
-@keyframes shimmer{0%{background-position:100% 0}100%{background-position:-100% 0}}
-.hero-date{
-  font-size:.85rem;letter-spacing:.2em;color:rgba(233,213,255,.5);
-  margin-bottom:2.5rem;text-transform:uppercase;
-}
-.countdown{display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap}
-.cd-box{
-  background:rgba(107,33,168,.18);border:1px solid rgba(168,85,247,.3);
-  border-radius:12px;padding:1.2rem 1.5rem;min-width:80px;
-  backdrop-filter:blur(12px);text-align:center;cursor:default;
-}
-.cd-num{
-  font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;
-  color:var(--pl);display:block;line-height:1;
-}
-.cd-label{font-size:.65rem;letter-spacing:.15em;color:var(--pm);text-transform:uppercase;margin-top:.3rem}
-.scroll-hint{
-  position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);
-  display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  color:rgba(233,213,255,.4);font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
-  animation:bob 2s ease-in-out infinite;z-index:3;
-}
-@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(6px)}}
-.scroll-arrow{width:18px;height:18px;border-right:1.5px solid rgba(168,85,247,.5);border-bottom:1.5px solid rgba(168,85,247,.5);transform:rotate(45deg)}
+/* botanical sprig */
+.sprig{width:48px;height:auto;color:var(--sage);opacity:.85}
+.sprig path{stroke:currentColor;stroke-width:2.4;fill:none;stroke-linecap:round}
+.sprig .lf{fill:currentColor;stroke:none}
 
-/* ── STORY ───────────────────────────────── */
-#story{padding:7rem 5% 5rem;background:linear-gradient(180deg,#0D0118 0%,#120228 100%)}
-.story-header{text-align:center;margin-bottom:4rem}
-.timeline{display:flex;flex-direction:column;gap:4rem;max-width:900px;margin:0 auto;position:relative}
-.tl-item{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
-.tl-item:nth-child(odd) .tl-text{order:1}
-.tl-item:nth-child(odd) .tl-visual{order:2}
-.tl-item:nth-child(even) .tl-text{order:2}
-.tl-item:nth-child(even) .tl-visual{order:1}
-.tl-text{padding:1.5rem 0}
-.tl-date{
-  font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--pm);margin-bottom:.6rem;
-}
-.tl-ch{
-  font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;
-  color:var(--pl);margin-bottom:.8rem;line-height:1.2;
-}
-.tl-desc{font-size:.9rem;color:rgba(233,213,255,.65);line-height:1.7}
-.tl-img-wrap{
-  border-radius:var(--br);overflow:hidden;position:relative;
-  border:1px solid rgba(168,85,247,.2);
-}
-.tl-img-wrap.portrait{aspect-ratio:3/4}
-.tl-img-wrap.landscape{aspect-ratio:16/9}
-.tl-img-wrap img{
-  width:100%;height:100%;object-fit:cover;
-  object-position:top center;display:block;
-  transition:transform .6s ease;
-}
-.tl-img-wrap:hover img{transform:scale(1.04)}
-.scan-line{
-  position:absolute;top:-5%;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);
-  z-index:3;opacity:0;
+/* ============================================================ CURSOR */
+#cur{position:fixed;top:0;left:0;width:8px;height:8px;border-radius:50%;
+  background:var(--terra);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);
+  opacity:0;transition:opacity .3s}
+#cur-ring{position:fixed;top:0;left:0;width:34px;height:34px;border-radius:50%;
+  border:1.5px solid rgba(106,27,154,.5);pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);opacity:0;
+  transition:opacity .3s,width .25s var(--ease-out),height .25s var(--ease-out),background .25s}
+body.cursor-on #cur,body.cursor-on #cur-ring{opacity:1}
+body.cursor-on #cur-ring.hot{width:54px;height:54px;background:rgba(106,27,154,.08)}
+
+/* ============================================================ LOADER (paper-puppet stop-motion intro) */
+#loader{position:fixed;inset:0;z-index:10000;overflow:hidden;
+  background:radial-gradient(125% 95% at 50% 32%, var(--paper) 0%, var(--cream) 52%, var(--cream-2) 100%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.1rem;
+  opacity:1;transition:opacity .9s var(--ease-out)}
+#loader.done{opacity:0;pointer-events:none}
+
+/* whirl backdrop — rotating pinwheel of soft violet/gold light behind the puppets */
+.intro-whirl{position:absolute;z-index:0;left:50%;top:45%;width:155vmax;height:155vmax;
+  transform:translate(-50%,-50%);pointer-events:none;opacity:.85;filter:blur(3px);
+  background:
+    conic-gradient(from 0deg,
+      transparent 0 4%, rgba(43,18,76,.26) 9%, transparent 14% 21%,
+      rgba(201,160,99,.26) 26%, transparent 31% 38%, rgba(133,79,108,.24) 43%, transparent 48% 55%,
+      rgba(43,18,76,.26) 60%, transparent 65% 72%, rgba(201,160,99,.24) 77%, transparent 82% 89%,
+      rgba(133,79,108,.24) 94%, transparent 99%),
+    radial-gradient(circle at 50% 50%,transparent 26%,rgba(223,182,178,.30) 52%,transparent 72%);
+  animation:whirlSpin 20s linear infinite}
+.intro-whirl.w2{opacity:.5;width:104vmax;height:104vmax;filter:blur(6px);mix-blend-mode:multiply;
+  animation:whirlSpin 13s linear infinite reverse}
+@keyframes whirlSpin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+
+/* puppet theatre stage — every puppet/frame anchored on a shared feet baseline, centred */
+.intro-stage{position:relative;z-index:1;width:min(88vw,540px);height:min(58vh,500px);display:block}
+.intro-frame,.intro-puppet{position:absolute;bottom:0;left:50%;height:100%;width:auto;
+  transform:translateX(-50%) translate(var(--jx,0px),var(--jy,0px)) rotate(var(--jr,0deg));
+  filter:drop-shadow(2px 3px 0 rgba(36,22,54,.10)) drop-shadow(0 18px 26px rgba(36,22,54,.22))}
+/* couple frames: instant on/off (no fade = stop-motion) */
+.intro-frame{opacity:0;visibility:hidden}
+.intro-frame.is-on{opacity:1;visibility:visible}
+/* walk-in puppets — JS slides the boy in toward the girl */
+.intro-puppet{height:92%}
+/* groom stands a touch taller; bride paints on top so his reaching hand passes behind her */
+#pp-girl{left:30%;height:88%;z-index:2}
+#pp-boy{left:90%;height:97%;z-index:1}
+.intro-puppet.gone{opacity:0;visibility:hidden}
+
+/* names + date caption */
+.intro-cap{position:relative;z-index:2;text-align:center;
+  opacity:0;transform:translateY(10px);animation:introCap 1s var(--ease-out) .4s forwards}
+@keyframes introCap{to{opacity:1;transform:none}}
+.intro-names{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,6vw,3rem);
+  color:var(--ink);line-height:1}
+.intro-names .amp{font-family:var(--script);color:var(--terra);font-size:1.25em;margin:0 .1em}
+.intro-tag{margin-top:.55rem;font-size:.7rem;letter-spacing:.28em;
+  text-transform:uppercase;color:var(--ink-faint)}
+
+/* floating petals / hearts / sparkles (swirled in by the whirl) */
+.intro-fx{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.fx-bit{position:absolute;will-change:transform,opacity;opacity:0;line-height:1;
+  animation:fxFloat linear forwards}
+@keyframes fxFloat{
+  0%{opacity:0;transform:translate(0,0) rotate(0) scale(.65)}
+  12%{opacity:var(--o,.85)}
+  88%{opacity:var(--o,.85)}
+  100%{opacity:0;transform:translate(var(--dx,0),var(--dy,-160px)) rotate(var(--rot,60deg)) scale(1)}
 }
 
-/* ── GALLERY ─────────────────────────────── */
-#gallery{padding:7rem 5%;background:#0D0118}
-.gallery-header{text-align:center;margin-bottom:3rem}
-.gal-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  grid-auto-rows:280px;
-  gap:1rem;
-  max-width:1100px;margin:0 auto;
-}
-.gal-item{
-  overflow:hidden;border-radius:var(--br);position:relative;cursor:none;
-  border:1px solid rgba(168,85,247,.15);
-  opacity:0;transform:scale(.88) translateY(20px);
-}
-.gal-item:nth-child(1){grid-row:span 2}
-.gal-item:nth-child(4){grid-column:span 2}
-.gal-item:nth-child(7){grid-row:span 2}
-.gal-item img{
-  width:100%;height:100%;object-fit:cover;
-  object-position:center 30%;display:block;
-  transition:transform .7s cubic-bezier(.25,.46,.45,.94);
-}
-/* ghibhili_1 portrait — show full figure from top */
-.gal-item:nth-child(1) img{object-position:center top}
-/* WhatsApp dancing photo — couple slightly above center */
-.gal-item:nth-child(2) img{object-position:center 35%}
-/* WhatsApp couple under trees — center crop */
-.gal-item:nth-child(3) img{object-position:center 40%}
-/* ghibhili_2 landscape storyboard — center */
-.gal-item:nth-child(4) img{object-position:center center}
-/* WhatsApp couple forest — center to catch both people */
-.gal-item:nth-child(5) img{object-position:center 45%}
-/* WhatsApp couple — center */
-.gal-item:nth-child(6) img{object-position:center 40%}
-/* Wedding invitation portrait — top to show card header */
-.gal-item:nth-child(7) img{object-position:center top}
-.gal-item:hover img{transform:scale(1.08)}
-.gal-shimmer{
-  position:absolute;inset:0;
-  background:linear-gradient(135deg,transparent 0%,rgba(168,85,247,.3) 50%,transparent 100%);
-  background-size:200% 200%;background-position:200% 200%;
-  opacity:0;transition:opacity .3s;
-  pointer-events:none;
-}
-.gal-item:hover .gal-shimmer{opacity:1;background-position:-100% -100%;transition:opacity .3s,background-position .6s}
+/* ============================================================ NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem clamp(4vw,5vw,6vw);transition:background .4s,padding .4s,box-shadow .4s,border-color .4s;
+  border-bottom:1px solid transparent}
+nav.solid{background:rgba(251,228,216,.82);backdrop-filter:blur(14px) saturate(140%);
+  border-color:var(--line);padding:.7rem 6vw;box-shadow:0 6px 30px rgba(25,0,25,.07)}
+.nav-logo{font-family:var(--serif);font-size:1.5rem;font-weight:400;letter-spacing:.04em}
+.nav-logo .amp{font-family:var(--script);color:var(--terra);font-size:1.2em;margin:0 .12em}
+.nav-right{display:flex;align-items:center;gap:1.4rem}
+.nav-links{display:flex;align-items:center;gap:1.5rem}
+.nav-links a{font-size:.74rem;font-weight:400;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--ink-soft);text-decoration:none;position:relative;padding:.2rem 0}
+.nav-links a::after{content:'';position:absolute;left:0;right:100%;bottom:-2px;height:1px;
+  background:var(--terra);transition:right .3s var(--ease-out)}
+@media(hover:hover){.nav-links a:hover{color:var(--ink)}.nav-links a:hover::after{right:0}}
+.btn-dev{font-family:var(--mono);font-size:.7rem;color:var(--sage-deep);
+  background:none;border:1px solid var(--line);border-radius:7px;padding:.4rem .7rem;
+  cursor:pointer;transition:transform .16s var(--ease-out),border-color .3s,color .3s}
+.btn-dev:active{transform:scale(.97)}
+@media(hover:hover){.btn-dev:hover{border-color:var(--sage);color:var(--ink)}}
+.nav-burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:.3rem}
+.nav-burger span{width:24px;height:1.6px;background:var(--ink);transition:transform .3s var(--ease-out),opacity .3s}
 
-/* ── LIGHTBOX ────────────────────────────── */
-#lightbox{
-  position:fixed;inset:0;z-index:5000;
-  background:rgba(0,0,0,.92);backdrop-filter:blur(8px);
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;pointer-events:none;transition:opacity .3s;
-}
-#lightbox.active{opacity:1;pointer-events:all}
-#lb-img{
-  max-width:90vw;max-height:88vh;border-radius:12px;
-  box-shadow:0 0 80px rgba(168,85,247,.4);display:block;
-}
-#lb-close{
-  position:absolute;top:1.5rem;right:1.5rem;
-  background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.3);color:#fff;
-  width:40px;height:40px;border-radius:50%;cursor:none;
-  font-size:1.2rem;display:flex;align-items:center;justify-content:center;
-  transition:all .3s;
-}
-#lb-close:hover{background:rgba(255,255,255,.15)}
-#lb-prev,#lb-next{
-  position:absolute;top:50%;transform:translateY(-50%);
-  background:rgba(107,33,168,.4);border:1px solid rgba(168,85,247,.4);
-  color:var(--pl);width:48px;height:48px;border-radius:50%;
-  cursor:none;font-size:1.5rem;display:flex;align-items:center;justify-content:center;
-  transition:all .3s;
-}
-#lb-prev{left:1.5rem}#lb-next{right:1.5rem}
-#lb-prev:hover,#lb-next:hover{background:rgba(107,33,168,.7)}
+/* music pill */
+.music-pill{display:flex;align-items:center;gap:.55rem;background:var(--paper);
+  border:1px solid var(--line);border-radius:24px;padding:.3rem .7rem .3rem .4rem}
+.vinyl{width:26px;height:26px;border-radius:50%;flex-shrink:0;border:1.5px solid var(--gold);
+  background:repeating-radial-gradient(circle,#3a342c 0 1px,#2a251f 1px 2px);position:relative}
+.vinyl::after{content:'';position:absolute;inset:0;margin:auto;width:7px;height:7px;border-radius:50%;background:var(--terra)}
+.vinyl.spin{animation:spin 2.4s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.music-meta{display:flex;flex-direction:column;max-width:108px;line-height:1.25}
+.music-t{font-size:.64rem;font-weight:500;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.music-a{font-size:.56rem;color:var(--terra);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.music-btn{background:none;border:none;cursor:pointer;color:var(--terra);font-size:.85rem;flex-shrink:0;padding:.1rem}
+.music-btn:active{transform:scale(.92)}
 
-/* ── FAMILY TREE ─────────────────────────── */
-#family{padding:7rem 5%;background:linear-gradient(180deg,#0D0118,#120228)}
-.family-header{text-align:center;margin-bottom:3rem}
-.tree-card{
-  background:var(--glas);border:1px solid rgba(168,85,247,.25);
-  border-radius:12px;padding:1rem 1.2rem;text-align:center;
-  transition:box-shadow .4s,border-color .4s;cursor:default;
-  backdrop-filter:blur(12px);
-}
-.tree-card:hover{
-  box-shadow:0 0 30px rgba(168,85,247,.35);
-  border-color:rgba(168,85,247,.6);
-}
-.tree-card h4{
-  font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;
-  color:var(--pl);margin-bottom:.25rem;
-}
-.tree-card p{font-size:.72rem;color:var(--pm);letter-spacing:.1em;text-transform:uppercase}
-.tree-center{
-  background:linear-gradient(135deg,rgba(107,33,168,.4),rgba(168,85,247,.2));
-  border-color:var(--pm);
-}
-.tree-heart{
-  font-size:2rem;display:block;margin:0 auto .3rem;
-  animation:heartbeat 1.4s ease-in-out infinite;
-}
-@keyframes heartbeat{
-  0%,100%{transform:scale(1)}14%{transform:scale(1.2)}28%{transform:scale(1)}42%{transform:scale(1.15)}70%{transform:scale(1)}
-}
-.tree-row{display:flex;gap:1.2rem;justify-content:center;flex-wrap:wrap;margin:.8rem 0}
-.tree-row .tree-card{flex:1;min-width:140px;max-width:190px}
-.tree-connector{text-align:center;color:rgba(168,85,247,.5);font-size:.8rem;margin:.3rem 0;letter-spacing:.1em}
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-size:.78rem;
+  font-weight:500;letter-spacing:.16em;text-transform:uppercase;text-decoration:none;cursor:pointer;
+  padding:.9rem 1.9rem;border-radius:30px;border:1px solid transparent;
+  transition:transform .16s var(--ease-out),background .3s,color .3s,border-color .3s,box-shadow .3s}
+.btn:active{transform:scale(.97)}
+.btn-solid{background:linear-gradient(135deg,var(--terra),var(--terra-deep));color:var(--cream);
+  border-color:rgba(232,201,143,.45);
+  box-shadow:0 10px 30px rgba(25,0,25,.34),inset 0 1px 0 rgba(255,255,255,.14)}
+@media(hover:hover){.btn-solid:hover{background:linear-gradient(135deg,#9A5F7E,var(--terra-deep));
+  border-color:rgba(232,201,143,.85);
+  box-shadow:0 14px 38px rgba(25,0,25,.45),0 0 18px rgba(201,160,99,.32),inset 0 1px 0 rgba(255,255,255,.2)}}
+.btn-ghost{border-color:var(--ink);color:var(--ink)}
+@media(hover:hover){.btn-ghost:hover{background:var(--ink);color:var(--cream)}}
+.btn-light{border-color:rgba(244,240,250,.7);color:var(--cream)}
+@media(hover:hover){.btn-light:hover{background:rgba(244,240,250,.16)}}
 
-/* ── VENUE ───────────────────────────────── */
-#venue{padding:7rem 5%;background:#0D0118}
-.venue-header{text-align:center;margin-bottom:3rem}
-.venue-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:3rem;
-  max-width:960px;margin:0 auto;align-items:start;
-}
-.venue-card{
-  background:var(--glas);border:1px solid rgba(168,85,247,.2);
-  border-radius:var(--br);padding:2rem;backdrop-filter:blur(16px);
-}
-.venue-card h3{
-  font-family:'Cormorant Garamond',serif;font-size:1.6rem;
-  color:var(--pl);margin-bottom:1.2rem;
-}
-.venue-detail{display:flex;gap:.8rem;margin-bottom:.9rem;align-items:flex-start}
-.venue-icon{font-size:1.1rem;margin-top:.1rem;flex-shrink:0}
-.venue-info{color:rgba(233,213,255,.75);font-size:.88rem;line-height:1.6}
-.venue-info strong{color:var(--pl)}
-.venue-tamil{
-  font-family:'Noto Serif Tamil',serif;font-size:1.05rem;
-  color:var(--blush);text-align:center;margin-top:1.5rem;
-  line-height:1.9;position:relative;padding-bottom:.8rem;
-}
-.venue-tamil::after{
-  content:'';position:absolute;bottom:0;left:50%;
-  transform:translateX(-50%) scaleX(0);transform-origin:left;
-  width:80px;height:2px;background:linear-gradient(90deg,var(--gold),var(--saffron));
-  transition:transform .8s ease .3s;
-}
-.venue-tamil.in-view::after{transform:translateX(-50%) scaleX(1)}
-.qr-wrap{
-  display:flex;flex-direction:column;align-items:center;gap:1rem;
-  background:var(--glas);border:1px solid rgba(168,85,247,.2);
-  border-radius:var(--br);padding:2rem;backdrop-filter:blur(16px);
-}
-.qr-wrap h3{
-  font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--pl);
-}
-#qrcode{
-  background:#fff;padding:.6rem;border-radius:8px;
-  box-shadow:0 0 20px rgba(168,85,247,.3);
-}
-.qr-caption{font-size:.75rem;color:rgba(233,213,255,.5);text-align:center;letter-spacing:.08em}
-.map-link{
-  display:inline-block;margin-top:.5rem;
-  background:linear-gradient(135deg,var(--pp),var(--pm));
-  color:#fff;padding:.55rem 1.4rem;border-radius:20px;
-  font-size:.8rem;text-decoration:none;letter-spacing:.08em;
-  transition:opacity .3s;
-}
-.map-link:hover{opacity:.8}
+/* ============================================================ HERO (floral arch) */
+#hero{--archw:clamp(320px,38vw,560px);
+  min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;position:relative;overflow:hidden;padding:5.2rem clamp(4vw,5vw,6vw) 2.4rem;
+  background:radial-gradient(ellipse 92% 72% at 50% 28%,var(--paper) 0%,var(--cream) 52%,var(--cream-2) 100%)}
+.hero-stage{position:relative;width:100%;display:flex;align-items:center;justify-content:center;
+  height:clamp(340px,56vh,560px)}
+/* giant names with outline-over-image effect */
+.hnames{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  font-family:var(--serif);font-weight:400;white-space:nowrap;pointer-events:none;
+  font-size:clamp(2.8rem,13vw,11rem);line-height:1;letter-spacing:.01em}
+.hnames .amp{font-family:var(--serif);font-style:italic;font-weight:400}
+.nf{z-index:1;color:var(--terra-deep)}
+.no{z-index:3;color:transparent;-webkit-text-stroke:2.2px #fff;text-shadow:0 2px 14px rgba(36,22,54,.28);
+  -webkit-mask-image:linear-gradient(90deg,transparent calc(50% - var(--archw)*.47),#000 calc(50% - var(--archw)*.47),#000 calc(50% + var(--archw)*.47),transparent calc(50% + var(--archw)*.47));
+  mask-image:linear-gradient(90deg,transparent calc(50% - var(--archw)*.47),#000 calc(50% - var(--archw)*.47),#000 calc(50% + var(--archw)*.47),transparent calc(50% + var(--archw)*.47))}
+/* arch composition: couple framed by the floral arch */
+.hero-arch{position:relative;z-index:2;width:var(--archw);aspect-ratio:1000/982;
+  filter:drop-shadow(0 30px 50px rgba(36,22,54,.18))}
+.hero-couple{position:absolute;top:7%;left:25.5%;width:56%;height:80%;
+  object-fit:cover;object-position:center 22%;border-radius:46% 46% 8px 8px/42% 42% 3% 3%}
+.hero-archimg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.hero-flower{position:absolute;z-index:4;width:clamp(80px,11vw,168px);pointer-events:none;
+  filter:drop-shadow(0 8px 16px rgba(36,22,54,.12))}
+.fl-l{left:calc(50% - var(--archw)*.62);bottom:9%;transform:rotate(-12deg)}
+.fl-r{right:calc(50% - var(--archw)*.62);bottom:15%;transform:scaleX(-1) rotate(-12deg)}
+.hero-cta{margin-top:1.4rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.hero-date{margin-top:1.1rem;font-size:.76rem;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-soft)}
+/* mobile-only stacked title (shown < 680px, mirrors the reference layout) */
+.hero-mtitle{display:none;font-family:var(--serif);font-weight:400;text-align:center;
+  line-height:1.02;letter-spacing:.01em;color:var(--terra-deep)}
+.hero-mtitle span{display:block}
+.hero-mtitle .amp{display:block;font-family:var(--script);font-style:normal;color:var(--terra);
+  font-size:1.25em;line-height:.7;margin:.05em 0}
 
-/* ── INVITATION ──────────────────────────── */
-#invitation{padding:7rem 5%;background:linear-gradient(180deg,#0D0118,#120228)}
-.inv-header{text-align:center;margin-bottom:3rem}
-.inv-scene{
-  perspective:1400px;max-width:460px;margin:0 auto;
-}
-.inv-book{
-  transform-style:preserve-3d;
-  transform:rotateY(90deg);
-  transition:transform .9s cubic-bezier(.25,.46,.45,.94);
-  position:relative;
-}
-.inv-book.revealed{transform:rotateY(0deg)}
-.inv-book img{
-  width:100%;border-radius:var(--br);display:block;
-  box-shadow:0 30px 80px rgba(107,33,168,.5);
-}
-.inv-blobs{position:absolute;inset:0;pointer-events:none;overflow:visible;z-index:-1}
-.blob{
-  position:absolute;border-radius:50%;filter:blur(40px);opacity:.15;
-  animation:blobFloat 8s ease-in-out infinite;
-}
-.blob1{width:200px;height:200px;background:var(--blush);top:-20%;left:-10%;animation-delay:0s}
-.blob2{width:150px;height:150px;background:var(--pm);bottom:-10%;right:-5%;animation-delay:3s}
-@keyframes blobFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.08)}}
-.inv-petals{position:absolute;inset:0;pointer-events:none;overflow:hidden;top:-50px}
-.inv-petal{
-  position:absolute;top:-20px;font-size:1rem;opacity:.4;
-  animation:petalFall 5s linear infinite;
-}
-.inv-petal:nth-child(1){left:20%;animation-delay:0s}
-.inv-petal:nth-child(2){left:55%;animation-delay:2s}
-.inv-petal:nth-child(3){left:80%;animation-delay:1s}
-@keyframes petalFall{0%{transform:translateY(-20px) rotate(0deg);opacity:.4}100%{transform:translateY(500px) rotate(360deg);opacity:0}}
-.inv-actions{
-  display:flex;flex-direction:column;align-items:center;gap:1rem;margin-top:2rem;
-}
-.btn-download{
-  background:linear-gradient(135deg,var(--pp),var(--pm));
-  color:#fff;border:none;padding:.8rem 2.5rem;border-radius:30px;
-  font-family:'Inter',sans-serif;font-size:.9rem;letter-spacing:.1em;cursor:none;
-  box-shadow:0 8px 30px rgba(107,33,168,.5);
-  transition:transform .3s, box-shadow .3s;
-  position:relative;overflow:hidden;text-decoration:none;display:inline-block;
-}
-.btn-download::before{
-  content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);
-  transition:left .5s;
-}
-.btn-download:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(107,33,168,.6)}
-.btn-download:hover::before{left:100%}
-.inv-caption{
-  font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-style:italic;
-  color:rgba(233,213,255,.55);text-align:center;
-}
+/* countdown — light theme on cream */
+.countdown{margin-top:1.6rem;display:flex;gap:.9rem;justify-content:center;flex-wrap:wrap}
+.cd{min-width:72px;padding:.85rem .6rem;border:1px solid rgba(203,161,53,.3);border-radius:12px;
+  background:var(--paper);box-shadow:0 8px 22px rgba(36,22,54,.07)}
+.cd b{display:block;font-family:var(--serif);font-weight:500;font-size:2rem;line-height:1;color:var(--terra)}
+.cd span{display:block;margin-top:.35rem;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+.scroll-hint{position:absolute;bottom:1.4rem;left:50%;transform:translateX(-50%);z-index:5;
+  display:flex;flex-direction:column;align-items:center;gap:.4rem;color:var(--ink-faint);
+  font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;animation:bob 2.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(7px)}}
+.scroll-hint i{width:13px;height:13px;border-right:1.5px solid;border-bottom:1.5px solid;transform:rotate(45deg)}
 
-/* ── NAV MUSIC PILL ──────────────────────── */
-.nav-music-pill{
-  display:flex;align-items:center;gap:.55rem;
-  background:rgba(13,1,24,.8);border:1px solid rgba(168,85,247,.4);
-  border-radius:24px;padding:.35rem .75rem .35rem .5rem;
-  backdrop-filter:blur(16px);
-}
-.vinyl-sm{
-  width:26px;height:26px;border-radius:50%;flex-shrink:0;
-  background:conic-gradient(#333 0deg,#555 90deg,#222 180deg,#444 270deg,#333 360deg);
-  position:relative;border:1.5px solid rgba(168,85,247,.6);
-}
-.vinyl-sm::after{
-  content:'';position:absolute;top:50%;left:50%;
-  width:7px;height:7px;border-radius:50%;background:var(--pm);
-  transform:translate(-50%,-50%);
-}
-.vinyl-sm.spinning{animation:vinylSpin 2s linear infinite}
-@keyframes vinylSpin{to{transform:rotate(360deg)}}
-.nav-music-info{display:flex;flex-direction:column;min-width:0;max-width:130px}
-.music-title{
-  font-size:.68rem;color:var(--pl);white-space:nowrap;
-  overflow:hidden;text-overflow:ellipsis;font-weight:500;line-height:1.3;
-}
-.music-artist{font-size:.58rem;color:var(--pm);opacity:.8;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.music-btn{
-  background:none;border:none;color:var(--pm);cursor:none;
-  font-size:.9rem;padding:.15rem;transition:color .2s;flex-shrink:0;
-}
-.music-btn:hover{color:var(--pl)}
-.yt-fallback{
-  font-size:.6rem;color:var(--pm);text-decoration:none;
-  background:rgba(168,85,247,.12);border:1px solid rgba(168,85,247,.3);
-  padding:.15rem .45rem;border-radius:8px;white-space:nowrap;flex-shrink:0;
-}
-.yt-fallback:hover{background:rgba(168,85,247,.25)}
+/* hero intro (CSS, GSAP-independent) */
+.js #hero .hero-arch{opacity:0;transform:scale(.93)}
+.js #hero .hnames,.js #hero .hero-flower,.js #hero .hero-cta,.js #hero .hero-date,.js #hero .countdown{opacity:0}
+#hero.ready .hero-arch{opacity:1;transform:none;transition:opacity 1s var(--ease-out),transform 1.1s var(--ease-out)}
+#hero.ready .hnames{opacity:1;transition:opacity 1.1s var(--ease-out) .15s}
+#hero.ready .hero-flower{opacity:1;transition:opacity 1s var(--ease-out) .5s}
+#hero.ready .hero-cta{opacity:1;transition:opacity .8s var(--ease-out) .55s}
+#hero.ready .hero-date{opacity:1;transition:opacity .8s var(--ease-out) .62s}
+#hero.ready .countdown{opacity:1;transition:opacity .8s var(--ease-out) .7s}
+.hero-petals{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.pt{position:absolute;top:-6%;width:10px;height:10px;border-radius:0 60% 0 60%;
+  background:rgba(200,165,235,.55);opacity:0;animation:petal linear infinite}
+@keyframes petal{0%{transform:translateY(0) rotate(0);opacity:0}10%{opacity:.7}100%{transform:translateY(112vh) rotate(360deg);opacity:0}}
 
-/* ── FOOTER ──────────────────────────────── */
-footer{
-  padding:5rem 5% 3rem;text-align:center;
-  background:radial-gradient(ellipse 60% 40% at 50% 80%,#2D0A5E 0%,#0D0118 60%);
-  position:relative;overflow:hidden;
-}
-.footer-stars{position:absolute;inset:0;pointer-events:none;overflow:hidden}
-.shoot-star{
-  position:absolute;width:2px;height:80px;
-  background:linear-gradient(180deg,transparent,var(--pm));
-  opacity:0;border-radius:2px;
-}
-.shoot-star:nth-child(1){top:5%;left:10%;transform:rotate(35deg);animation:shoot 3.5s 0s infinite}
-.shoot-star:nth-child(2){top:15%;left:35%;transform:rotate(35deg);animation:shoot 3.5s .9s infinite}
-.shoot-star:nth-child(3){top:3%;left:62%;transform:rotate(35deg);animation:shoot 3.5s 1.8s infinite}
-.shoot-star:nth-child(4){top:12%;left:80%;transform:rotate(35deg);animation:shoot 3.5s .4s infinite}
-.shoot-star:nth-child(5){top:8%;left:50%;transform:rotate(35deg);animation:shoot 3.5s 2.4s infinite}
-@keyframes shoot{
-  0%{opacity:0;transform:rotate(35deg) translateY(-80px)}
-  10%{opacity:1}
-  55%{opacity:0;transform:rotate(35deg) translateY(180px)}
-  100%{opacity:0}
-}
-.footer-mono{
-  font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;
-  letter-spacing:.3em;color:var(--pl);margin-bottom:.5rem;
-  animation:hueRot 8s linear infinite;display:inline-block;
-}
-@keyframes hueRot{0%,100%{filter:hue-rotate(0deg)}50%{filter:hue-rotate(30deg) brightness(1.2)}}
-.footer-tagline{
-  font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:1.2rem;color:rgba(233,213,255,.5);margin-bottom:2rem;
-}
-.footer-divider{width:80px;height:1px;background:var(--pm);margin:1.5rem auto;opacity:.4}
-.footer-copy{font-size:.72rem;color:rgba(233,213,255,.25);letter-spacing:.1em}
-.kolam{
-  width:80px;height:80px;margin:1.5rem auto;opacity:.18;
-  background-image:radial-gradient(circle,var(--pm) 1.5px,transparent 1.5px);
-  background-size:10px 10px;border-radius:50%;
-}
+/* ============================================================ INFO */
+#info{background:var(--paper)}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.info-card{background:var(--cream);border:1px solid var(--line);border-radius:16px;
+  padding:2.4rem 1.8rem;text-align:center;
+  transition:transform .4s var(--ease-out),box-shadow .4s,border-color .4s}
+@media(hover:hover){.info-card:hover{transform:translateY(-5px);box-shadow:0 18px 40px rgba(36,22,54,.08);border-color:rgba(106,27,154,.4)}}
+.info-ic{width:46px;height:46px;margin:0 auto 1.2rem;color:var(--terra)}
+.info-card h3{font-family:var(--sans);font-size:.72rem;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--terra);margin-bottom:.9rem}
+.info-card .big{font-family:var(--serif);font-size:1.7rem;font-weight:400;line-height:1.2;color:var(--ink)}
+.info-card p{margin-top:.5rem;color:var(--ink-soft);font-size:.92rem}
+.info-cta{text-align:center;margin-top:3rem}
 
-/* ── FLOATING HEARTS ─────────────────────── */
-.float-heart{
-  position:fixed;pointer-events:none;z-index:3000;
-  font-size:1.4rem;opacity:0;
-  animation:heartFloat 3.5s ease-out forwards;
-  will-change:transform,opacity;
-}
-@keyframes heartFloat{
-  0%  {opacity:.9;transform:translateY(0) scale(1) rotate(0deg)}
-  30% {opacity:.8;transform:translateY(-80px) scale(1.15) rotate(-8deg)}
-  60% {opacity:.5;transform:translateY(-180px) scale(1) rotate(6deg)}
-  100%{opacity:0;transform:translateY(-300px) scale(.7) rotate(-4deg)}
-}
+/* ============================================================ STORY */
+#story{background:var(--cream)}
+.timeline{max-width:980px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(3.5rem,7vw,6rem)}
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:center}
+.tl:nth-child(even) .tl-arch{order:2}
+.tl-media{position:relative;border-radius:16px;overflow:hidden;border:1px solid var(--line);
+  box-shadow:0 20px 50px rgba(36,22,54,.1)}
+.tl-media img{width:100%;height:100%;object-fit:cover;aspect-ratio:4/5;
+  transition:transform 1s var(--ease-out)}
+.tl-media.wide img{aspect-ratio:16/11}
+@media(hover:hover){.tl-media:hover img{transform:scale(1.05)}}
+.tl-num{font-family:var(--script);font-size:3rem;color:var(--terra);opacity:.5;line-height:.6}
+.tl-date{margin:.6rem 0 .8rem;font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--sage-deep)}
+.tl-h{font-family:var(--serif);font-weight:300;font-size:clamp(1.7rem,3.4vw,2.6rem);line-height:1.1;margin-bottom:.9rem}
+.tl-p{color:var(--ink-soft);max-width:42ch}
 
-/* ── DEV MODE ────────────────────────────── */
-#dev-overlay{
-  position:fixed;inset:0;z-index:8000;
-  background:rgba(0,5,0,.96);
-  display:none;flex-direction:column;
-}
-#dev-overlay.open{display:flex}
-.dev-header{
-  background:rgba(0,20,0,.9);border-bottom:1px solid rgba(0,255,65,.2);
-  padding:.6rem 1.5rem;display:flex;align-items:center;gap:.8rem;
-  flex-shrink:0;
-}
+/* ============================================================ SCHEDULE */
+#schedule{background:var(--cream-2);overflow:hidden}
+.sched{max-width:760px;margin:0 auto;position:relative}
+.sched::before{content:'';position:absolute;left:23px;top:8px;bottom:8px;width:1px;background:var(--line)}
+.ev{display:grid;grid-template-columns:48px 1fr;gap:1.6rem;align-items:start;padding:1.4rem 0;position:relative}
+.ev-dot{width:48px;height:48px;border-radius:50%;background:var(--cream);border:1px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;color:var(--terra);position:relative;z-index:1}
+.ev-dot svg{width:22px;height:22px}
+.ev-time{font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--terra);margin-bottom:.25rem}
+.ev-h{font-family:var(--serif);font-size:1.5rem;font-weight:400;margin-bottom:.3rem}
+.ev-p{color:var(--ink-soft);font-size:.92rem}
+
+/* ============================================================ GALLERY */
+#gallery{background:var(--cream)}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:.9rem;max-width:1180px;margin:0 auto}
+.gi{position:relative;overflow:hidden;border-radius:12px;cursor:pointer;border:1px solid var(--line);background:var(--panel)}
+.gi img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease-out)}
+.gi::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(22,16,30,.35));opacity:0;transition:opacity .4s}
+@media(hover:hover){.gi:hover img{transform:scale(1.07)}.gi:hover::after{opacity:1}}
+.gi .plus{position:absolute;bottom:.7rem;right:.8rem;color:var(--cream);font-size:1.1rem;opacity:0;transform:translateY(6px);transition:.4s var(--ease-out);z-index:2}
+@media(hover:hover){.gi:hover .plus{opacity:1;transform:none}}
+.gi.tall{grid-row:span 2}.gi.wide{grid-column:span 2}
+.gal-quote{text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.3rem,3vw,2rem);
+  color:var(--ink);max-width:34ch;margin:0 auto clamp(2.5rem,5vw,3.5rem)}
+
+/* ============================================================ FAMILY */
+#family{background:var(--paper)}
+.tree{max-width:900px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1rem}
+.fcard{background:var(--cream);border:1px solid var(--line);border-radius:14px;padding:1rem 1.4rem;text-align:center;
+  transition:transform .35s var(--ease-out),box-shadow .35s,border-color .35s}
+@media(hover:hover){.fcard:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(36,22,54,.08);border-color:rgba(106,27,154,.4)}}
+.fcard h4{font-family:var(--serif);font-weight:500;font-size:1.2rem;color:var(--ink)}
+.fcard p{font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);margin-top:.2rem}
+.fcenter{background:linear-gradient(135deg,var(--terra),var(--terra-deep));border:1px solid var(--gold);
+  box-shadow:0 14px 36px rgba(68,16,138,.35),0 0 0 1px rgba(235,205,112,.18)}
+.fcenter h4,.fcenter p{color:var(--cream)}
+.fcenter .heart{font-size:1.4rem;display:block;margin-bottom:.2rem}
+.frow{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;width:100%}
+.frow .fcard{flex:1;min-width:150px;max-width:210px}
+.fconn{color:var(--ink-faint);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase}
+
+/* ============================================================ VENUE */
+#venue{background:var(--cream)}
+.venue-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:1.6rem;max-width:1000px;margin:0 auto;align-items:stretch}
+.vcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:2.4rem}
+.vcard h3{font-family:var(--serif);font-weight:400;font-size:1.9rem;margin-bottom:1.4rem}
+.vrow{display:flex;gap:.9rem;margin-bottom:1.1rem;align-items:flex-start}
+.vrow .vi{color:var(--terra);flex-shrink:0;width:20px;height:20px;margin-top:.15rem}
+.vrow div{color:var(--ink-soft);font-size:.94rem}
+.vrow strong{color:var(--ink);font-weight:500}
+.vtamil{font-family:var(--tamil);font-weight:300;color:var(--sage-deep);text-align:center;
+  line-height:2;margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:1.05rem}
+.qr-card{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1rem;
+  background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:2.4rem}
+.qr-card h3{font-family:var(--serif);font-weight:400;font-size:1.4rem;text-align:center}
+#qrcode{background:#fff;padding:.7rem;border-radius:10px;box-shadow:0 10px 24px rgba(36,22,54,.1)}
+#qrcode img{border-radius:4px}
+.qr-cap{font-size:.74rem;color:var(--ink-faint);text-align:center}
+
+/* ============================================================ INVITATION */
+#invitation{background:var(--cream-2);overflow:hidden}
+.inv-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:center;max-width:1040px;margin:0 auto}
+.inv-card{perspective:1400px}
+.inv-card img{border-radius:12px;box-shadow:0 30px 70px rgba(36,22,54,.22);
+  transform:rotateY(16deg) rotateX(3deg);transition:transform 1s var(--ease-out)}
+@media(hover:hover){.inv-card:hover img{transform:rotateY(0) rotateX(0)}}
+.inv-text .sec-title{text-align:left}
+.inv-text .rule{margin:1.4rem 0}
+.inv-actions{margin-top:2rem;display:flex;gap:1rem;flex-wrap:wrap}
+
+/* ============================================================ FAQ */
+#faq{background:var(--cream)}
+.faq-list{max-width:760px;margin:0 auto}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;
+  display:flex;align-items:center;justify-content:space-between;gap:1.5rem;
+  padding:1.5rem 0;font-family:var(--serif);font-size:1.3rem;font-weight:400;color:var(--ink)}
+.faq-q .ic{flex-shrink:0;width:22px;height:22px;color:var(--terra);
+  transition:transform .35s var(--ease-out)}
+.faq-item.open .faq-q .ic{transform:rotate(45deg)}
+.faq-a{display:grid;grid-template-rows:0fr;transition:grid-template-rows .4s var(--ease-out)}
+.faq-item.open .faq-a{grid-template-rows:1fr}
+.faq-a>div{overflow:hidden}
+.faq-a p{color:var(--ink-soft);padding-bottom:1.5rem;max-width:60ch}
+
+/* ============================================================ FOOTER */
+footer{background:radial-gradient(ellipse 80% 120% at 50% -10%,#3a1f63 0%,var(--ink) 55%);
+  color:var(--cream);text-align:center;padding:clamp(4rem,8vw,6rem) clamp(4vw,5vw,6vw) 3rem;position:relative;overflow:hidden;
+  border-top:1px solid rgba(235,205,112,.25)}
+.f-mono{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6vw,4rem)}
+.f-mono .amp{font-family:var(--script);color:#EBCD70;margin:0 .12em}
+.f-intro{max-width:50ch;margin:1.4rem auto 0;color:rgba(244,240,250,.7);font-style:italic;font-family:var(--serif);font-size:1.15rem;line-height:1.7}
+.f-tamil{font-family:var(--tamil);color:rgba(200,165,235,.85);margin-top:1.6rem;line-height:2}
+.f-links{display:flex;gap:1.6rem;justify-content:center;flex-wrap:wrap;margin:2.2rem 0 1.4rem}
+.f-links a{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,240,250,.7);text-decoration:none;transition:color .3s}
+@media(hover:hover){.f-links a:hover{color:var(--cream)}}
+.f-div{width:60px;height:1px;background:rgba(244,240,250,.3);margin:1.6rem auto}
+.f-copy{font-size:.7rem;color:rgba(244,240,250,.4);letter-spacing:.08em}
+
+/* ============================================================ LIGHTBOX */
+#lb{position:fixed;inset:0;z-index:5000;background:rgba(22,16,30,.92);backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .35s var(--ease-out)}
+#lb.on{opacity:1;pointer-events:auto}
+#lb img{max-width:90vw;max-height:86vh;border-radius:10px;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.lb-btn{position:absolute;background:rgba(244,240,250,.12);border:1px solid rgba(244,240,250,.3);
+  color:var(--cream);width:46px;height:46px;border-radius:50%;cursor:pointer;font-size:1.2rem;
+  display:flex;align-items:center;justify-content:center;transition:transform .16s var(--ease-out),background .3s}
+.lb-btn:active{transform:scale(.94)}
+@media(hover:hover){.lb-btn:hover{background:rgba(244,240,250,.24)}}
+#lb-close{top:1.4rem;right:1.4rem}#lb-prev{left:1.4rem;top:50%;transform:translateY(-50%)}#lb-next{right:1.4rem;top:50%;transform:translateY(-50%)}
+
+/* ============================================================ DEV MODE */
+#dev{position:fixed;inset:0;z-index:8000;background:rgba(6,12,7,.97);display:none;flex-direction:column}
+#dev.on{display:flex;animation:fade .3s var(--ease-out)}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.dev-bar{display:flex;align-items:center;gap:.8rem;padding:.6rem 1.4rem;background:rgba(0,18,6,.9);border-bottom:1px solid rgba(63,185,80,.2)}
 .dev-dots{display:flex;gap:.4rem}
-.dev-dot{width:12px;height:12px;border-radius:50%;cursor:none;}
-.dev-dot.r{background:#FF5F56}.dev-dot.y{background:#FFBD2E}.dev-dot.g{background:#27C93F}
-.dev-title{
-  font-family:'JetBrains Mono',monospace;font-size:.75rem;
-  color:rgba(0,255,65,.6);letter-spacing:.1em;
-}
-.dev-close-btn{
-  margin-left:auto;background:none;border:none;color:rgba(0,255,65,.5);
-  cursor:none;font-size:1.2rem;padding:.2rem .5rem;
-}
-.dev-terminal{
-  flex:1;padding:1.5rem;font-family:'JetBrains Mono',monospace;
-  font-size:.82rem;line-height:1.7;color:var(--dg);
-  overflow-y:auto;position:relative;
-}
-#matrix-canvas{
-  position:absolute;inset:0;pointer-events:none;opacity:0;z-index:1;
-}
-#dev-output{position:relative;z-index:2;white-space:pre-wrap}
-.dev-line{margin:.05rem 0}
-.dev-line.cmd{color:#fff}
-.dev-line.info{color:var(--dg)}
-.dev-line.warn{color:var(--gold)}
-.dev-line.err{color:#FF5F56}
-.dev-line.hi{color:var(--pm)}
-.dev-line.dim{color:rgba(0,255,65,.45)}
-.dev-input-row{
-  display:flex;align-items:center;gap:.5rem;
-  padding:1rem 1.5rem;border-top:1px solid rgba(0,255,65,.15);
-  background:rgba(0,10,0,.6);position:relative;z-index:2;flex-shrink:0;
-}
-.dev-prompt{color:var(--pm);font-family:'JetBrains Mono',monospace;font-size:.82rem;white-space:nowrap}
-#dev-input{
-  flex:1;background:transparent;border:none;outline:none;
-  color:var(--dg);font-family:'JetBrains Mono',monospace;font-size:.82rem;
-  caret-color:var(--dg);
-}
-.dev-autocomplete{
-  position:absolute;bottom:100%;left:2rem;
-  background:rgba(0,20,0,.95);border:1px solid rgba(0,255,65,.25);
-  border-radius:6px;padding:.3rem 0;display:none;min-width:260px;
-}
-.dev-autocomplete.show{display:block}
-.ac-item{
-  padding:.3rem .8rem;color:rgba(0,255,65,.7);font-family:'JetBrains Mono',monospace;
-  font-size:.76rem;cursor:none;
-}
-.ac-item:hover,.ac-item.active{background:rgba(0,255,65,.08);color:var(--dg)}
+.dev-dots i{width:12px;height:12px;border-radius:50%}
+.dev-dots .r{background:#FF5F56;cursor:pointer}.dev-dots .y{background:#FFBD2E}.dev-dots .g{background:#27C93F}
+.dev-bar b{font-family:var(--mono);font-weight:400;font-size:.74rem;color:rgba(63,185,80,.65);letter-spacing:.05em}
+.dev-x{margin-left:auto;background:none;border:none;color:rgba(63,185,80,.6);cursor:pointer;font-size:1.2rem}
+.dev-term{flex:1;overflow-y:auto;padding:1.4rem;font-family:var(--mono);font-size:.82rem;line-height:1.7;color:var(--dg);position:relative}
+#matrix{position:absolute;inset:0;opacity:0;pointer-events:none;z-index:1}
+#dev-out{position:relative;z-index:2;white-space:pre-wrap}
+.dl{margin:.04rem 0}
+.dl.cmd{color:#dff5e1}.dl.warn{color:#E3B341}.dl.err{color:#FF7B72}.dl.hi{color:#79C0FF}.dl.dim{color:rgba(63,185,80,.5)}.dl.terra{color:#F0883E}
+.dev-in{display:flex;align-items:center;gap:.5rem;padding:1rem 1.4rem;border-top:1px solid rgba(63,185,80,.15);background:rgba(0,12,4,.6)}
+.dev-in .ps{color:#F0883E;font-family:var(--mono);font-size:.82rem;white-space:nowrap}
+#dev-input{flex:1;background:none;border:none;outline:none;color:var(--dg);font-family:var(--mono);font-size:.82rem;caret-color:var(--dg)}
 
-/* ── INVITE MODAL ────────────────────────── */
-#invite-modal{
-  position:fixed;inset:0;z-index:9000;
-  background:rgba(0,0,0,.88);backdrop-filter:blur(12px);
-  display:none;align-items:center;justify-content:center;padding:2rem;
-}
-#invite-modal.show{display:flex;animation:fadeIn .5s ease}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-.invite-card{
-  background:linear-gradient(135deg,#1A0533,#2D0A5E);
-  border:1px solid rgba(168,85,247,.5);border-radius:20px;
-  padding:2.5rem;max-width:480px;width:100%;text-align:center;
-  box-shadow:0 0 80px rgba(107,33,168,.5);
-  animation:popIn .5s cubic-bezier(.34,1.56,.64,1);
-}
-@keyframes popIn{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
-.invite-card img{
-  width:100%;border-radius:12px;margin-bottom:1.5rem;
-  box-shadow:0 20px 50px rgba(0,0,0,.5);display:block;
-}
-.invite-card h2{
-  font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;
-  color:var(--pl);margin-bottom:.5rem;
-}
-.invite-card p{color:rgba(233,213,255,.65);font-size:.88rem;margin-bottom:1.5rem;line-height:1.7}
-.invite-actions{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
-.btn-inv-dl{
-  background:linear-gradient(135deg,var(--pp),var(--pm));color:#fff;
-  border:none;padding:.7rem 1.8rem;border-radius:25px;cursor:none;
-  font-size:.85rem;letter-spacing:.08em;transition:transform .3s;
-  text-decoration:none;display:inline-block;
-}
-.btn-inv-dl:hover{transform:scale(1.04)}
-.btn-inv-close{
-  background:none;border:1px solid rgba(168,85,247,.4);color:var(--pm);
-  padding:.7rem 1.4rem;border-radius:25px;cursor:none;font-size:.85rem;
-  transition:all .3s;
-}
-.btn-inv-close:hover{background:rgba(168,85,247,.1)}
+/* ============================================================ MODAL */
+#modal{position:fixed;inset:0;z-index:9000;background:rgba(22,16,30,.85);backdrop-filter:blur(10px);
+  display:none;align-items:center;justify-content:center;padding:1.5rem}
+#modal.on{display:flex;animation:fade .35s var(--ease-out)}
+.modal-card{background:var(--paper);border:1px solid var(--gold);border-radius:18px;padding:2.4rem;max-width:440px;width:100%;text-align:center;
+  box-shadow:0 30px 80px rgba(0,0,0,.4);transform:scale(.94);animation:pop .4s var(--ease-out) forwards}
+@keyframes pop{to{transform:scale(1)}}
+.modal-card img{border-radius:10px;margin-bottom:1.4rem;box-shadow:0 16px 40px rgba(36,22,54,.18)}
+.modal-card h2{font-family:var(--serif);font-weight:300;font-size:1.7rem;margin-bottom:.5rem}
+.modal-card p{color:var(--ink-soft);font-size:.9rem;margin-bottom:1.4rem}
+.modal-act{display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap}
 
-/* ── RESPONSIVE ──────────────────────────── */
-@media(max-width:768px){
-  nav{padding:.7rem 1.2rem}
-  .nav-links a{display:none}
-  .gal-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:200px}
-  .gal-item:nth-child(4){grid-column:span 2}
-  .tl-item{grid-template-columns:1fr}
-  .tl-item:nth-child(odd) .tl-text,.tl-item:nth-child(odd) .tl-visual{order:unset}
-  .tl-item:nth-child(even) .tl-text,.tl-item:nth-child(even) .tl-visual{order:unset}
-  .venue-grid{grid-template-columns:1fr}
-  .hero-title{font-size:clamp(2.2rem,8vw,4rem)}
-  .music-pill{min-width:160px}
+/* falling decorations on click */
+.fall{position:fixed;pointer-events:none;z-index:3000;font-size:1.2rem;opacity:0;will-change:transform,opacity;
+  animation:fallA 2.6s var(--ease-out) forwards}
+@keyframes fallA{0%{opacity:.9;transform:translateY(0) rotate(0)}100%{opacity:0;transform:translateY(140px) rotate(80deg)}}
+
+/* ============================================================ SCROLL FX / ARCHES */
+/* arch-framed story media + clip-rise scroll reveal */
+.tl-media.arch{border-radius:48% 48% 14px 14px/30% 30% 4% 4%}
+.clip-rise{transition:clip-path 1.1s var(--ease-out),transform 1s var(--ease-out)}
+.js .clip-rise{clip-path:inset(0 0 100% 0)}
+[data-reveal].in .clip-rise{clip-path:inset(0 0 0 0)}
+/* golden arch outlines — SVG paths injected by JS, drawn line-by-line as you scroll */
+.tl-arch{position:relative}
+.tl-arch .tl-media{position:relative;z-index:1}
+.arch-draw{position:absolute;pointer-events:none;z-index:0;overflow:visible}
+.arch-draw path{fill:none;stroke:var(--gold);stroke-width:1.5;vector-effect:non-scaling-stroke;
+  stroke-linecap:round;filter:drop-shadow(0 0 4px rgba(201,160,99,.35))}
+.arch-draw.o1{inset:-15px -15px -2px;opacity:.85}
+.arch-draw.o2{inset:-30px -30px -2px;opacity:.5}
+
+/* ghibli bride + groom — two halves bind together on scroll */
+.tl-media.bind{border-radius:46% 46% 16px 16px/28% 28% 5% 5%;background:var(--panel)}
+.bind-pair{display:flex;width:100%}
+.bind-pair img{width:50%;height:auto;display:block;object-fit:cover;aspect-ratio:.46;will-change:transform;transition:none}
+.bind-pair img.bind-l{transform-origin:right center}
+.bind-pair img.bind-r{transform-origin:left center}
+@media(hover:hover){.tl-media.bind:hover img{transform:none}}
+
+/* discover — pinned scroll story: arch photo left, rotating quotes right, vines bloom */
+#discover{position:relative;height:100vh;background:linear-gradient(180deg,var(--cream-2),var(--cream))}
+body.fx #discover{height:420vh}
+.discover-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 clamp(4vw,5vw,6vw)}
+.discover-grid{position:relative;z-index:2;display:grid;align-items:center;width:100%;max-width:1020px;
+  grid-template-columns:clamp(240px,30vw,350px) 1fr;gap:clamp(2.5rem,7vw,5.5rem)}
+.discover-archwrap{position:relative;width:100%;aspect-ratio:3/4.4}
+.discover-arch{position:absolute;inset:0;border-radius:50% 50% 8px 8px/30% 30% 2% 2%;overflow:hidden;
+  box-shadow:0 34px 90px rgba(36,22,54,.32)}
+.discover-arch .da{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 32%;opacity:0}
+.discover-arch .da:first-child{opacity:1}
+.discover-floral{position:absolute;z-index:3;left:clamp(-40px,-3vw,-24px);bottom:-12px;
+  width:clamp(96px,12vw,150px);pointer-events:none;filter:drop-shadow(0 8px 16px rgba(36,22,54,.12))}
+/* rotating quotes — one per photo, swapped in sync with the crossfade */
+.discover-right{display:flex;flex-direction:column;justify-content:center}
+.discover-right .eyebrow{margin-bottom:1.2rem}
+.discover-quotes{position:relative;min-height:clamp(15rem,34vh,20rem)}
+.dq{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  opacity:0;transform:translateY(28px);pointer-events:none;
+  transition:opacity .55s var(--ease-out),transform .55s var(--ease-out)}
+.dq.on{opacity:1;transform:none}
+.dq .dq-mark{font-family:var(--script);font-size:3.6rem;color:var(--gold);line-height:.5}
+.dq blockquote{font-family:var(--serif);font-weight:300;font-style:italic;
+  font-size:clamp(1.45rem,2.9vw,2.3rem);line-height:1.3;color:var(--ink);max-width:26ch}
+.dq .dq-tag{margin-top:1.1rem;font-size:.66rem;letter-spacing:.26em;text-transform:uppercase;color:var(--terra)}
+.discover-dots{display:flex;gap:.55rem;margin-top:1.4rem}
+.discover-dots i{width:8px;height:8px;border-radius:50%;border:1px solid var(--terra);
+  transition:background .4s,transform .4s var(--ease-out)}
+.discover-dots i.on{background:var(--terra);transform:scale(1.3)}
+/* flowering vines (JS-generated): stems draw themselves, leaves/buds/blossoms bloom */
+.vine{position:absolute;pointer-events:none;color:var(--sage)}
+.vine .vp{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.vine .vl{fill:currentColor;opacity:.8}
+.vine .pe{stroke:#C98DA6;stroke-width:.8}
+.vine .pi{opacity:.95}
+.vine .ct{fill:var(--gold)}
+.vine .vl,.vine .vb,.vine .bud{transform-box:fill-box;transform-origin:center}
+.discover-vine{z-index:1;opacity:.9}
+.v-left{left:max(-30px,-2vw);bottom:5vh;width:clamp(130px,16vw,210px);
+  transform-origin:bottom left;animation:vineSway 7s ease-in-out infinite alternate}
+.v-right{right:max(-24px,-1.5vw);top:6vh;width:clamp(140px,17vw,230px);transform:scale(-1);
+  transform-origin:center;animation:vineSway 9s ease-in-out infinite alternate-reverse}
+/* story-chapter vines hug the arch corner and bloom as each chapter scrolls in */
+.tl-vine{z-index:2;left:-28px;bottom:-26px;width:clamp(110px,13vw,170px);
+  transform-origin:bottom left;animation:vineSway 8s ease-in-out infinite alternate;
+  filter:drop-shadow(0 6px 10px rgba(36,22,54,.16))}
+.tl:nth-child(even) .tl-vine{left:auto;right:-28px;transform:scaleX(-1);transform-origin:bottom right}
+@keyframes vineSway{from{rotate:-2.2deg}to{rotate:2.2deg}}
+
+/* polaroid clothesline gallery */
+.clothesline-wrap{position:relative}
+.clothesline{overflow-x:auto;scrollbar-width:thin;padding-bottom:1.4rem}
+.clothesline::-webkit-scrollbar{height:6px}
+.clothesline::-webkit-scrollbar-thumb{background:var(--sage);border-radius:6px}
+.clothesline-track{position:relative;display:flex;width:max-content;
+  gap:clamp(1.2rem,3vw,2.6rem);padding:66px clamp(4vw,5vw,6vw) 46px}
+/* real draped twine image — JS hangs each photo at the thread's height */
+.rope-img{position:absolute;top:30px;left:0;width:100%;height:64px;object-fit:fill;
+  pointer-events:none;z-index:0;filter:drop-shadow(0 3px 3px rgba(25,0,25,.18))}
+.pola{position:relative;z-index:1;flex:0 0 auto;width:clamp(170px,19vw,220px);
+  background:#fff;padding:11px 11px 38px;border-radius:3px;box-shadow:0 16px 30px rgba(36,22,54,.16);
+  cursor:pointer;transform-origin:top center;
+  transform:translateY(var(--hang,0px)) rotate(var(--rot,0deg));
+  transition:transform .5s var(--ease-out),box-shadow .4s var(--ease-out)}
+/* wooden clothespin clipping the thread */
+.pola .peg{position:absolute;top:-15px;left:50%;width:11px;height:27px;transform:translateX(-50%);z-index:3;
+  background:linear-gradient(90deg,#cda773,#a4753e 52%,#cda773);border-radius:4px;
+  box-shadow:0 2px 3px rgba(0,0,0,.32),inset 0 0 0 .5px rgba(0,0,0,.14)}
+.pola .peg::before{content:'';position:absolute;left:50%;top:5px;width:1.4px;height:17px;
+  transform:translateX(-50%);background:rgba(0,0,0,.28);border-radius:1px}
+.pola .peg::after{content:'';position:absolute;left:-1px;right:-1px;top:12px;height:3px;border-radius:2px;
+  background:linear-gradient(#f3eee6,#c9bda8);box-shadow:0 0 0 .5px rgba(0,0,0,.22)}
+.pola img{width:100%;aspect-ratio:1;object-fit:cover;display:block;border-radius:1px;background:var(--panel)}
+.pola figcaption{font-family:var(--script);color:var(--ink-soft);text-align:center;font-size:1.35rem;line-height:1;padding-top:.5rem}
+.pola:nth-child(3n+1){--rot:-3deg}
+.pola:nth-child(3n+2){--rot:2deg}
+.pola:nth-child(3n+3){--rot:-1.5deg}
+@media(hover:hover){.pola:hover{transform:translateY(calc(var(--hang,0px) - 10px)) rotate(0) scale(1.04);
+  box-shadow:0 28px 50px rgba(36,22,54,.26);z-index:2}}
+
+/* ============================================================ WOW TOUCHES */
+/* gold scroll-progress thread along the top */
+#sprog{position:fixed;top:0;left:0;width:100%;height:3px;z-index:1002;pointer-events:none;
+  background:linear-gradient(90deg,var(--terra),var(--gold),var(--terra-deep));
+  transform:scaleX(0);transform-origin:left;box-shadow:0 1px 6px rgba(201,160,99,.45)}
+
+/* names marquee divider */
+.marquee{overflow:hidden;background:var(--cream-2);padding:1.2rem 0;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.mq-track{display:flex;width:max-content;white-space:nowrap;animation:mq 30s linear infinite;
+  font-family:var(--serif);font-size:clamp(1.6rem,3.4vw,2.6rem);letter-spacing:.04em;
+  color:rgba(133,79,108,.16);-webkit-text-stroke:1px rgba(133,79,108,.55)}
+.mq-track span{padding-right:2.2rem}
+.mq-track i{font-style:normal;color:var(--gold);-webkit-text-stroke:0}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* section titles — words rise out of a mask, one by one */
+.sec-title .w{display:inline-block;overflow:hidden;vertical-align:bottom;
+  padding-bottom:.14em;margin-bottom:-.14em}
+.sec-title .ww{display:inline-block}
+.js .sec-title .ww{transform:translateY(115%);transition:transform .9s var(--ease-out)}
+.js [data-reveal].in .sec-title .ww{transform:none}
+
+/* schedule spine grows downward as it reveals */
+.js .sched::before{transform:scaleY(0);transform-origin:top;transition:transform 1.8s var(--ease-out) .25s}
+.js .sched.in::before{transform:scaleY(1)}
+
+/* polaroids sway gently on their pegs (rotate property composes with the hang transform) */
+.pola{animation:polaSway 4.2s ease-in-out infinite alternate}
+.pola:nth-child(2n){animation-duration:5.2s;animation-delay:-1.3s}
+.pola:nth-child(3n){animation-duration:6.1s;animation-delay:-2.5s}
+@keyframes polaSway{from{rotate:-1.2deg}to{rotate:1.2deg}}
+
+/* gold stars twinkling in the footer night */
+.f-star{position:absolute;color:#EBCD70;pointer-events:none;line-height:1;
+  animation:twinkle ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.08;transform:scale(.7)}50%{opacity:.85;transform:scale(1.15)}}
+
+/* countdown digits pop when they change */
+.cd b.pop{animation:cdPop .45s var(--ease-out)}
+@keyframes cdPop{0%{transform:scale(1.22);color:var(--gold)}100%{transform:scale(1)}}
+
+/* schedule dots breathe a soft golden pulse, one after another */
+.ev-dot::after{content:'';position:absolute;inset:-5px;border-radius:50%;
+  border:1px solid var(--gold);opacity:0;animation:dotPulse 3.2s ease-out infinite}
+.ev:nth-child(2) .ev-dot::after{animation-delay:.8s}
+.ev:nth-child(3) .ev-dot::after{animation-delay:1.6s}
+.ev:nth-child(4) .ev-dot::after{animation-delay:2.4s}
+@keyframes dotPulse{0%{transform:scale(.6);opacity:.7}70%,100%{transform:scale(1.5);opacity:0}}
+
+/* soft light sweep across solid buttons */
+.btn-solid{position:relative;overflow:hidden}
+.btn-solid::after{content:'';position:absolute;top:0;bottom:0;left:-70%;width:42%;
+  background:linear-gradient(105deg,transparent,rgba(255,255,255,.32),transparent);
+  transform:skewX(-20deg);animation:sheen 3.8s ease-in-out infinite}
+@keyframes sheen{0%,55%{left:-70%}100%{left:140%}}
+
+/* ============================================================ RESPONSIVE */
+@media(max-width:880px){
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  nav.menu-open .nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
+    background:var(--paper);padding:1.4rem clamp(4vw,5vw,6vw);gap:1.2rem;border-bottom:1px solid var(--line)}
+  .info-grid{grid-template-columns:1fr}
+  .tl,.inv-grid,.venue-grid{grid-template-columns:1fr}
+  .tl:nth-child(even) .tl-arch{order:0}
+  .tl-text{text-align:center}
+  .tl-text .tl-p{margin-left:auto;margin-right:auto}
+  .tl-num{line-height:1}
+  .inv-card{order:-1;max-width:340px;margin:0 auto}
+  .inv-text .sec-title,.inv-text .lead{text-align:center}
+  .inv-text .lead{margin-left:auto;margin-right:auto}
+  .inv-actions,.venue-grid{justify-items:center}
+  .inv-actions{justify-content:center;gap:.8rem}
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
+  .gi.wide{grid-column:span 2}
+  /* discover stacks: arch above, quotes centred below */
+  .discover-grid{grid-template-columns:1fr;gap:2rem;justify-items:center;text-align:center}
+  .discover-archwrap{width:clamp(220px,60vw,340px)}
+  .discover-right{align-items:center}
+  .dq{align-items:center}
+  .dq blockquote{max-width:30ch}
+  .discover-quotes{width:100%;min-height:12rem}
+  .discover-dots{justify-content:center}
+  .v-right{display:none}
+  .v-left{width:clamp(100px,22vw,150px);bottom:2vh;opacity:.7}
+  /* story vines tuck closer to the arch on small screens */
+  .tl-vine{width:clamp(86px,20vw,120px);left:-12px;bottom:-12px}
+  .tl:nth-child(even) .tl-vine{right:-12px}
+  /* the outer arch outline stays inside the viewport */
+  .arch-draw.o2{inset:-22px -18px -2px}
+}
+/* ---- MOBILE: hero reflows to a stacked title-over-arch layout (reference image) ---- */
+@media(max-width:680px){
+  .wrap{padding:0 clamp(3.5vw,4.5vw,5vw)}
+  .section-pad{padding:clamp(3.5rem,9vh,5rem) 0}
+  .sec-head{margin-bottom:clamp(2rem,7vw,3rem)}
+  #hero{min-height:auto;justify-content:flex-start;padding:5.6rem clamp(3.5vw,4.5vw,5vw) 3rem;
+    --archw:clamp(240px,82vw,400px)}
+  .hnames{display:none}
+  .hero-mtitle{display:block;font-size:clamp(2.6rem,12vw,4.4rem);margin-bottom:.5rem;text-align:center}
+  .hero-stage{height:auto;margin-top:.4rem}
+  .hero-arch{margin:0 auto}
+  .hero-cta{margin-top:1.8rem;width:100%;justify-content:center}
+  .hero-cta .btn{flex:0 1 auto;justify-content:center;min-width:200px;max-width:100%}
+  .scroll-hint{position:static;transform:none;animation:none;margin-top:1.8rem}
+  .info-card{padding:2rem 1.4rem}
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px;gap:.6rem}
+  .clothesline-track{padding:66px clamp(3.5vw,4.5vw,5vw) 46px;gap:clamp(1rem,2vw,1.8rem)}
+  .discover-archwrap{width:clamp(240px,70vw,380px)}
+  nav{padding:.9rem clamp(3.5vw,4.5vw,5vw)}
+  nav.solid{padding:.6rem clamp(3.5vw,4.5vw,5vw)}
+  nav.menu-open .nav-links{padding:1.4rem clamp(3.5vw,4.5vw,5vw)}
+  .discover-sticky{padding:0 clamp(3.5vw,4.5vw,5vw)}
+}
+@media(max-width:520px){
+  .wrap{padding:0 clamp(3vw,4vw,5vw)}
+  .music-meta{display:none}
+  .countdown{gap:.5rem;flex-wrap:wrap}
+  .cd{min-width:0;flex:1;max-width:80px;padding:.65rem .35rem}
+  .cd b{font-size:1.6rem}
+  .cd span{font-size:.52rem}
+  nav{padding:.8rem clamp(3vw,4vw,5vw)}
+  nav.solid{padding:.55rem clamp(3vw,4vw,5vw)}
+  .marquee{padding:.7rem 0;margin:0 calc(-1 * clamp(3vw,4vw,5vw))}
+  .dq blockquote{font-size:1.25rem}
+  .dq .dq-mark{font-size:2.4rem}
+  .discover-quotes{min-height:10.5rem}
+  .discover-archwrap{width:clamp(240px,80vw,360px)}
+  .discover-sticky{padding:0 clamp(3vw,4vw,5vw)}
+  .pola{width:clamp(140px,50vw,180px)}
+  .btn{padding:.8rem 1.3rem;font-size:.68rem}
+  .tl-h{font-size:1.5rem}
+  .info-card h3{font-size:.68rem}
+  .info-card .big{font-size:1.5rem}
+  .info-card p{font-size:.88rem}
+  .gal{grid-template-columns:2fr 1fr;grid-auto-rows:100px}
+  .clothesline-track{padding:60px clamp(3vw,4vw,5vw) 40px}
+  .sec-head{margin-bottom:clamp(1.8rem,5vw,2.5rem)}
+  .sec-title{font-size:clamp(2.2rem,8vw,3.5rem)}
+}
+@media(max-width:360px){
+  .wrap{padding:0 clamp(2.5vw,3.5vw,4vw)}
+  body{font-size:.95rem}
+  .btn{padding:.75rem 1rem;font-size:.65rem}
+  .cd{padding:.6rem .3rem}
+  .cd b{font-size:1.4rem}
+  .hero-mtitle{font-size:clamp(2.2rem,10vw,3.5rem)}
+  .tl-h{font-size:1.35rem}
+  .fcard{padding:.8rem 1rem}
+  .fcard h4{font-size:1rem}
+  nav{padding:.7rem clamp(2.5vw,3.5vw,4vw)}
+  .info-card{padding:1.6rem 1rem}
+  .pola{width:clamp(120px,45vw,160px);padding:10px 10px 35px}
+  .discover-sticky{padding:0 clamp(2.5vw,3.5vw,4vw)}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  [data-reveal]{opacity:1;transform:none}
+  .js #hero .hero-arch,.js #hero .hnames,.js #hero .hero-flower,
+  .js #hero .hero-cta,.js #hero .hero-date,.js #hero .countdown{opacity:1;transform:none}
 }
 </style>
 </head>
 <body>
+<script>document.documentElement.className+=' js';</script>
 
-<!-- CURSOR -->
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+<div id="cur"></div><div id="cur-ring"></div>
+<div id="sprog" aria-hidden="true"></div>
 
-<!-- LOADER -->
+<!-- LOADER — paper-puppet stop-motion intro (replaces old monogram loader) -->
 <div id="loader">
-  <div class="loader-glow"></div>
-  <div class="loader-petals">
-    <span class="petal">🌸</span><span class="petal">✨</span>
-    <span class="petal">🌺</span><span class="petal">💜</span><span class="petal">🌸</span>
+  <div class="intro-whirl" aria-hidden="true"></div>
+  <div class="intro-whirl w2" aria-hidden="true"></div>
+  <div class="intro-fx" id="intro-fx" aria-hidden="true"></div>
+  <div class="intro-stage" id="intro-stage" role="img" aria-label="Dharshiny and Prakash">
+    <!-- walk-in puppets (separate boy + girl) -->
+    <img class="intro-puppet" id="pp-girl" src="images/walk/frame1_girl.png" alt="" aria-hidden="true">
+    <img class="intro-puppet" id="pp-boy" src="images/walk/frame1_boy.png" alt="" aria-hidden="true">
+    <!-- couple stop-motion poses -->
+    <img class="intro-frame" data-k="2" src="images/walk/frame_2.png" alt="" aria-hidden="true">
+    <img class="intro-frame" data-k="3" src="images/walk/frame_3.png" alt="" aria-hidden="true">
+    <img class="intro-frame" data-k="4" src="images/walk/frame_4.png" alt="" aria-hidden="true">
+    <img class="intro-frame" data-k="5" src="images/walk/frame_5.png" alt="" aria-hidden="true">
+    <img class="intro-frame" data-k="6" src="images/walk/frame_6.png" alt="" aria-hidden="true">
+    <img class="intro-frame" data-k="7" src="images/walk/frame_7.png" alt="" aria-hidden="true">
+    <img class="intro-frame" data-k="8" src="images/walk/frame_8.png" alt="" aria-hidden="true">
+    <img class="intro-frame" data-k="9" src="images/walk/frame_9.png" alt="" aria-hidden="true">
   </div>
-  <div class="loader-mono">
-    <span class="l-d">D</span>
-    <span class="l-pipe pipe">|</span>
-    <span class="l-p">P</span>
+  <div class="intro-cap">
+    <div class="intro-names">Dharshiny <i class="amp">&amp;</i> Prakash</div>
+    <div class="intro-tag">Reception · 21 June 2026</div>
   </div>
-  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
-  <div class="loader-tag">Reception · June 21, 2026</div>
 </div>
 
 <!-- NAV -->
-<nav>
-  <div class="nav-logo">D<span>♥</span>P</div>
-  <div class="nav-links">
-    <a href="#story">Story</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#family">Family</a>
-    <a href="#venue">Venue</a>
-    <a href="#invitation">Invite</a>
-    <!-- Inline music pill -->
-    <div class="nav-music-pill" id="nav-music-pill">
-      <div class="vinyl vinyl-sm" id="vinyl-disc"></div>
-      <div class="nav-music-info">
-        <div class="music-title" id="music-title-text">Amsham · Aksomaniac</div>
-        <div class="music-artist">Aksomaniac · M.H.R</div>
-      </div>
-      <button class="music-btn" id="play-btn" onclick="togglePlay()">▶</button>
-      <a class="yt-fallback" href="https://youtu.be/V4aDJ4kiSNw" target="_blank" rel="noopener noreferrer">YT ↗</a>
+<nav id="nav">
+  <a href="#hero" class="nav-logo" style="text-decoration:none">D<span class="amp">&amp;</span>P</a>
+  <div class="nav-right">
+    <div class="nav-links" id="nav-links">
+      <a href="#info">The Day</a>
+      <a href="#story">Our Story</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#family">Family</a>
+      <a href="#venue">Venue</a>
+      <a href="#faq">FAQ</a>
     </div>
-    <button class="dev-btn" id="dev-btn" onclick="openDev()">&lt;/&gt; Dev Mode</button>
+    <div class="music-pill">
+      <div class="vinyl" id="vinyl"></div>
+      <div class="music-meta"><span class="music-t">Amsham</span><span class="music-a">Aksomaniac · M.H.R</span></div>
+      <button class="music-btn" id="music-btn" onclick="toggleMusic()" aria-label="Play music">▶</button>
+    </div>
+    <button class="btn-dev" onclick="openDev()">&lt;/&gt; dev</button>
+    <button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <img id="hero-bg-img"
-    src="images/WhatsApp Image 2026-06-07 at 10.51.32 AM.jpeg"
-    alt=""
-    aria-hidden="true"
-    style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:0;display:block;">
-  <div style="position:absolute;inset:0;z-index:0;
-    background:linear-gradient(to bottom,rgba(13,1,24,.45) 0%,rgba(107,33,168,.15) 45%,rgba(13,1,24,.55) 100%)">
-  </div>
-  <div class="aurora"></div>
-  <div id="particles-js"></div>
-  <div class="hero-content">
-    <p class="hero-tag">♡ You are cordially invited to celebrate ♡</p>
-    <h1 class="hero-title" id="hero-title">
-      <span id="w1">Dharshiny</span>
-      <span class="hero-amp">&amp;</span>
-      <span id="w2">Prakash</span>
-    </h1>
-    <p class="hero-sub">A New Beginning · A Lifetime of Us</p>
-    <p class="hero-date">Reception · Sunday, 21 June 2026 · 6:30 PM</p>
-    <div class="countdown">
-      <div class="cd-box"><span class="cd-num" id="cd-d">00</span><span class="cd-label">Days</span></div>
-      <div class="cd-box"><span class="cd-num" id="cd-h">00</span><span class="cd-label">Hours</span></div>
-      <div class="cd-box"><span class="cd-num" id="cd-m">00</span><span class="cd-label">Minutes</span></div>
-      <div class="cd-box"><span class="cd-num" id="cd-s">00</span><span class="cd-label">Seconds</span></div>
+  <div class="hero-petals" id="petals"></div>
+  <div class="hero-mtitle"><span>Dharshiny</span><i class="amp">&amp;</i><span>Prakash</span></div>
+  <div class="hero-stage">
+    <h1 class="hnames nf">Dharshiny <i class="amp">&amp;</i> Prakash</h1>
+    <div class="hero-arch" id="hero-arch">
+      <img class="hero-couple" src="images/hero-couple.jpg" alt="Dharshiny and Prakash">
+      <img class="hero-archimg" src="images/arch.png" alt="" aria-hidden="true">
     </div>
+    <span class="hnames no" aria-hidden="true">Dharshiny <i class="amp">&amp;</i> Prakash</span>
+    <img class="hero-flower fl-l" src="images/flower.png" alt="" aria-hidden="true">
+    <img class="hero-flower fl-r" src="images/flower.png" alt="" aria-hidden="true">
   </div>
-  <div class="scroll-hint">
-    <div class="scroll-arrow"></div>
-    <span>Scroll</span>
+  <div class="hero-cta">
+    <a href="#info" class="btn btn-solid">Info &amp; RSVP</a>
+  </div>
+  <p class="hero-date">Sunday · 21 June 2026 · 6:30 PM · Coimbatore</p>
+  <div class="countdown" id="countdown">
+    <div class="cd"><b id="cd-d">00</b><span>Days</span></div>
+    <div class="cd"><b id="cd-h">00</b><span>Hours</span></div>
+    <div class="cd"><b id="cd-m">00</b><span>Mins</span></div>
+    <div class="cd"><b id="cd-s">00</b><span>Secs</span></div>
+  </div>
+  <div class="scroll-hint"><i></i><span>Scroll</span></div>
+</section>
+
+<!-- INFO / THE DAY -->
+<section id="info" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">The Celebration</span>
+      <h2 class="sec-title">The <em>Day</em></h2>
+      <p class="sec-sub">We're so happy you're here. Here's everything you need to celebrate this day with us.</p>
+    </div>
+    <div class="info-grid">
+      <div class="info-card" data-reveal data-d="1">
+        <svg class="info-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg>
+        <h3>When</h3>
+        <div class="big">Sunday, 21 June 2026</div>
+        <p>6:30 PM onwards<br>Dinner &amp; celebration to follow</p>
+      </div>
+      <div class="info-card" data-reveal data-d="2">
+        <svg class="info-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <h3>Where</h3>
+        <div class="big">Ashirvad Hall</div>
+        <p>First Floor, Pearl Restaurant<br>Coimbatore, Tamil Nadu</p>
+      </div>
+      <div class="info-card" data-reveal data-d="3">
+        <svg class="info-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 9V6a6 6 0 0 1 12 0v3M4.5 9h15l-1 11h-13l-1-11Z"/></svg>
+        <h3>Dress Code</h3>
+        <div class="big">Traditional &amp; Festive</div>
+        <p>Bring your brightest colours<br>and your warmest smiles</p>
+      </div>
+    </div>
+    <div class="info-cta" data-reveal>
+      <a href="images/invitation.jpg" download="Dharshiny_Prakash_Invitation.jpg" class="btn btn-solid">Download Invitation</a>
+    </div>
   </div>
 </section>
 
 <!-- STORY -->
-<section id="story">
-  <div class="story-header">
-    <p class="sub-title">✦ Our Journey ✦</p>
-    <div class="section-title-wrap">
-      <div class="section-wipe" data-wipe></div>
-      <h2 class="section-title">Our Story</h2>
+<section id="story" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Our Journey</span>
+      <h2 class="sec-title">Our <em>Story</em></h2>
+      <div class="rule"><i></i></div>
+      <p class="sec-sub">From a chance encounter to forever — a few of the chapters that brought us here.</p>
     </div>
-  </div>
-  <div class="timeline">
-
-    <div class="tl-item">
-      <div class="tl-text">
-        <p class="tl-date">Chapter 1 · 2022</p>
-        <h3 class="tl-ch">When Two Worlds Met</h3>
-        <p class="tl-desc">A chance encounter that turned into destiny. Two souls from Coimbatore, bound by laughter, dreams, and the quiet magic of truly seeing each other.</p>
-      </div>
-      <div class="tl-visual">
-        <div class="tl-img-wrap portrait">
-          <img src="images/WhatsApp%20Image%202026-06-07%20at%2010.51.30%20AM.jpeg" alt="Dharshiny and Prakash">
-          <div class="scan-line" data-scan></div>
+    <div class="timeline">
+      <article class="tl">
+        <div class="tl-arch" data-reveal>
+          <div class="tl-media arch"><img class="clip-rise" src="images/cottage-facing.jpg" alt="Dharshiny and Prakash by the cottage"></div>
         </div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-text">
-        <p class="tl-date">Chapter 2 · In Art</p>
-        <h3 class="tl-ch">A Story Worth Painting</h3>
-        <p class="tl-desc">Five moments. One love story. Illustrated in the gentle strokes of a Ghibli world — because their love felt just that magical.</p>
-      </div>
-      <div class="tl-visual">
-        <div class="tl-img-wrap landscape">
-          <img src="images/ghibhili_2.png" alt="Ghibli storyboard" style="object-position:center center">
-          <div class="scan-line" data-scan></div>
+        <div class="tl-text" data-reveal data-d="1">
+          <div class="tl-num">01</div>
+          <p class="tl-date">Chapter One · 2022</p>
+          <h3 class="tl-h">When Two Worlds Met</h3>
+          <p class="tl-p">Two souls from Coimbatore, brought together by chance and held together by laughter. What began as a quiet hello slowly became a story neither of us wanted to end.</p>
         </div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-text">
-        <p class="tl-date">Chapter 3 · May 18, 2026</p>
-        <h3 class="tl-ch">The Promise</h3>
-        <p class="tl-desc">Surrounded by family and the fragrance of marigolds, they said yes to forever. The engagement was everything — joyful, tearful, and beautifully Tamil.</p>
-      </div>
-      <div class="tl-visual">
-        <div class="tl-img-wrap portrait">
-          <img src="images/WhatsApp%20Image%202026-06-07%20at%2010.51.32%20AM.jpeg" alt="Engagement">
-          <div class="scan-line" data-scan></div>
+      </article>
+      <article class="tl">
+        <div class="tl-arch" data-reveal>
+          <div class="tl-media bind">
+            <div class="bind-pair">
+              <img class="bind-l" src="images/ghibli-bride.jpg" alt="Illustrated bride">
+              <img class="bind-r" src="images/ghibli-groom.jpg" alt="Illustrated groom">
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-
-    <div class="tl-item">
-      <div class="tl-text">
-        <p class="tl-date">Chapter 4 · June 21, 2026</p>
-        <h3 class="tl-ch">The Beginning</h3>
-        <p class="tl-desc">Ashirvad Hall, Coimbatore. 6:30 PM. Their reception is not an ending — it is the very first page of forever.</p>
-      </div>
-      <div class="tl-visual">
-        <div class="tl-img-wrap portrait">
-          <img src="images/Wedding_invitation.jpeg" alt="Wedding Invitation" style="object-position:center top">
-          <div class="scan-line" data-scan></div>
+        <div class="tl-text" data-reveal data-d="1">
+          <div class="tl-num">02</div>
+          <p class="tl-date">Chapter Two · In Art</p>
+          <h3 class="tl-h">A Love Worth Painting</h3>
+          <p class="tl-p">Two halves of one story. Scroll, and watch them find their way to each other — painted in the soft, golden light of a Ghibli world, because our love felt just that magical.</p>
         </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- GALLERY -->
-<section id="gallery">
-  <div class="gallery-header">
-    <p class="sub-title">✦ Moments ✦</p>
-    <div class="section-title-wrap">
-      <div class="section-wipe" data-wipe></div>
-      <h2 class="section-title">Gallery</h2>
-    </div>
-  </div>
-  <div class="gal-grid" id="gal-grid">
-    <div class="gal-item" data-index="0">
-      <img src="images/ghibhili_1.png" alt="Ghibli portrait">
-      <div class="gal-shimmer"></div>
-    </div>
-    <div class="gal-item" data-index="1">
-      <img src="images/WhatsApp%20Image%202026-06-07%20at%2010.51.30%20AM.jpeg" alt="Dancing">
-      <div class="gal-shimmer"></div>
-    </div>
-    <div class="gal-item" data-index="2">
-      <img src="images/WhatsApp%20Image%202026-06-07%20at%2010.51.32%20AM.jpeg" alt="Couple">
-      <div class="gal-shimmer"></div>
-    </div>
-    <div class="gal-item" data-index="3">
-      <img src="images/ghibhili_2.png" alt="Ghibli storyboard">
-      <div class="gal-shimmer"></div>
-    </div>
-    <div class="gal-item" data-index="4">
-      <img src="images/WhatsApp%20Image%202026-06-07%20at%2010.51.36%20AM.jpeg" alt="Couple">
-      <div class="gal-shimmer"></div>
-    </div>
-    <div class="gal-item" data-index="5">
-      <img src="images/WhatsApp%20Image%202026-06-07%20at%2010.51.38%20AM.jpeg" alt="Couple">
-      <div class="gal-shimmer"></div>
-    </div>
-    <div class="gal-item" data-index="6">
-      <img src="images/Wedding_invitation.jpeg" alt="Wedding Invitation">
-      <div class="gal-shimmer"></div>
+      </article>
+      <article class="tl">
+        <div class="tl-arch" data-reveal>
+          <div class="tl-media arch"><img class="clip-rise" src="images/proposal.jpg" alt="The proposal"></div>
+        </div>
+        <div class="tl-text" data-reveal data-d="1">
+          <div class="tl-num">03</div>
+          <p class="tl-date">Chapter Three · 18 May 2026</p>
+          <h3 class="tl-h">The Promise</h3>
+          <p class="tl-p">Beneath the trees, with flowers in hand and family all around, we said yes to forever. The engagement was everything — joyful, tearful, and beautifully ours.</p>
+        </div>
+      </article>
+      <article class="tl">
+        <div class="tl-arch" data-reveal>
+          <div class="tl-media arch"><img class="clip-rise" src="images/invitation.jpg" alt="The wedding invitation"></div>
+        </div>
+        <div class="tl-text" data-reveal data-d="1">
+          <div class="tl-num">04</div>
+          <p class="tl-date">Chapter Four · 21 June 2026</p>
+          <h3 class="tl-h">Forever Begins</h3>
+          <p class="tl-p">Ashirvad Hall, Coimbatore. 6:30 in the evening. Our reception isn't an ending — it's the very first page of the rest of our lives, and we'd love for you to be in it.</p>
+        </div>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- FAMILY TREE -->
-<section id="family">
-  <div class="family-header">
-    <p class="sub-title">✦ Two Families · One Heart ✦</p>
-    <div class="section-title-wrap">
-      <div class="section-wipe" data-wipe></div>
-      <h2 class="section-title">Family</h2>
+<!-- SCHEDULE -->
+<section id="schedule" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Order of the Evening</span>
+      <h2 class="sec-title">The <em>Schedule</em></h2>
+      <p class="sec-sub">A gentle outline of how our celebration will unfold.</p>
+    </div>
+    <div class="sched" data-reveal>
+      <div class="ev" data-reveal>
+        <div class="ev-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10Z"/></svg></div>
+        <div><div class="ev-time">6:30 PM</div><h3 class="ev-h">Arrival &amp; Welcome</h3><p class="ev-p">Guests arrive and are welcomed with smiles, refreshments, and photographs with the couple.</p></div>
+      </div>
+      <div class="ev" data-reveal>
+        <div class="ev-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3v6m0 0 3-2m-3 2-3-2M5 21h14l-1.5-9h-11L5 21Z"/></svg></div>
+        <div><div class="ev-time">7:15 PM</div><h3 class="ev-h">Reception Blessings</h3><p class="ev-p">The couple takes the stage as family and friends shower them with love and blessings.</p></div>
+      </div>
+      <div class="ev" data-reveal>
+        <div class="ev-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M5 3v8a3 3 0 0 0 6 0V3M8 3v18M19 3c-1.5 1-2 3-2 6s.5 4 2 5v7"/></svg></div>
+        <div><div class="ev-time">8:00 PM</div><h3 class="ev-h">Dinner is Served</h3><p class="ev-p">A warm Tamil feast — please join us at the table and eat well, you're family now.</p></div>
+      </div>
+      <div class="ev" data-reveal>
+        <div class="ev-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M9 18V5l10-2v13M9 9l10-2"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></div>
+        <div><div class="ev-time">9:00 PM</div><h3 class="ev-h">Music &amp; Celebration</h3><p class="ev-p">The night opens up into music, laughter and dancing. Stay as long as your heart desires.</p></div>
+      </div>
     </div>
   </div>
-  <div style="max-width:860px;margin:0 auto">
-    <div style="display:flex;justify-content:center;margin-bottom:1.5rem">
-      <div class="tree-card tree-center" style="max-width:230px;width:100%">
-        <span class="tree-heart">💜</span>
-        <h4>Dharshiny &amp; Prakash</h4>
-        <p>Reception · June 21, 2026</p>
+</section>
+
+<!-- MARQUEE DIVIDER -->
+<div class="marquee" aria-hidden="true">
+  <div class="mq-track">
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+    <span>Dharshiny <i>❦</i> Prakash <i>·</i> 21 June 2026 <i>·</i></span>
+  </div>
+</div>
+
+<!-- DISCOVER (pinned scroll story — photo left, quotes right) -->
+<section id="discover">
+  <div class="discover-sticky">
+    <div class="hero-petals" id="discover-petals" aria-hidden="true"></div>
+    <div class="discover-grid">
+      <div class="discover-archwrap">
+        <div class="discover-arch">
+          <img class="da" src="images/tracks-walk.jpg" alt="On the railway tracks">
+          <img class="da" src="images/proposal.jpg" alt="The proposal">
+          <img class="da" src="images/cottage-facing.jpg" alt="By the cottage">
+          <img class="da" src="images/ghibli-diptych.jpg" alt="Illustrated portrait">
+        </div>
+        <img class="discover-floral" src="images/flower.png" alt="" aria-hidden="true">
+      </div>
+      <div class="discover-right">
+        <span class="eyebrow">Chapters of Us</span>
+        <div class="discover-quotes">
+          <div class="dq on">
+            <span class="dq-mark">“</span>
+            <blockquote>Every walk felt shorter with you beside me — even the longest tracks.</blockquote>
+            <span class="dq-tag">Lovedale · Where it began</span>
+          </div>
+          <div class="dq">
+            <span class="dq-mark">“</span>
+            <blockquote>With flowers in hand and hope in his eyes — she said yes, and time stood still.</blockquote>
+            <span class="dq-tag">The Promise · 18 May 2026</span>
+          </div>
+          <div class="dq">
+            <span class="dq-mark">“</span>
+            <blockquote>Home was never a place. It was always wherever you were standing.</blockquote>
+            <span class="dq-tag">The Cottage · Just Us</span>
+          </div>
+          <div class="dq">
+            <span class="dq-mark">“</span>
+            <blockquote>Painted or real, in every world and every art — it was always you.</blockquote>
+            <span class="dq-tag">In Art · Forever</span>
+          </div>
+        </div>
+        <div class="discover-dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></div>
       </div>
     </div>
-    <div class="tree-connector">↕ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ↕</div>
-    <div class="tree-row">
-      <div class="tree-card">
-        <h4>Dharshiny</h4>
-        <p>Bride</p>
-      </div>
-      <div class="tree-card">
-        <h4>Prakash</h4>
-        <p>Groom</p>
+  </div>
+</section>
+
+<!-- GALLERY (polaroid clothesline) -->
+<section id="gallery" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Moments</span>
+      <h2 class="sec-title">The <em>Gallery</em></h2>
+      <p class="sec-sub">Little frames from our story — drag across the line, tap any to open.</p>
+    </div>
+  </div>
+  <div class="clothesline-wrap" data-reveal>
+    <div class="clothesline" id="gal">
+      <div class="clothesline-track">
+        <img class="rope-img" src="assest/6606d0bc26c2741b458e6e72_String.webp" alt="" aria-hidden="true">
+        <figure class="pola" data-i="0"><span class="peg"></span><img src="images/proposal.jpg" alt="The proposal"><figcaption>the promise</figcaption></figure>
+        <figure class="pola" data-i="1"><span class="peg"></span><img src="images/cottage-walk.jpg" alt="Walking together"><figcaption>home</figcaption></figure>
+        <figure class="pola" data-i="2"><span class="peg"></span><img src="images/ghibli-bride.jpg" alt="Illustrated bride"><figcaption>her</figcaption></figure>
+        <figure class="pola" data-i="3"><span class="peg"></span><img src="images/ghibli-groom.jpg" alt="Illustrated groom"><figcaption>him</figcaption></figure>
+        <figure class="pola" data-i="4"><span class="peg"></span><img src="images/tracks-walk.jpg" alt="On the railway tracks"><figcaption>lovedale</figcaption></figure>
+        <figure class="pola" data-i="5"><span class="peg"></span><img src="images/cottage-facing.jpg" alt="By the cottage"><figcaption>us</figcaption></figure>
+        <figure class="pola" data-i="6"><span class="peg"></span><img src="images/ghibli-diptych.jpg" alt="Illustrated portrait"><figcaption>in art</figcaption></figure>
+        <figure class="pola" data-i="7"><span class="peg"></span><img src="images/invitation.jpg" alt="The invitation"><figcaption>21·06·26</figcaption></figure>
       </div>
     </div>
-    <div class="tree-connector">── Parents ──</div>
-    <div class="tree-row">
-      <div class="tree-card">
-        <h4>Selvaraj</h4>
-        <p>Bride's Father</p>
+  </div>
+</section>
+
+<!-- FAMILY -->
+<section id="family" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Two Families · One Heart</span>
+      <h2 class="sec-title">The <em>Family</em></h2>
+    </div>
+    <div class="tree">
+      <div class="fcard fcenter" data-reveal style="min-width:240px"><span class="heart">❦</span><h4>Dharshiny &amp; Prakash</h4><p>Reception · 21 June 2026</p></div>
+      <div class="fconn" data-reveal>♦</div>
+      <div class="frow" data-reveal>
+        <div class="fcard"><h4>Dharshiny</h4><p>Bride</p></div>
+        <div class="fcard"><h4>Prakash</h4><p>Groom</p></div>
       </div>
-      <div class="tree-card">
-        <h4>Indhrani</h4>
-        <p>Bride's Mother</p>
+      <div class="fconn" data-reveal>— Parents —</div>
+      <div class="frow" data-reveal>
+        <div class="fcard"><h4>Selvaraj</h4><p>Bride's Father</p></div>
+        <div class="fcard"><h4>Indhrani</h4><p>Bride's Mother</p></div>
+        <div class="fcard"><h4>Raja</h4><p>Groom's Father</p></div>
+        <div class="fcard"><h4>Selvi</h4><p>Groom's Mother</p></div>
       </div>
-      <div class="tree-card">
-        <h4>Raja</h4>
-        <p>Groom's Father</p>
-      </div>
-      <div class="tree-card">
-        <h4>Selvi</h4>
-        <p>Groom's Mother</p>
+      <div class="fconn" data-reveal>— Siblings —</div>
+      <div class="frow" data-reveal>
+        <div class="fcard"><h4>Santhosh S</h4><p>Bride's Brother</p></div>
+        <div class="fcard"><h4>Priya &amp; Surendheran</h4><p>Groom's Family</p></div>
+        <div class="fcard"><h4>Prema &amp; RamaLingam</h4><p>Groom's Family</p></div>
       </div>
     </div>
-    <div class="tree-connector">── Siblings ──</div>
-    <div class="tree-row">
-      <div class="tree-card">
-        <h4>Santhosh S</h4>
-        <p>Bride's Sibling</p>
-      </div>
-      <div class="tree-card">
-        <h4>Priya - Surendheran</h4>
-        <h4>Prema - RamaLingam</h4>
-        <p>Groom's Sibling</p>
-      </div>
-    </div>
-    <p style="text-align:center;font-size:.7rem;color:rgba(233,213,255,.25);margin-top:1.2rem">
-      
-    </p>
   </div>
 </section>
 
 <!-- VENUE -->
-<section id="venue">
-  <div class="venue-header">
-    <p class="sub-title">✦ Find Us ✦</p>
-    <div class="section-title-wrap">
-      <div class="section-wipe" data-wipe></div>
-      <h2 class="section-title">Venue</h2>
+<section id="venue" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Find Us</span>
+      <h2 class="sec-title">The <em>Venue</em></h2>
     </div>
-  </div>
-  <div class="venue-grid">
-    <div class="venue-card">
-      <div style="text-align:center;margin-bottom:1.2rem">
-        <div style="font-size:2.5rem;margin-bottom:.4rem">🕡</div>
+    <div class="venue-grid">
+      <div class="vcard" data-reveal>
         <h3>Ashirvad Hall</h3>
+        <div class="vrow"><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12Z"/><circle cx="12" cy="10" r="2.5"/></svg><div><strong>First Floor, Pearl Restaurant</strong><br>Coimbatore, Tamil Nadu</div></div>
+        <div class="vrow"><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="4.5" width="18" height="16" rx="2"/><path d="M3 9h18M8 2.5v4M16 2.5v4"/></svg><div><strong>Sunday, 21 June 2026</strong><br>6:30 PM onwards</div></div>
+        <div class="vrow"><svg class="vi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="8" r="4"/><path d="M12 12v9m-3-3h6"/></svg><div>Engaged · <strong>18 May 2026</strong></div></div>
+        <div class="vtamil">வாழ்க்கை என்பது இருவர் இணைவு,<br>அன்பு என்பது அதன் ஆன்மா.</div>
       </div>
-      <div class="venue-detail">
-        <span class="venue-icon">📍</span>
-        <div class="venue-info"><strong>First Floor, Pearl Restaurant</strong><br>Coimbatore, Tamil Nadu</div>
+      <div class="qr-card" data-reveal data-d="1">
+        <h3>Scan for Directions</h3>
+        <div id="qrcode"></div>
+        <p class="qr-cap">Opens Ashirvad Hall in Google Maps</p>
+        <a class="btn btn-ghost" href="https://maps.app.goo.gl/r5kEW3Kn8aWUBSTx7" target="_blank" rel="noopener">Open Maps</a>
       </div>
-      <div class="venue-detail">
-        <span class="venue-icon">📅</span>
-        <div class="venue-info"><strong>Sunday, June 21, 2026</strong><br>6:30 PM onwards</div>
-      </div>
-      <div class="venue-detail">
-        <span class="venue-icon">💍</span>
-        <div class="venue-info">Engaged · <strong>May 18, 2026</strong></div>
-      </div>
-      <div class="venue-tamil" id="venue-tamil">
-        வாழ்க்கை என்பது இருவர் இணைவு,<br>
-        அன்பு என்பது அதன் ஆன்மா.
-      </div>
-    </div>
-    <div class="qr-wrap">
-      <h3>📍 Get Directions</h3>
-      <div id="qrcode"></div>
-      <p class="qr-caption">Scan to open in Google Maps</p>
-      <a class="map-link" href="https://maps.app.goo.gl/r5kEW3Kn8aWUBSTx7" target="_blank" rel="noopener">Open Maps ↗</a>
     </div>
   </div>
 </section>
 
 <!-- INVITATION -->
-<section id="invitation">
-  <div class="inv-header">
-    <p class="sub-title">✦ Save This Date ✦</p>
-    <div class="section-title-wrap">
-      <div class="section-wipe" data-wipe></div>
-      <h2 class="section-title">The Invitation</h2>
-    </div>
-  </div>
-  <div class="inv-scene">
-    <div class="inv-book" id="inv-book">
-      <div class="inv-blobs">
-        <div class="blob blob1"></div>
-        <div class="blob blob2"></div>
+<section id="invitation" class="section-pad">
+  <div class="wrap">
+    <div class="inv-grid">
+      <div class="inv-card" data-reveal><img src="images/invitation.jpg" alt="Dharshiny and Prakash wedding invitation"></div>
+      <div class="inv-text" data-reveal data-d="1">
+        <span class="eyebrow">Save the Date</span>
+        <h2 class="sec-title">The <em>Invitation</em></h2>
+        <div class="rule" style="margin-left:0"><i></i></div>
+        <p class="lead">Every detail has been chosen with love. Keep this close — we can't wait to celebrate this new beginning with you by our side.</p>
+        <div class="inv-actions">
+          <a href="images/invitation.jpg" download="Dharshiny_Prakash_Invitation.jpg" class="btn btn-solid">Download Invitation</a>
+          <a href="#venue" class="btn btn-ghost">Get Directions</a>
+        </div>
       </div>
-      <img src="images/Wedding_invitation.jpeg" alt="Wedding Invitation">
-    </div>
-    <div class="inv-petals">
-      <span class="inv-petal">🌸</span>
-      <span class="inv-petal">🌺</span>
-      <span class="inv-petal">✨</span>
     </div>
   </div>
-  <div class="inv-actions">
-    <a href="images/Wedding_invitation.jpeg" download="Dharshiny_Prakash_Invitation.jpeg" class="btn-download">
-      ⬇ Download Invitation
-    </a>
-    <p class="inv-caption">"A new beginning, a lifetime of us."</p>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section-pad">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <span class="eyebrow">Good to Know</span>
+      <h2 class="sec-title">Common <em>Questions</em></h2>
+    </div>
+    <div class="faq-list" id="faq-list" data-reveal>
+      <div class="faq-item">
+        <button class="faq-q">When should I arrive?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>The reception begins at 6:30 PM. Arriving a little early means more time for photos and conversation before dinner is served.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What should I wear?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Traditional and festive attire is most welcome — think bright colours and your finest celebration wear. Most of all, come comfortable and ready to dance.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Where exactly is the venue?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Ashirvad Hall is on the first floor of Pearl Restaurant in Coimbatore. Use the “Get Directions” button or scan the QR code in the Venue section to navigate straight there.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I bring my family?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Absolutely — children and family are always welcome. The more loved ones in the room, the merrier the celebration.</p></div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What about gifts?<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg></button>
+        <div class="faq-a"><div><p>Your presence is the only gift we ask for. Your blessings and warm wishes mean more to us than anything that could be wrapped.</p></div></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-stars">
-    <div class="shoot-star"></div><div class="shoot-star"></div>
-    <div class="shoot-star"></div><div class="shoot-star"></div>
-    <div class="shoot-star"></div>
+  <div class="f-mono">D<span class="amp">&amp;</span>P</div>
+  <p class="f-intro">“Welcome to the tapestry of our lives — woven from a thousand ordinary moments, and one extraordinary love.”</p>
+  <p class="f-tamil">வாழ்க்கை என்பது இருவர் இணைவு · அன்பு என்பது அதன் ஆன்மா</p>
+  <div class="f-links">
+    <a href="#info">The Day</a><a href="#story">Our Story</a><a href="#schedule">Schedule</a>
+    <a href="#gallery">Gallery</a><a href="#venue">Venue</a><a href="#faq">FAQ</a>
   </div>
-  <div class="footer-mono">D ♥ P</div>
-  <p class="footer-tagline">Forever begins June 21, 2026</p>
-  <div class="footer-divider"></div>
-  <div class="kolam"></div>
-  <p class="footer-copy">Reception · Ashirvad Hall · Coimbatore · Made with 💜</p>
+  <div class="f-div"></div>
+  <p class="f-copy">Reception · Ashirvad Hall · Coimbatore · Made with love for Dharshiny &amp; Prakash</p>
 </footer>
 
-<!-- MUSIC PLAYER -->
-<audio id="bg-audio" loop preload="auto">
-  <source src="images/amsham.webm" type="audio/webm">
-  <source src="images/amsham.mp3" type="audio/mpeg">
-</audio>
+<!-- MUSIC (hidden YouTube player plays the song inline) -->
+<div id="ytwrap" aria-hidden="true" style="position:fixed;left:-9999px;top:0;width:240px;height:135px;overflow:hidden"><div id="ytplayer"></div></div>
 
 <!-- LIGHTBOX -->
-<div id="lightbox">
-  <button id="lb-prev">&#8249;</button>
-  <img id="lb-img" src="" alt="Gallery">
-  <button id="lb-next">&#8250;</button>
-  <button id="lb-close">&#10005;</button>
+<div id="lb">
+  <button class="lb-btn" id="lb-prev">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-btn" id="lb-next">›</button>
+  <button class="lb-btn" id="lb-close">✕</button>
 </div>
 
-<!-- DEV MODE OVERLAY -->
-<div id="dev-overlay">
-  <div class="dev-header">
-    <div class="dev-dots">
-      <div class="dev-dot r" onclick="closeDev()" title="Close"></div>
-      <div class="dev-dot y"></div>
-      <div class="dev-dot g"></div>
-    </div>
-    <span class="dev-title">wedding-terminal ~ dharshiny@prakash-forever</span>
-    <button class="dev-close-btn" onclick="closeDev()">&#10005;</button>
+<!-- DEV MODE -->
+<div id="dev">
+  <div class="dev-bar">
+    <div class="dev-dots"><i class="r" onclick="closeDev()"></i><i class="y"></i><i class="g"></i></div>
+    <b>wedding-terminal — dharshiny@prakash-forever:~</b>
+    <button class="dev-x" onclick="closeDev()">✕</button>
   </div>
-  <div class="dev-terminal" id="dev-terminal">
-    <canvas id="matrix-canvas"></canvas>
-    <div id="dev-output"></div>
-  </div>
-  <div class="dev-input-row">
-    <span class="dev-prompt">dharshiny@forever:~$&nbsp;</span>
-    <div style="position:relative;flex:1">
-      <input type="text" id="dev-input" placeholder="type 'help' to begin..." autocomplete="off" spellcheck="false">
-      <div class="dev-autocomplete" id="dev-autocomplete"></div>
-    </div>
+  <div class="dev-term" id="dev-term"><canvas id="matrix"></canvas><div id="dev-out"></div></div>
+  <div class="dev-in">
+    <span class="ps">dharshiny@forever:~$</span>
+    <input id="dev-input" autocomplete="off" spellcheck="false" placeholder="type 'help' to begin…">
   </div>
 </div>
 
-<!-- INVITE MODAL -->
-<div id="invite-modal">
-  <div class="invite-card">
-    <img src="images/Wedding_invitation.jpeg" alt="Invitation">
+<!-- MODAL -->
+<div id="modal">
+  <div class="modal-card">
+    <img src="images/invitation.jpg" alt="Invitation">
     <h2>You're Invited! 🎉</h2>
-    <p>Dharshiny &amp; Prakash's Reception<br>Sunday, June 21, 2026 · 6:30 PM<br>Ashirvad Hall, Coimbatore</p>
-    <div class="invite-actions">
-      <a href="images/Wedding_invitation.jpeg" download="Dharshiny_Prakash_Invitation.jpeg" class="btn-inv-dl">⬇ Download</a>
-      <button class="btn-inv-close" onclick="closeModal()">Close</button>
+    <p>Dharshiny &amp; Prakash's Reception<br>Sunday, 21 June 2026 · 6:30 PM<br>Ashirvad Hall, Coimbatore</p>
+    <div class="modal-act">
+      <a href="images/invitation.jpg" download="Dharshiny_Prakash_Invitation.jpg" class="btn btn-solid">Download</a>
+      <button class="btn btn-ghost" onclick="closeModal()">Close</button>
     </div>
   </div>
 </div>
 
 <script>
-/* ── Music Player ────────────────────────────────────────────────── */
-// Primary: HTML5 <audio> with local file (images/amsham.mp3)
-// Fallback: opens YouTube in a small popup window
-const YT_URL = 'https://youtu.be/V4aDJ4kiSNw';
-let isPlaying = false;
+/* ============================ LOADER + INIT ============================ */
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+let started=false, inited=false, revealed=false;
+let fxTimer=null;
 
-function setPlaying(playing) {
-  const btn  = document.getElementById('play-btn');
-  const disc = document.getElementById('vinyl-disc');
-  isPlaying = playing;
-  btn.textContent  = playing ? '⏸' : '▶';
-  playing ? disc.classList.add('spinning') : disc.classList.remove('spinning');
+/* floating petals / hearts / sparkles behind+around the couple */
+function spawnIntroFX(){
+  const layer=document.getElementById('intro-fx');
+  if(!layer || reduce) return;
+  const kinds=['🌸','💜','✨','🌸','💜','✨','🌷','🤍'];
+  function bit(){
+    const el=document.createElement('span');
+    el.className='fx-bit';
+    const k=kinds[Math.random()*kinds.length|0];
+    el.textContent=k;
+    const up = (k==='💜'||k==='✨'||k==='🤍');         // hearts & sparkles rise, petals drift down
+    el.style.left=(Math.random()*100)+'vw';
+    el.style.top=(up ? 72+Math.random()*24 : -6)+'vh';
+    el.style.fontSize=(0.75+Math.random()*1.15)+'rem';
+    el.style.setProperty('--dx',(Math.random()*140-70)+'px');
+    el.style.setProperty('--dy',(up ? -(180+Math.random()*240) : (innerHeight*0.95))+'px');
+    el.style.setProperty('--rot',(Math.random()*200-100)+'deg');
+    el.style.setProperty('--o',(0.5+Math.random()*0.4).toFixed(2));
+    el.style.animationDuration=(2.6+Math.random()*1.9)+'s';
+    layer.appendChild(el);
+    setTimeout(()=>el.remove(), 4700);
+  }
+  for(let i=0;i<10;i++) setTimeout(bit, i*110);           // opening burst
+  fxTimer=setInterval(bit, 170);
 }
 
-function togglePlay() {
-  const audio = document.getElementById('bg-audio');
-  const title = document.getElementById('music-title-text');
+/* paper-puppet stop-motion: boy walks in to the girl, then snap-cut through the couple poses */
+function runIntro(done){
+  spawnIntroFX();
+  const stage=document.getElementById('intro-stage');
+  if(!stage){ setTimeout(done, 600); return; }
+  const girl=document.getElementById('pp-girl');
+  const boy=document.getElementById('pp-boy');
+  const frames=[...stage.querySelectorAll('.intro-frame')];
 
-  if (isPlaying) {
-    audio.pause();
-    setPlaying(false);
-    title.textContent = 'Amsham · Aksomaniac';
+  // a hand-cut "paper" wobble applied per stop-motion step
+  const jitter=el=>{
+    el.style.setProperty('--jx',(Math.random()*6-3).toFixed(1)+'px');
+    el.style.setProperty('--jy',(Math.random()*5-2.5).toFixed(1)+'px');
+    el.style.setProperty('--jr',(Math.random()*2.6-1.3).toFixed(2)+'deg');
+  };
+
+  if(reduce){                                            // reduced motion: just the final embrace
+    if(girl) girl.classList.add('gone');
+    if(boy) boy.classList.add('gone');
+    if(frames.length) frames[frames.length-1].classList.add('is-on');
+    setTimeout(done, 500);
     return;
   }
 
-  // Ensure audio is loaded before playing
-  const needsLoad = audio.networkState === HTMLMediaElement.NETWORK_EMPTY;
-  if (needsLoad) { audio.load(); }
+  // PHASE B — snap through the couple poses (stop-motion), then hold + reveal
+  function phaseB(){
+    if(girl) girl.classList.add('gone');
+    if(boy) boy.classList.add('gone');
+    let i=0;
+    (function step(){
+      if(i>=frames.length){ setTimeout(done, 950); return; }   // hold the final hug
+      frames.forEach((f,k)=>f.classList.toggle('is-on', k===i));
+      jitter(frames[i]);
+      i++;
+      setTimeout(step, 240);
+    })();
+  }
 
-  audio.play()
-    .then(() => {
-      setPlaying(true);
-    })
-    .catch(err => {
-      console.warn('Audio play failed:', err);
-      const a = document.createElement('a');
-      a.href = YT_URL; a.target = '_blank'; a.rel = 'noopener noreferrer';
-      a.click();
-      title.textContent = '▶ Opened on YouTube';
-      setPlaying(true);
-    });
+  // PHASE A — boy walks in toward the girl in choppy paper-puppet steps
+  const X0=90, X1=52, STEPS=8, STEP_MS=150;
+  let s=0;
+  (function walk(){
+    s++;
+    const t=s/STEPS;
+    if(boy){
+      boy.style.left=(X0+(X1-X0)*t)+'%';
+      boy.style.setProperty('--jy', s%2 ? '-7px' : '0px');     // step bob
+      boy.style.setProperty('--jr', s%2 ? '-2.5deg' : '2deg'); // paper tilt
+    }
+    if(girl) girl.style.setProperty('--jr', s%2 ? '1.2deg' : '-1.2deg'); // idle sway
+    if(s>=STEPS){ setTimeout(phaseB, 280); return; }
+    setTimeout(walk, STEP_MS);
+  })();
 }
 
-/* ── Custom cursor ───────────────────────────────────────────────── */
-const cur = document.getElementById('cursor');
-const ring = document.getElementById('cursor-ring');
-let mx = window.innerWidth / 2, my = window.innerHeight / 2;
-let rx = mx, ry = my;
-document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-(function animCursor() {
-  cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-  rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
-  ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-  requestAnimationFrame(animCursor);
-})();
+function revealSite(){
+  if(revealed) return; revealed=true;
+  if(fxTimer) clearInterval(fxTimer);
+  const l=document.getElementById('loader');
+  l.classList.add('done');
+  setTimeout(()=>{ l.style.display='none'; }, 950);
+  initSite();
+}
 
-/* ── Cursor trail ────────────────────────────────────────────────── */
-const trailStyle = document.createElement('style');
-trailStyle.textContent = '@keyframes trailFade{to{opacity:0;transform:translate(-50%,-50%) scale(0)}}';
-document.head.appendChild(trailStyle);
-let lastTrail = 0;
-document.addEventListener('mousemove', e => {
-  const now = Date.now();
-  if (now - lastTrail < 40) return;
-  lastTrail = now;
-  const p = document.createElement('div');
-  p.style.cssText = `position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:6px;height:6px;
-    border-radius:50%;pointer-events:none;z-index:9990;
-    background:rgba(168,85,247,.65);transform:translate(-50%,-50%);
-    animation:trailFade .6s ease forwards`;
-  document.body.appendChild(p);
-  setTimeout(() => p.remove(), 620);
-});
+function start(){
+  if(started) return; started=true;
+  runIntro(revealSite);
+}
+window.addEventListener('load', start);
+/* if 'load' is slow, start the intro anyway; and a hard fail-safe so a guest is never trapped */
+setTimeout(start, 2500);
+setTimeout(revealSite, 9000);
 
-/* ── Loader ──────────────────────────────────────────────────────── */
-window.addEventListener('load', function() {
-  const chars = document.querySelectorAll('.loader-mono span');
-  gsap.to(chars, {
-    opacity: 1, y: 0, duration: 0.5, stagger: 0.18, ease: 'back.out(1.4)',
-    onComplete: function() {
-      gsap.to('#loader', {
-        opacity: 0, duration: 0.8, delay: 0.7,
-        onComplete: function() {
-          document.getElementById('loader').style.display = 'none';
-          initSite();
-        }
-      });
-    }
-  });
-});
+function initSite(){
+  if(inited) return; inited=true;
+  // visual-critical first, each isolated so one failure can't trap the rest
+  [initTitleSplit, injectArches, initVines, initHeroIntro, initReveals, initCountdown, initPetals, initCursor,
+   initQR, initLenis, initScrollFX, initProgress, initHeroTilt, initFooterStars, initCardTilt,
+   layoutClothesline].forEach(fn=>{ try{ fn(); }catch(e){ console.warn(fn.name, e); } });
+}
 
-/* ── Init Lenis smooth scroll ────────────────────────────────────── */
+/* ============================ SMOOTH SCROLL ============================ */
 let lenis;
-function initLenis() {
-  lenis = new Lenis({ lerp: 0.1 });
-  function raf(t) { lenis.raf(t); requestAnimationFrame(raf); }
+function initLenis(){
+  if(!window.Lenis || reduce) return;
+  lenis = new Lenis({lerp:.1});
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
   requestAnimationFrame(raf);
-  lenis.on('scroll', ScrollTrigger.update);
+  if(window.ScrollTrigger) lenis.on('scroll', ScrollTrigger.update);
+}
+// anchor links via lenis
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href')); if(!t) return;
+    e.preventDefault(); closeMenu();
+    if(lenis) lenis.scrollTo(t,{offset:-60}); else t.scrollIntoView({behavior:'smooth'});
+  });
+});
+
+/* ============================ REVEALS ============================ */
+function initReveals(){
+  const io=new IntersectionObserver((es)=>{
+    es.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target);} });
+  },{threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(el=>io.observe(el));
 }
 
-/* ── Init site after loader ──────────────────────────────────────── */
-function initSite() {
-  initLenis();
-  splitHeroText();
-  initParticles();
-  initScrollAnimations();
-  initCountdown();
-  generateQR();
-}
+/* ============================ HERO INTRO (CSS class toggle) ============================ */
+function initHeroIntro(){ document.getElementById('hero').classList.add('ready'); }
 
-/* ── Hero title split ────────────────────────────────────────────── */
-function splitHeroText() {
-  ['w1', 'w2'].forEach(id => {
-    const el = document.getElementById(id);
-    const text = el.textContent;
-    el.innerHTML = text.split('').map(c =>
-      `<span class="char" style="display:inline-block;opacity:0;transform:translateY(-60px)">${c}</span>`
-    ).join('');
-  });
-  const allChars = document.querySelectorAll('#hero-title .char');
-  gsap.to(allChars, {
-    opacity: 1, y: 0, duration: 0.65, stagger: 0.03,
-    ease: 'back.out(1.3)', delay: 0.1
-  });
-}
-
-/* ── Particles.js ────────────────────────────────────────────────── */
-function initParticles() {
-  if (typeof particlesJS === 'undefined') return;
-  particlesJS('particles-js', {
-    particles: {
-      number: { value: 55, density: { enable: true, value_area: 900 } },
-      color: { value: ['#A855F7', '#F9C7D5', '#F5C842', '#ffffff', '#E9D5FF'] },
-      shape: { type: 'circle' },
-      opacity: { value: 0.5, random: true, anim: { enable: true, speed: 0.5, opacity_min: 0.08, sync: false } },
-      size: { value: 3.5, random: true, anim: { enable: true, speed: 1.2, size_min: 0.6, sync: false } },
-      line_linked: { enable: false },
-      move: { enable: true, speed: 0.65, random: true, straight: false, out_mode: 'out', bounce: false }
-    },
-    interactivity: {
-      detect_on: 'window',
-      events: { onhover: { enable: true, mode: 'bubble' }, onclick: { enable: true, mode: 'push' } },
-      modes: { bubble: { distance: 120, size: 6, duration: 0.4, opacity: 0.8 }, push: { particles_nb: 4 } }
-    },
-    retina_detect: true
-  });
-}
-
-/* ── Scroll Animations ───────────────────────────────────────────── */
-function initScrollAnimations() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  // Hero aurora parallax
-  gsap.to('.aurora', {
-    yPercent: 25,
-    scrollTrigger: { trigger: '#hero', start: 'top top', end: 'bottom top', scrub: 1.5 }
-  });
-
-  // Section title wipe reveals
-  document.querySelectorAll('[data-wipe]').forEach(wipe => {
-    ScrollTrigger.create({
-      trigger: wipe.parentElement,
-      start: 'top 80%',
-      onEnter: () => gsap.to(wipe, { scaleX: 0, transformOrigin: 'right', duration: 0.65, ease: 'power3.inOut' })
+/* ============================ TITLE WORD REVEAL ============================ */
+/* split every .sec-title into masked words that rise one-by-one when revealed */
+function initTitleSplit(){
+  document.querySelectorAll('.sec-title').forEach(t=>{
+    const frag=document.createDocumentFragment();
+    const wrap=node=>{
+      const w=document.createElement('span'); w.className='w';
+      const ww=document.createElement('span'); ww.className='ww';
+      ww.appendChild(node); w.appendChild(ww); frag.appendChild(w);
+    };
+    [...t.childNodes].forEach(n=>{
+      if(n.nodeType===3){
+        n.textContent.split(/(\s+)/).forEach(part=>{
+          if(!part) return;
+          if(/^\s+$/.test(part)){ frag.appendChild(document.createTextNode(' ')); return; }
+          wrap(document.createTextNode(part));
+        });
+      } else wrap(n.cloneNode(true));
     });
+    t.innerHTML=''; t.appendChild(frag);
+    t.querySelectorAll('.ww').forEach((ww,i)=>ww.style.transitionDelay=(.15+i*.1)+'s');
   });
+}
 
-  // Timeline items
-  document.querySelectorAll('.tl-item').forEach((item, i) => {
-    gsap.from(item, {
-      opacity: 0, y: 40, duration: 0.7, ease: 'power2.out',
-      scrollTrigger: { trigger: item, start: 'top 80%' }
-    });
-  });
-
-  // Scan line on images
-  document.querySelectorAll('[data-scan]').forEach(scan => {
-    ScrollTrigger.create({
-      trigger: scan.parentElement,
-      start: 'top 70%',
-      onEnter: () => gsap.fromTo(scan,
-        { top: '-5%', opacity: 0.9 },
-        { top: '105%', opacity: 0, duration: 1.1, ease: 'power2.inOut' }
-      )
-    });
-  });
-
-  // Gallery stagger
-  gsap.to('.gal-item', {
-    opacity: 1, scale: 1, y: 0, duration: 0.65, stagger: 0.08, ease: 'power2.out',
-    scrollTrigger: { trigger: '#gal-grid', start: 'top 75%' }
-  });
-
-  // Invitation book flip
-  ScrollTrigger.create({
-    trigger: '#invitation',
-    start: 'top 70%',
-    onEnter: () => document.getElementById('inv-book').classList.add('revealed')
-  });
-
-  // Venue Tamil underline
-  ScrollTrigger.create({
-    trigger: '#venue-tamil',
-    start: 'top 85%',
-    onEnter: () => document.getElementById('venue-tamil').classList.add('in-view')
-  });
-
-  // Family tree cards
-  document.querySelectorAll('.tree-card').forEach((card, i) => {
-    gsap.from(card, {
-      opacity: 0, scale: 0.85, duration: 0.5, ease: 'back.out(1.2)',
-      delay: i * 0.06,
-      scrollTrigger: { trigger: '#family', start: 'top 70%' }
+/* ============================ ARCH OUTLINE SVGs ============================ */
+/* two concentric golden arch paths around each framed photo — drawn on scroll */
+function injectArches(){
+  const NS='http://www.w3.org/2000/svg';
+  document.querySelectorAll('.tl-arch,.discover-archwrap').forEach(w=>{
+    ['o1','o2'].forEach(cls=>{
+      const s=document.createElementNS(NS,'svg');
+      s.setAttribute('class','arch-draw '+cls);
+      s.setAttribute('viewBox','0 0 100 132');
+      s.setAttribute('preserveAspectRatio','none');
+      s.setAttribute('aria-hidden','true');
+      const p=document.createElementNS(NS,'path');
+      p.setAttribute('pathLength','1');
+      p.setAttribute('d','M1.5,132 L1.5,40 A48.5,38 0 0 1 98.5,40 L98.5,132');
+      s.appendChild(p);
+      w.prepend(s);
     });
   });
 }
 
-/* ── Countdown timer ─────────────────────────────────────────────── */
-function initCountdown() {
-  function tick() {
-    const target = new Date('2026-06-21T18:30:00+05:30');
-    const diff = target - Date.now();
-    if (diff <= 0) {
-      document.querySelector('.countdown').innerHTML =
-        '<p style="color:var(--pm);font-family:Cormorant Garamond,serif;font-size:1.8rem;font-style:italic">🎉 The day is here!</p>';
-      return;
-    }
-    document.getElementById('cd-d').textContent = String(Math.floor(diff / 864e5)).padStart(2, '0');
-    document.getElementById('cd-h').textContent = String(Math.floor((diff % 864e5) / 36e5)).padStart(2, '0');
-    document.getElementById('cd-m').textContent = String(Math.floor((diff % 36e5) / 6e4)).padStart(2, '0');
-    document.getElementById('cd-s').textContent = String(Math.floor((diff % 6e4) / 1e3)).padStart(2, '0');
-  }
-  tick();
-  setInterval(tick, 1000);
-}
-
-/* ── QR Code ─────────────────────────────────────────────────────── */
-function generateQR() {
-  try {
-    new QRCode(document.getElementById('qrcode'), {
-      text: 'https://maps.app.goo.gl/r5kEW3Kn8aWUBSTx7',
-      width: 160, height: 160,
-      colorDark: '#1A0533', colorLight: '#ffffff',
-      correctLevel: QRCode.CorrectLevel.H
-    });
-  } catch (e) { console.warn('QR generation failed:', e); }
-}
-
-/* ── Gallery lightbox ────────────────────────────────────────────── */
-const galleryImages = [
-  'images/ghibhili_1.png',
-  'images/WhatsApp%20Image%202026-06-07%20at%2010.51.30%20AM.jpeg',
-  'images/WhatsApp%20Image%202026-06-07%20at%2010.51.32%20AM.jpeg',
-  'images/ghibhili_2.png',
-  'images/WhatsApp%20Image%202026-06-07%20at%2010.51.36%20AM.jpeg',
-  'images/WhatsApp%20Image%202026-06-07%20at%2010.51.38%20AM.jpeg',
-  'images/Wedding_invitation.jpeg'
-];
-let lbIndex = 0;
-
-document.querySelectorAll('.gal-item').forEach(item => {
-  item.addEventListener('click', function() {
-    lbIndex = Number.parseInt(this.dataset.index, 10);
-    openLightbox(lbIndex, this);
-  });
-});
-
-function openLightbox(idx, fromEl) {
-  lbIndex = idx;
-  const lb = document.getElementById('lightbox');
-  const img = document.getElementById('lb-img');
-  img.src = galleryImages[idx];
-  lb.classList.add('active');
-  if (fromEl) {
-    const rect = fromEl.getBoundingClientRect();
-    const startScale = rect.width / (window.innerWidth * 0.9);
-    gsap.fromTo(img,
-      { scale: Math.max(startScale, 0.3), opacity: 0 },
-      { scale: 1, opacity: 1, duration: 0.5, ease: 'power3.out' }
-    );
-  } else {
-    gsap.fromTo(img, { scale: 0.7, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.5 });
-  }
-}
-
-document.getElementById('lightbox').addEventListener('click', e => {
-  if (e.target === document.getElementById('lightbox')) closeLightbox();
-});
-document.getElementById('lb-close').addEventListener('click', closeLightbox);
-document.getElementById('lb-prev').addEventListener('click', () => {
-  lbIndex = (lbIndex - 1 + galleryImages.length) % galleryImages.length;
-  const img = document.getElementById('lb-img');
-  gsap.fromTo(img, { x: -30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3 });
-  img.src = galleryImages[lbIndex];
-});
-document.getElementById('lb-next').addEventListener('click', () => {
-  lbIndex = (lbIndex + 1) % galleryImages.length;
-  const img = document.getElementById('lb-img');
-  gsap.fromTo(img, { x: 30, opacity: 0 }, { x: 0, opacity: 1, duration: 0.3 });
-  img.src = galleryImages[lbIndex];
-});
-
-function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
-
-document.addEventListener('keydown', e => {
-  if (!document.getElementById('lightbox').classList.contains('active')) return;
-  if (e.key === 'Escape') closeLightbox();
-  if (e.key === 'ArrowLeft') document.getElementById('lb-prev').click();
-  if (e.key === 'ArrowRight') document.getElementById('lb-next').click();
-});
-
-/* ── Magnetic countdown ──────────────────────────────────────────── */
-document.querySelectorAll('.cd-box').forEach(box => {
-  box.addEventListener('mousemove', e => {
-    const r = box.getBoundingClientRect();
-    const dx = (e.clientX - (r.left + r.width / 2)) * 0.14;
-    const dy = (e.clientY - (r.top + r.height / 2)) * 0.14;
-    gsap.to(box, { x: dx, y: dy, duration: 0.2, ease: 'power2.out' });
-  });
-  box.addEventListener('mouseleave', () => {
-    gsap.to(box, { x: 0, y: 0, duration: 0.45, ease: 'elastic.out(1,.5)' });
-  });
-});
-
-/* ── Floating Hearts ─────────────────────────────────────────────── */
-const HEARTS = ['💜','🩷','❤️','💗','💕','✨','🌸','💖'];
-function spawnHeart(x, y) {
-  const h = document.createElement('div');
-  h.className = 'float-heart';
-  h.textContent = HEARTS[Math.floor(Math.random() * HEARTS.length)];
-  h.style.left = (x - 12 + (Math.random() - 0.5) * 30) + 'px';
-  h.style.top  = (y - 12) + 'px';
-  h.style.fontSize = (1 + Math.random() * 0.8) + 'rem';
-  document.body.appendChild(h);
-  setTimeout(() => h.remove(), 3600);
-}
-
-// Spawn hearts on click anywhere on page
-document.addEventListener('click', e => {
-  if (e.target.closest('#dev-overlay, #lightbox, nav')) return;
-  for (let i = 0; i < 4; i++) {
-    setTimeout(() => spawnHeart(e.clientX + (Math.random() - 0.5) * 40, e.clientY), i * 80);
-  }
-});
-
-// Ambient hearts — random position every few seconds
-setInterval(() => {
-  spawnHeart(
-    80 + Math.random() * (window.innerWidth - 160),
-    100 + Math.random() * (window.innerHeight - 200)
-  );
-}, 2200);
-
-/* ── DEV MODE ────────────────────────────────────────────────────── */
-const ALL_CMDS = [
-  'help', 'whoami', 'clear',
-  'ls -la love/',
-  'cat .env',
-  'ssh love@universe.∞',
-  'git log --oneline',
-  'git status',
-  'git add .',
-  'git commit -m "wedding on 18 for prakash and dharshiney"',
-  'git push'
-];
-
-let devHistory = [], devHistIdx = -1, gitStep = 0;
-let devInitialized = false;
-
-function openDev() {
-  document.getElementById('dev-overlay').classList.add('open');
-  setTimeout(() => document.getElementById('dev-input').focus(), 150);
-  if (!devInitialized) {
-    devInitialized = true;
-    addDevLines([
-      { t: 'info', v: '' },
-      { t: 'hi',   v: '  ██████╗  ██╗  ██╗    ██████╗' },
-      { t: 'hi',   v: '  ██╔══██╗ ╚██╗██╔╝   ██╔══██╗' },
-      { t: 'hi',   v: '  ██║  ██║  ╚███╔╝    ██████╔╝' },
-      { t: 'hi',   v: '  ██║  ██║  ██╔██╗    ██╔═══╝ ' },
-      { t: 'hi',   v: '  ██████╔╝ ██╔╝ ██╗   ██║     ' },
-      { t: 'hi',   v: '                             ' },
-      { t: 'info', v: '' },
-      { t: 'info', v: '  wedding-terminal v2.6.21 · dharshiny@prakash-forever' },
-      { t: 'dim',  v: '  Built with love, chai, and a reckless amount of JavaScript ☕' },
-      { t: 'info', v: '' },
-      { t: 'warn', v: '  💡 Type "help" to see available commands' },
-      { t: 'dim',  v: '  💡 Use ↑ / ↓ for history · Tab to autocomplete' },
-      { t: 'info', v: '' },
-    ]);
-  }
-}
-
-function closeDev() {
-  document.getElementById('dev-overlay').classList.remove('open');
-}
-
-function addDevLines(lines) {
-  const out = document.getElementById('dev-output');
-  lines.forEach(l => {
-    const d = document.createElement('div');
-    d.className = 'dev-line ' + (l.t || 'info');
-    d.textContent = l.v;
-    out.appendChild(d);
-  });
-  const term = document.getElementById('dev-terminal');
-  term.scrollTop = term.scrollHeight;
-}
-
-function runDevCmd(raw) {
-  const cmd = raw.trim();
-  if (!cmd) return;
-  devHistory.unshift(cmd);
-  devHistIdx = -1;
-  addDevLines([{ t: 'cmd', v: 'dharshiny@forever:~$ ' + cmd }]);
-
-  switch (true) {
-    case cmd === 'help':
-      addDevLines([
-        { t: 'info', v: '' },
-        { t: 'warn', v: '  Available Commands:' },
-        { t: 'dim',  v: '  ──────────────────────────────────────────' },
-        { t: 'info', v: '  help                     Show this message' },
-        { t: 'info', v: '  whoami                   Who are we?' },
-        { t: 'info', v: '  clear                    Clear terminal' },
-        { t: 'info', v: '  ls -la love/             List love directory' },
-        { t: 'info', v: '  cat .env                 Show env variables' },
-        { t: 'info', v: '  ssh love@universe.∞      Connect to forever' },
-        { t: 'info', v: '  git log --oneline        Love commit history' },
-        { t: 'info', v: '  git status               Check heart repo' },
-        { t: 'dim',  v: '' },
-        { t: 'warn', v: '  🔐 Unlock Sequence (run in order):' },
-        { t: 'info', v: '  git add .' },
-        { t: 'info', v: '  git commit -m "wedding on 18 for prakash and dharshiney"' },
-        { t: 'info', v: '  git push' },
-        { t: 'dim',  v: '  ──────────────────────────────────────────' },
-        { t: 'info', v: '' },
-      ]);
-      break;
-
-    case cmd === 'whoami':
-      addDevLines([
-        { t: 'info', v: '' },
-        { t: 'hi',   v: '  dharshiny@prakash — lover, partner, forever-teammate' },
-        { t: 'dim',  v: '  uid=1 gid=forever(love) groups=soulmates,family,∞' },
-        { t: 'info', v: '' },
-      ]);
-      break;
-
-    case cmd === 'clear':
-      document.getElementById('dev-output').innerHTML = '';
-      break;
-
-    case cmd === 'ls -la love/':
-      addDevLines([
-        { t: 'info', v: '' },
-        { t: 'dim',  v: '  total 108' },
-        { t: 'info', v: '  drwxr-xr-x  hearts/          [∞ entries]' },
-        { t: 'info', v: '  drwxr-xr-x  memories/         [2022 — ∞]' },
-        { t: 'info', v: '  -rwxr-xr-x  forever.sh        [executable ♡]' },
-        { t: 'info', v: '  -rw-r--r--  .secrets          [encrypted]' },
-        { t: 'info', v: '  -rw-r--r--  vows.md           [June 21, 2026]' },
-        { t: 'info', v: '  -rw-r--r--  ring.png          [18 carats]' },
-        { t: 'info', v: '' },
-      ]);
-      break;
-
-    case cmd === 'cat .env':
-      addDevLines([
-        { t: 'info', v: '' },
-        { t: 'warn', v: '  # .env — love/forever' },
-        { t: 'info', v: '  LOVE_LEVEL=∞' },
-        { t: 'info', v: '  WEDDING_DATE=2026-06-21' },
-        { t: 'info', v: '  ENGAGEMENT_DATE=2026-05-18' },
-        { t: 'info', v: '  SOULMATE=true' },
-        { t: 'info', v: '  VENUE="Ashirvad Hall, Coimbatore"' },
-        { t: 'info', v: '  HAPPINESS=overflowing' },
-        { t: 'info', v: '  FOREVER=yes' },
-        { t: 'dim',  v: '  # Do not expose. Ever.' },
-        { t: 'info', v: '' },
-      ]);
-      break;
-
-    case cmd === 'ssh love@universe.∞': {
-      addDevLines([{ t: 'info', v: '' }]);
-      const msgs = [
-        { t: 'dim',  v: '  SSH · Connecting to love@universe.∞...' },
-        { t: 'dim',  v: '  Authenticating with ring.png...' },
-        { t: 'dim',  v: '  Verifying soulmate certificate...' },
-        { t: 'dim',  v: '  Certificate: valid · issued by Tamil Hindu Marriage Authority' },
-        { t: 'dim',  v: '  Establishing encrypted tunnel to forever...' },
-        { t: 'hi',   v: '  ✓ Connected to origin/forever ❤' },
-        { t: 'info', v: '' },
-      ];
-      msgs.forEach((m, i) => setTimeout(() => addDevLines([m]), i * 380));
-      break;
-    }
-
-    case cmd === 'git log --oneline':
-      addDevLines([
-        { t: 'info', v: '' },
-        { t: 'info', v: '  a7f3c21  feat: first hello became a forever' },
-        { t: 'info', v: '  e2d81b9  add: shared chai on a rainy Coimbatore evening' },
-        { t: 'info', v: '  f9a2314  fix: two broken hearts → one whole love' },
-        { t: 'info', v: '  c4b7890  feat: engagement · May 18, 2026 · rings exchanged' },
-        { t: 'info', v: '  9e1d567  chore: families merged successfully ✓' },
-        { t: 'dim',  v: '  (and infinite commits to come...)' },
-        { t: 'info', v: '' },
-      ]);
-      break;
-
-    case cmd === 'git status':
-      addDevLines([
-        { t: 'info', v: '' },
-        { t: 'info', v: "  On branch main (origin/forever)" },
-        { t: 'info', v: "  Your branch is ahead of 'universe' by ∞ commits." },
-        { t: 'info', v: '' },
-        { t: 'warn', v: '  Untracked files:' },
-        { t: 'info', v: '    hearts/' },
-        { t: 'info', v: '    ring.png' },
-        { t: 'info', v: '    vows.md' },
-        { t: 'dim',  v: '    .secrets   (stage at your own risk)' },
-        { t: 'info', v: '' },
-      ]);
-      break;
-
-    case cmd === 'git add .':
-      if (gitStep === 0) {
-        gitStep = 1;
-        addDevLines([
-          { t: 'info', v: '' },
-          { t: 'info', v: '  Staging all love files...' },
-          { t: 'info', v: '  ✓ hearts/      staged' },
-          { t: 'info', v: '  ✓ ring.png     staged' },
-          { t: 'info', v: '  ✓ vows.md      staged' },
-          { t: 'info', v: '  ✓ .secrets     encrypted & staged' },
-          { t: 'warn', v: '' },
-          { t: 'warn', v: '  💡 Next: git commit -m "wedding on 18 for prakash and dharshiney"' },
-          { t: 'info', v: '' },
-        ]);
-      } else {
-        addDevLines([{ t: 'dim', v: '  Already staged. Continue with git commit.' }]);
-      }
-      break;
-
-    case cmd.startsWith('git commit'):
-      if (gitStep === 1) {
-        gitStep = 2;
-        addDevLines([
-          { t: 'info', v: '' },
-          { t: 'info', v: '  [main (root-commit) 2026621] wedding on 18 for prakash and dharshiney' },
-          { t: 'info', v: '  ∞ files changed, ∞ insertions(+)' },
-          { t: 'info', v: '  create mode 100644 hearts/forever.json' },
-          { t: 'info', v: '  create mode 100644 ring.png' },
-          { t: 'info', v: '  create mode 100644 vows.md' },
-          { t: 'warn', v: '' },
-          { t: 'warn', v: '  💡 Next: git push' },
-          { t: 'info', v: '' },
-        ]);
-      } else if (gitStep === 0) {
-        addDevLines([{ t: 'err', v: '  error: nothing to commit. Run "git add ." first.' }]);
-      } else {
-        addDevLines([{ t: 'dim', v: '  Already committed. Run "git push"!' }]);
-      }
-      break;
-
-    case cmd === 'git push':
-      if (gitStep === 2) {
-        gitStep = 3;
-        addDevLines([
-          { t: 'info', v: '' },
-          { t: 'info', v: '  Enumerating objects: ∞, done.' },
-          { t: 'info', v: '  Counting objects: 100% (∞/∞), done.' },
-          { t: 'dim',  v: '  Delta compression using up to ♾ threads' },
-          { t: 'info', v: '  Compressing love objects...' },
-          { t: 'info', v: '  Writing objects: 100% (∞/∞), ∞ GiB' },
-        ]);
-        setTimeout(() => {
-          addDevLines([
-            { t: 'hi',   v: '  To universe:forever.git' },
-            { t: 'hi',   v: '    * [new branch]  main → origin/forever' },
-            { t: 'hi',   v: '  ✓ Deployed to forever. 🚀' },
-            { t: 'info', v: '' },
-          ]);
-          triggerMatrix();
-        }, 700);
-      } else {
-        addDevLines([{ t: 'err', v: '  fatal: nothing to push. Complete the git sequence first.' }]);
-      }
-      break;
-
-    default:
-      addDevLines([{ t: 'err', v: `  command not found: ${cmd}   (try "help")` }]);
-  }
-}
-
-/* Matrix rain + confetti + modal */
-function triggerMatrix() {
-  const canvas = document.getElementById('matrix-canvas');
-  const term = document.getElementById('dev-terminal');
-  canvas.width = term.offsetWidth;
-  canvas.height = term.offsetHeight;
-  const ctx = canvas.getContext('2d');
-  gsap.to(canvas, { opacity: 0.9, duration: 0.5 });
-
-  const colW = 14;
-  const cols = Math.floor(canvas.width / colW);
-  const drops = new Array(cols).fill(1);
-  const chars = 'アイウエオカキDHARSHINYPRAKASH❤∞LOVE💜FOREVER06212026';
-
-  const interval = setInterval(() => {
-    ctx.fillStyle = 'rgba(0,5,0,.07)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.font = '13px "JetBrains Mono", monospace';
-    drops.forEach((y, i) => {
-      ctx.fillStyle = Math.random() > 0.95 ? '#ffffff' : '#00FF41';
-      ctx.fillText(chars[Math.floor(Math.random() * chars.length)], i * colW, y * colW);
-      if (y * colW > canvas.height && Math.random() > 0.975) drops[i] = 0;
-      drops[i]++;
-    });
-  }, 48);
-
-  setTimeout(() => {
-    clearInterval(interval);
-    gsap.to(canvas, {
-      opacity: 0, duration: 0.7,
-      onComplete: () => {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        fireConfetti();
-        setTimeout(showInviteModal, 900);
-      }
-    });
-  }, 3000);
-}
-
-function fireConfetti() {
-  const opts = {
-    particleCount: 130,
-    spread: 85,
-    colors: ['#A855F7', '#F9C7D5', '#F5C842', '#E9D5FF', '#6B21A8']
+/* ============================ FLOWERING VINES ============================ */
+/* one detailed vine: 5 stems, leaves, buds, layered five-petal blossoms in blush /
+   cream / lilac — generated once, reused for discover + every story chapter */
+function vineSVG(cls){
+  const PINK='#E8B7C8', CREAM='#F3DCC8', LILAC='#DCC0E8', IN='#F6E3EC';
+  const bloom=(x,y,s,fill)=>{
+    let p='';
+    for(let i=0;i<5;i++) p+='<ellipse class="pe" cx="0" cy="-7.5" rx="3.6" ry="6.6" fill="'+fill+'" transform="rotate('+(i*72)+')"/>';
+    for(let i=0;i<4;i++) p+='<ellipse class="pi" cx="0" cy="-4.4" rx="2.1" ry="3.9" fill="'+IN+'" transform="rotate('+(36+i*90)+')"/>';
+    p+='<circle class="ct" r="2.7"/>';
+    for(let i=0;i<5;i++) p+='<circle cx="'+(Math.cos(i*1.256)*1.7).toFixed(1)+'" cy="'+(Math.sin(i*1.256)*1.7).toFixed(1)+'" r=".55" fill="#8A6A2F"/>';
+    return '<g transform="translate('+x+','+y+') scale('+s+')"><g class="vb">'+p+'</g></g>';
   };
-  confetti({ ...opts, origin: { x: 0.3, y: 0.65 } });
-  setTimeout(() => confetti({ ...opts, origin: { x: 0.7, y: 0.65 } }), 350);
-  setTimeout(() => confetti({ ...opts, origin: { x: 0.5, y: 0.5 }, particleCount: 90 }), 700);
+  const leaf=(x,y,rot,s)=>'<g transform="translate('+x+','+y+') rotate('+rot+') scale('+(s||1)+')"><ellipse class="vl" rx="9.5" ry="3.6"/></g>';
+  const bud=(x,y,rot)=>'<g transform="translate('+x+','+y+') rotate('+(rot||0)+')"><g class="bud">'+
+    '<ellipse cx="0" cy="-3" rx="2.6" ry="4.6" fill="'+PINK+'" stroke="#C98DA6" stroke-width=".8"/>'+
+    '<ellipse cx="0" cy="-2.2" rx="1.5" ry="3" fill="'+IN+'"/></g></g>';
+  const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+  svg.setAttribute('class',cls);
+  svg.setAttribute('viewBox','0 0 200 320');
+  svg.setAttribute('aria-hidden','true');
+  svg.innerHTML=
+    '<path class="vp" pathLength="1" d="M14,314 C34,250 8,205 42,152 C72,106 58,62 96,20"/>'+
+    '<path class="vp" pathLength="1" d="M42,152 C80,144 104,116 114,88"/>'+
+    '<path class="vp" pathLength="1" d="M24,240 C58,234 84,212 92,188"/>'+
+    '<path class="vp" pathLength="1" d="M30,196 C16,176 14,156 22,136"/>'+
+    '<path class="vp" pathLength="1" d="M18,300 C46,292 72,282 92,266"/>'+
+    leaf(30,256,-32)+leaf(20,214,42)+leaf(56,172,-20)+leaf(72,120,32)+
+    leaf(60,228,-10,.85)+leaf(36,182,24,.85)+leaf(56,288,-24,.9)+leaf(78,206,-14,.8)+
+    bud(50,132,-15)+bud(86,162,20)+bud(40,272,-8)+
+    bloom(96,20,1.15,PINK)+bloom(114,88,1,LILAC)+bloom(92,188,1,PINK)+bloom(22,136,.85,CREAM)+
+    bloom(92,266,.9,LILAC)+bloom(42,152,.75,CREAM)+bloom(60,244,.8,PINK);
+  return svg;
 }
-
-function showInviteModal() {
-  closeDev();
-  document.getElementById('invite-modal').classList.add('show');
-}
-function closeModal() {
-  document.getElementById('invite-modal').classList.remove('show');
-}
-document.getElementById('invite-modal').addEventListener('click', e => {
-  if (e.target === document.getElementById('invite-modal')) closeModal();
-});
-
-/* Dev input key events */
-const devInput = document.getElementById('dev-input');
-devInput.addEventListener('keydown', e => {
-  if (e.key === 'Enter') {
-    const v = devInput.value;
-    devInput.value = '';
-    hideAC();
-    runDevCmd(v);
-  } else if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    if (devHistIdx < devHistory.length - 1) {
-      devHistIdx++;
-      devInput.value = devHistory[devHistIdx];
-    }
-  } else if (e.key === 'ArrowDown') {
-    e.preventDefault();
-    if (devHistIdx > 0) { devHistIdx--; devInput.value = devHistory[devHistIdx]; }
-    else { devHistIdx = -1; devInput.value = ''; }
-  } else if (e.key === 'Tab') {
-    e.preventDefault();
-    const partial = devInput.value.toLowerCase();
-    const match = ALL_CMDS.find(c => c.startsWith(partial) && c !== partial);
-    if (match) { devInput.value = match; hideAC(); }
+function initVines(){
+  const sticky=document.querySelector('.discover-sticky');
+  if(sticky){
+    const grid=sticky.querySelector('.discover-grid');
+    sticky.insertBefore(vineSVG('vine discover-vine v-left'),grid);
+    sticky.insertBefore(vineSVG('vine discover-vine v-right'),grid);
   }
+  document.querySelectorAll('.tl-arch').forEach(w=>w.appendChild(vineSVG('vine tl-vine')));
+}
+
+/* ============================ FOOTER STARS ============================ */
+function initFooterStars(){
+  if(reduce) return;
+  const f=document.querySelector('footer'); if(!f) return;
+  for(let i=0;i<26;i++){
+    const s=document.createElement('span'); s.className='f-star';
+    s.textContent=Math.random()>.5?'✦':'✧';
+    s.style.left=Math.random()*100+'%';
+    s.style.top=Math.random()*85+'%';
+    s.style.fontSize=(.4+Math.random()*.7)+'rem';
+    s.style.animationDuration=(2.2+Math.random()*3.4)+'s';
+    s.style.animationDelay=(Math.random()*4)+'s';
+    f.appendChild(s);
+  }
+}
+
+/* ============================ INFO CARD 3D TILT ============================ */
+function initCardTilt(){
+  if(reduce||!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  document.querySelectorAll('.info-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const r=card.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5, y=(e.clientY-r.top)/r.height-.5;
+      card.style.transform='perspective(720px) rotateY('+(x*7).toFixed(2)+'deg) rotateX('+(-y*7).toFixed(2)+'deg) translateY(-5px)';
+    });
+    card.addEventListener('mouseleave',()=>{ card.style.transform=''; });
+  });
+}
+
+/* ============================ SCROLL PROGRESS ============================ */
+function initProgress(){
+  const bar=document.getElementById('sprog'); if(!bar) return;
+  const upd=()=>{ const h=document.documentElement.scrollHeight-innerHeight;
+    bar.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'; };
+  addEventListener('scroll',upd,{passive:true}); upd();
+}
+
+/* ============================ HERO MOUSE PARALLAX ============================ */
+/* the couple drifts toward the cursor while the side flowers drift away — gentle depth */
+function initHeroTilt(){
+  if(reduce||!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  const couple=document.querySelector('.hero-couple');
+  const fls=document.querySelectorAll('.hero-flower');
+  if(!couple) return;
+  let tx=0,ty=0,cx=0,cy=0;
+  addEventListener('mousemove',e=>{
+    if(scrollY>innerHeight){ tx=0; ty=0; return; }
+    tx=(e.clientX/innerWidth-.5)*2; ty=(e.clientY/innerHeight-.5)*2;
+  },{passive:true});
+  (function loop(){
+    cx+=(tx-cx)*.05; cy+=(ty-cy)*.05;
+    couple.style.transform='translate('+(cx*9).toFixed(2)+'px,'+(cy*7).toFixed(2)+'px) scale(1.06)';
+    fls.forEach((f,i)=>{ f.style.translate=(-cx*(12+i*5)).toFixed(2)+'px '+(-cy*9).toFixed(2)+'px'; });
+    requestAnimationFrame(loop);
+  })();
+}
+
+/* ============================ SCROLL FX ============================ */
+function initScrollFX(){
+  if(!window.gsap||!window.ScrollTrigger||reduce) return;
+  gsap.registerPlugin(ScrollTrigger);
+  document.body.classList.add('fx');   // unlocks the tall #discover scroll track
+
+  // gentle parallax on the floral arch
+  gsap.to('.hero-arch',{yPercent:-7,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+
+  // the giant names lift away upward as you scroll past the hero (deeper than the arch)
+  gsap.to('.hnames',{yPercent:-160,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  // side flowers drift outward + down slightly for extra depth
+  gsap.to('.hero-flower.fl-l',{xPercent:-26,yPercent:14,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+  gsap.to('.hero-flower.fl-r',{xPercent:26,yPercent:14,ease:'none',
+    scrollTrigger:{trigger:'#hero',start:'top top',end:'bottom top',scrub:true}});
+
+  // golden arch outlines draw themselves around each story photo as it scrolls in,
+  // and that chapter's corner vine grows + blooms right behind them
+  document.querySelectorAll('.tl-arch').forEach(w=>{
+    const paths=w.querySelectorAll('.arch-draw path');
+    if(paths.length){
+      gsap.set(paths,{strokeDasharray:1,strokeDashoffset:1});
+      gsap.to(paths,{strokeDashoffset:0,ease:'none',stagger:.15,
+        scrollTrigger:{trigger:w,start:'top 94%',end:'center 52%',scrub:.4}});
+    }
+    const vine=w.querySelector('.tl-vine');
+    if(vine){
+      const stems=vine.querySelectorAll('.vp');
+      const blooms=vine.querySelectorAll('.vl,.bud,.vb');
+      gsap.set(stems,{strokeDasharray:1,strokeDashoffset:1});
+      gsap.set(blooms,{scale:0,transformOrigin:'50% 50%'});
+      const vt=gsap.timeline({scrollTrigger:{trigger:w,start:'top 82%',end:'center 40%',scrub:.4}});
+      vt.to(stems,{strokeDashoffset:0,duration:1,stagger:.1,ease:'none'},0)
+        .to(blooms,{scale:1,duration:.55,stagger:.05,ease:'back.out(2.2)'},.3);
+    }
+  });
+
+  // ghibli bride + groom bind together
+  if(document.querySelector('.bind')){
+    gsap.fromTo('.bind-l',{xPercent:-102},{xPercent:0,ease:'none',
+      scrollTrigger:{trigger:'.bind',start:'top 88%',end:'top 40%',scrub:.5}});
+    gsap.fromTo('.bind-r',{xPercent:102},{xPercent:0,ease:'none',
+      scrollTrigger:{trigger:'.bind',start:'top 88%',end:'top 40%',scrub:.5}});
+  }
+
+  // discover — bloom-gated story: a wave of flowers must blossom fully, and only THEN
+  // does the photo pass to the next one; quotes + dots swap in sync, petals burst on change
+  const das=gsap.utils.toArray('.discover-arch .da');
+  const dqs=gsap.utils.toArray('#discover .dq');
+  const dots=gsap.utils.toArray('.discover-dots i');
+  let dLast=0;
+  const dActive=i=>{
+    if(i!==dLast){ dLast=i; burstPetals(); }
+    dqs.forEach((q,k)=>q.classList.toggle('on',k===i));
+    dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+  };
+  const leaves=gsap.utils.toArray('.discover-vine .vl, .discover-vine .bud');
+  const vbs=gsap.utils.toArray('.discover-vine .vb');
+  const vps=gsap.utils.toArray('.discover-vine .vp');
+  if(das.length>1){
+    gsap.set(das,{opacity:0,scale:1.08}); gsap.set(das[0],{opacity:1,scale:1});
+    if(vps.length) gsap.set(vps,{strokeDasharray:1,strokeDashoffset:1});
+    gsap.set([...leaves,...vbs],{scale:0,transformOrigin:'50% 50%'});
+    // round-robin the blossoms into one bloom-wave per photo change (both vines join every wave)
+    const waves=Array.from({length:das.length-1},()=>[]);
+    vbs.forEach((b,i)=>waves[i%waves.length].push(b));
+    const marks=[];
+    const tl=gsap.timeline({scrollTrigger:{trigger:'#discover',start:'top top',end:'bottom bottom',scrub:.5,
+      onUpdate(self){
+        const t=self.progress*tl.duration();
+        let idx=0; marks.forEach(m=>{ if(t>=m) idx++; });
+        dActive(Math.min(idx,das.length-1));
+      }}});
+    tl.to(leaves,{scale:1,duration:.7,stagger:.06,ease:'back.out(2)'},.15);   // leaves unfurl first
+    for(let i=1;i<das.length;i++){
+      tl.to(waves[i-1],{scale:1,duration:.85,stagger:.2,ease:'back.out(2.4)'},'+=0.3'); // bloom fully…
+      marks.push(tl.duration()+.45);
+      tl.to(das[i],{opacity:1,scale:1,duration:.9},'+=0.12')                  // …then pass to the next photo
+        .to(das[i-1],{opacity:0,duration:.9},'<');
+    }
+    tl.to({},{duration:.5});                                                  // settle on the last frame
+    if(vps.length) tl.to(vps,{strokeDashoffset:0,duration:tl.duration()*.75,stagger:.12,ease:'none'},0); // stems grow throughout
+  }
+
+  // discover arch outlines draw in as the section approaches
+  const dap=document.querySelectorAll('.discover-archwrap .arch-draw path');
+  if(dap.length){
+    gsap.set(dap,{strokeDasharray:1,strokeDashoffset:1});
+    gsap.to(dap,{strokeDashoffset:0,ease:'none',stagger:.15,
+      scrollTrigger:{trigger:'#discover',start:'top 85%',end:'top 15%',scrub:.4}});
+  }
+  ScrollTrigger.refresh();
+}
+
+/* ============================ NAV ============================ */
+const nav=document.getElementById('nav');
+addEventListener('scroll',()=>{ nav.classList.toggle('solid', scrollY>40); },{passive:true});
+function toggleMenu(){ nav.classList.toggle('menu-open');
+  const b=document.getElementById('burger'); b.classList.toggle('x'); }
+function closeMenu(){ nav.classList.remove('menu-open'); }
+
+/* ============================ COUNTDOWN ============================ */
+function initCountdown(){
+  const target=new Date('2026-06-21T18:30:00+05:30');
+  const $=id=>document.getElementById(id);
+  function tick(){
+    const diff=target-Date.now();
+    if(diff<=0){ $('countdown').innerHTML='<p style="font-family:var(--serif);font-style:italic;font-size:1.5rem;color:#fff">The day is here 🎉</p>'; return; }
+    const d=Math.floor(diff/864e5),h=Math.floor(diff%864e5/36e5),m=Math.floor(diff%36e5/6e4),s=Math.floor(diff%6e4/1e3);
+    const set=(id,n)=>{ const el=$(id), v=String(n).padStart(2,'0');
+      if(el.textContent!==v){ el.textContent=v; el.classList.remove('pop'); void el.offsetWidth; el.classList.add('pop'); } };
+    set('cd-d',d); set('cd-h',h); set('cd-m',m); set('cd-s',s);
+  }
+  tick(); setInterval(tick,1000);
+}
+
+/* ============================ QR ============================ */
+function initQR(){
+  if(!window.QRCode) return;
+  try{ new QRCode(document.getElementById('qrcode'),{
+    text:'https://maps.app.goo.gl/r5kEW3Kn8aWUBSTx7', width:150, height:150,
+    colorDark:'#241636', colorLight:'#ffffff', correctLevel:QRCode.CorrectLevel.H }); }catch(e){}
+}
+
+/* ============================ HERO PETALS ============================ */
+function initPetals(){
+  if(reduce) return;
+  [['petals',14],['discover-petals',10]].forEach(([id,n])=>{
+    const wrap=document.getElementById(id); if(!wrap) return;
+    for(let i=0;i<n;i++){
+      const p=document.createElement('span'); p.className='pt';
+      p.style.left=Math.random()*100+'%';
+      p.style.animationDuration=(7+Math.random()*7)+'s';
+      p.style.animationDelay=(Math.random()*8)+'s';
+      const s=6+Math.random()*8; p.style.width=p.style.height=s+'px';
+      p.style.background=Math.random()>.5?'rgba(200,165,235,.5)':'rgba(150,120,190,.45)';
+      wrap.appendChild(p);
+    }
+  });
+}
+
+/* ============================ CURSOR ============================ */
+function initCursor(){
+  if(!matchMedia('(hover:hover) and (pointer:fine)').matches) return;
+  document.body.classList.add('cursor-on');
+  const cur=document.getElementById('cur'), ring=document.getElementById('cur-ring');
+  let mx=innerWidth/2,my=innerHeight/2,rx=mx,ry=my;
+  addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+  (function loop(){ rx+=(mx-rx)*.16; ry+=(my-ry)*.16; ring.style.left=rx+'px'; ring.style.top=ry+'px'; requestAnimationFrame(loop); })();
+  document.addEventListener('mouseover',e=>{
+    ring.classList.toggle('hot', !!e.target.closest('a,button,.gi,.info-card,.fcard,.cd'));
+  });
+}
+
+/* ============================ MUSIC (YouTube inline) ============================ */
+const YT_URL='https://youtu.be/V4aDJ4kiSNw', YT_ID='V4aDJ4kiSNw';
+let ytPlayer=null, ytReady=false;
+(function loadYT(){ const s=document.createElement('script'); s.src='https://www.youtube.com/iframe_api'; document.head.appendChild(s); })();
+window.onYouTubeIframeAPIReady=function(){
+  ytPlayer=new YT.Player('ytplayer',{
+    videoId:YT_ID, playerVars:{playsinline:1,rel:0},
+    events:{
+      onReady(){ ytReady=true; },
+      onStateChange(e){
+        const playing=e.data===YT.PlayerState.PLAYING;
+        const btn=document.getElementById('music-btn'), v=document.getElementById('vinyl');
+        btn.textContent=playing?'⏸':'▶'; v.classList.toggle('spin',playing);
+      }
+    }
+  });
+};
+function toggleMusic(){
+  if(!ytReady||!ytPlayer){ window.open(YT_URL,'_blank','noopener'); return; }
+  const s=ytPlayer.getPlayerState();
+  if(s===YT.PlayerState.PLAYING) ytPlayer.pauseVideo(); else ytPlayer.playVideo();
+}
+
+/* ============================ LIGHTBOX ============================ */
+const gImgs=[...document.querySelectorAll('#gal .pola img')].map(i=>i.getAttribute('src'));
+let li=0;
+const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img');
+document.querySelectorAll('#gal .pola').forEach(g=>g.addEventListener('click',()=>openLB(+g.dataset.i)));
+
+/* ---- hang each gallery photo at the draped thread's height (pins ride the thread) ---- */
+const THREAD_CURVE=[0.901,0.837,0.762,0.695,0.625,0.550,0.483,0.409,0.353,0.296,0.233,0.163,0.084,0.154,0.240,0.312,0.373,0.433,0.488,0.543,0.579,0.608,0.637,0.663,0.659,0.663,0.661,0.651,0.627,0.589,0.546,0.490,0.430,0.353,0.264,0.188,0.209,0.260,0.293,0.325,0.353,0.377,0.411,0.440,0.471,0.490,0.498,0.486];
+function sampleThread(f){
+  f=Math.max(0,Math.min(1,f)); const n=THREAD_CURVE.length-1, t=f*n, i=Math.floor(t);
+  const a=THREAD_CURVE[i], b=THREAD_CURVE[Math.min(n,i+1)]; return a+(b-a)*(t-i);
+}
+function layoutClothesline(){
+  const track=document.querySelector('#gal .clothesline-track');
+  const thread=document.querySelector('#gal .rope-img');
+  if(!track||!thread) return;
+  const polas=[...track.querySelectorAll('.pola')];
+  if(!polas.length) return;
+  const W=track.scrollWidth||track.offsetWidth||1, tH=thread.offsetHeight||64, base=polas[0].offsetTop;
+  const raw=polas.map(p=>sampleThread((p.offsetLeft+p.offsetWidth/2)/W)*tH);
+  const mean=raw.reduce((s,v)=>s+v,0)/raw.length;
+  thread.style.top=((base-11)-mean).toFixed(1)+'px';        // line passes through every pin, centred
+  polas.forEach((p,i)=>p.style.setProperty('--hang',(raw[i]-mean).toFixed(1)+'px'));
+}
+let _clTO; addEventListener('resize',()=>{ clearTimeout(_clTO); _clTO=setTimeout(layoutClothesline,150); });
+addEventListener('load',()=>setTimeout(layoutClothesline,60));
+
+/* burst of petals from the discover arch each time the photo passes to the next */
+function burstPetals(){
+  if(reduce||document.hidden) return;
+  const arch=document.querySelector('.discover-arch'); if(!arch) return;
+  const r=arch.getBoundingClientRect();
+  for(let i=0;i<12;i++) setTimeout(()=>{
+    const f=document.createElement('span'); f.className='fall';
+    f.textContent=FALL[Math.random()*FALL.length|0];
+    f.style.left=(r.left+Math.random()*r.width)+'px';
+    f.style.top=(r.top+Math.random()*r.height*.55)+'px';
+    f.style.fontSize=(.85+Math.random()*.95)+'rem';
+    document.body.appendChild(f); setTimeout(()=>f.remove(),2600);
+  },i*45);
+}
+
+/* falling-petal trail that follows the cursor anywhere on the page */
+function galPetal(x,y){
+  const f=document.createElement('span'); f.className='fall';
+  f.textContent=FALL[Math.random()*FALL.length|0];
+  f.style.left=(x+(Math.random()-.5)*22)+'px'; f.style.top=(y-6)+'px';
+  f.style.fontSize=(.8+Math.random()*.8)+'rem';
+  document.body.appendChild(f); setTimeout(()=>f.remove(),2600);
+}
+let _trailT=0;
+addEventListener('mousemove',e=>{
+  if(reduce) return;
+  if(e.target.closest('#loader,#dev,#lb,#modal')) return;   // skip full-screen overlays
+  const now=performance.now(); if(now-_trailT<70) return; _trailT=now;
+  galPetal(e.clientX, e.clientY);
+},{passive:true});
+function openLB(i){ li=i; lbImg.src=gImgs[i]; lb.classList.add('on');
+  if(window.gsap) gsap.fromTo(lbImg,{scale:.9,opacity:0},{scale:1,opacity:1,duration:.4,ease:'power3.out'}); }
+function closeLB(){ lb.classList.remove('on'); }
+function step(n){ li=(li+n+gImgs.length)%gImgs.length; lbImg.src=gImgs[li];
+  if(window.gsap) gsap.fromTo(lbImg,{x:n*24,opacity:0},{x:0,opacity:1,duration:.3,ease:'power2.out'}); }
+document.getElementById('lb-close').onclick=closeLB;
+document.getElementById('lb-prev').onclick=()=>step(-1);
+document.getElementById('lb-next').onclick=()=>step(1);
+lb.addEventListener('click',e=>{ if(e.target===lb) closeLB(); });
+addEventListener('keydown',e=>{ if(!lb.classList.contains('on'))return;
+  if(e.key==='Escape')closeLB(); if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1); });
+
+/* ============================ FAQ ============================ */
+document.querySelectorAll('.faq-item').forEach(it=>{
+  it.querySelector('.faq-q').addEventListener('click',()=>{
+    const open=it.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(x=>x.classList.remove('open'));
+    if(!open) it.classList.add('open');
+  });
 });
 
-devInput.addEventListener('input', () => {
-  const v = devInput.value;
-  if (!v) { hideAC(); return; }
-  const matches = ALL_CMDS.filter(c => c.startsWith(v) && c !== v).slice(0, 5);
-  if (matches.length) showAC(matches); else hideAC();
+/* ============================ FALLING PETALS ON CLICK ============================ */
+const FALL=['🌸','🌼','🍃','✿','❦'];
+addEventListener('click',e=>{
+  if(reduce||e.target.closest('#dev,#lb,#modal,nav,button,a')) return;
+  for(let i=0;i<3;i++) setTimeout(()=>{
+    const f=document.createElement('span'); f.className='fall';
+    f.textContent=FALL[Math.random()*FALL.length|0];
+    f.style.left=(e.clientX+(Math.random()-.5)*40)+'px'; f.style.top=e.clientY+'px';
+    f.style.fontSize=(.9+Math.random()*.7)+'rem'; document.body.appendChild(f);
+    setTimeout(()=>f.remove(),2600);
+  },i*70);
 });
 
-function showAC(matches) {
-  const ac = document.getElementById('dev-autocomplete');
-  ac.innerHTML = matches.map(m =>
-    `<div class="ac-item" onclick="pickAC(${JSON.stringify(m)})">${m}</div>`
-  ).join('');
-  ac.classList.add('show');
+/* ============================ DEV MODE ============================ */
+let devReady=false,gitStep=0,hist=[],hi=-1;
+const CMDS=['help','whoami','neofetch','ls -la love/','cat .env','cal','date','sudo marry','clear','git status','git log --oneline','git add .','git commit -m "forever"','git push','exit'];
+function openDev(){ document.getElementById('dev').classList.add('on'); setTimeout(()=>document.getElementById('dev-input').focus(),120);
+  if(!devReady){ devReady=true; out([
+    {t:'hi',v:''},
+    {t:'hi',v:'   ╔══════════════════════════════════════╗'},
+    {t:'hi',v:'   ║   D & P · wedding-terminal v6.21     ║'},
+    {t:'hi',v:'   ╚══════════════════════════════════════╝'},
+    {t:'dim',v:'   Built with love, filter coffee & far too much JavaScript ☕'},
+    {t:'',v:''},
+    {t:'warn',v:'   💡 type "help" for commands · ↑/↓ history · Tab to autocomplete'},
+    {t:'dim',v:'   🔓 hint: complete the git sequence to unlock something special'},
+    {t:'',v:''},
+  ]); } }
+function closeDev(){ document.getElementById('dev').classList.remove('on'); }
+function out(lines){ const o=document.getElementById('dev-out');
+  lines.forEach(l=>{ const d=document.createElement('div'); d.className='dl '+(l.t||''); d.textContent=l.v; o.appendChild(d); });
+  const t=document.getElementById('dev-term'); t.scrollTop=t.scrollHeight; }
+
+function run(raw){
+  const c=raw.trim(); if(!c) return; hist.unshift(c); hi=-1;
+  out([{t:'cmd',v:'dharshiny@forever:~$ '+c}]);
+  if(c==='help') out([{t:'',v:''},{t:'warn',v:'  Commands'},{t:'dim',v:'  ─────────────────────────────'},
+    {t:'',v:'  help            this message'},{t:'',v:'  whoami          who are we?'},
+    {t:'',v:'  neofetch        system (love) info'},{t:'',v:'  ls -la love/    list the love directory'},
+    {t:'',v:'  cat .env        secret variables'},{t:'',v:'  cal             the only date that matters'},
+    {t:'',v:'  sudo marry      attempt elevated commitment'},{t:'',v:'  clear           clear screen'},
+    {t:'',v:''},{t:'warn',v:'  🔓 Unlock sequence (run in order):'},
+    {t:'terra',v:'  git add .  →  git commit -m "forever"  →  git push'},{t:'',v:''}]);
+  else if(c==='whoami') out([{t:'',v:''},{t:'hi',v:'  dharshiny & prakash — partners, best friends, forever-teammates'},{t:'dim',v:'  uid=2 gid=forever groups=soulmates,family,∞'},{t:'',v:''}]);
+  else if(c==='neofetch') out([{t:'',v:''},
+    {t:'terra',v:'        ❦          '},{t:'hi',v:'   couple@forever'},
+    {t:'',v:'   ─────────────────'},{t:'',v:'   OS:      LoveOS 21.06 (Tamil edition)'},
+    {t:'',v:'   Host:    Ashirvad Hall, Coimbatore'},{t:'',v:'   Uptime:  since 2022 · counting'},
+    {t:'',v:'   Engaged: 18 May 2026'},{t:'',v:'   Shell:   /bin/together'},
+    {t:'',v:'   Memory:  ∞ used / ∞ total'},{t:'',v:''}]);
+  else if(c==='ls -la love/') out([{t:'',v:''},{t:'dim',v:'  total ∞'},
+    {t:'',v:'  drwxr-xr-x  memories/      2022 → ∞'},{t:'',v:'  -rwxr-xr-x  forever.sh     ♡ executable'},
+    {t:'',v:'  -rw-r--r--  vows.md        21 June 2026'},{t:'',v:'  -rw-------  .secrets       encrypted'},{t:'',v:''}]);
+  else if(c==='cat .env') out([{t:'',v:''},{t:'warn',v:'  # love/.env'},{t:'',v:'  LOVE_LEVEL=∞'},
+    {t:'',v:'  WEDDING_DATE=2026-06-21'},{t:'',v:'  ENGAGEMENT=2026-05-18'},{t:'',v:'  VENUE="Ashirvad Hall, Coimbatore"'},
+    {t:'',v:'  SOULMATE=true'},{t:'dim',v:'  # do not expose. ever.'},{t:'',v:''}]);
+  else if(c==='cal') out([{t:'',v:''},{t:'hi',v:'        June 2026'},{t:'',v:'  Su Mo Tu We Th Fr Sa'},
+    {t:'',v:'      1  2  3  4  5  6'},{t:'',v:'   7  8  9 10 11 12 13'},{t:'',v:'  14 15 16 17 18 19 20'},
+    {t:'terra',v:'  [21] 22 23 24 25 26 27'},{t:'',v:'  28 29 30'},{t:'dim',v:'  ↑ the day everything begins'},{t:'',v:''}]);
+  else if(c==='date') out([{t:'',v:'  '+new Date().toString()},{t:'dim',v:'  …but who\'s counting? (21 June 2026 is.)'}]);
+  else if(c==='sudo marry') out([{t:'',v:''},{t:'dim',v:'  [sudo] password for dharshiny: ********'},{t:'hi',v:'  ✓ permission granted by both families ❦'},{t:'terra',v:'  commitment elevated to: FOREVER'},{t:'',v:''}]);
+  else if(c==='clear') document.getElementById('dev-out').innerHTML='';
+  else if(c==='git status') out([{t:'',v:''},{t:'',v:'  On branch main (origin/forever)'},{t:'warn',v:'  Untracked: hearts/  vows.md  ring.png'},{t:'dim',v:'  use "git add ." to stage your love'},{t:'',v:''}]);
+  else if(c==='git log --oneline') out([{t:'',v:''},{t:'',v:'  a7f3c21 feat: first hello became forever'},{t:'',v:'  e2d81b9 add: chai on a rainy Coimbatore evening'},{t:'',v:'  c4b7890 feat: engagement · 18 May 2026'},{t:'',v:'  9e1d567 chore: two families merged ✓'},{t:'dim',v:'  (∞ commits to come…)'},{t:'',v:''}]);
+  else if(c==='git add .'){ if(gitStep===0){gitStep=1; out([{t:'',v:''},{t:'',v:'  staging all love files…'},{t:'',v:'  ✓ hearts/  ✓ vows.md  ✓ ring.png'},{t:'warn',v:'  💡 next: git commit -m "forever"'},{t:'',v:''}]);} else out([{t:'dim',v:'  already staged.'}]); }
+  else if(c.startsWith('git commit')){ if(gitStep===1){gitStep=2; out([{t:'',v:''},{t:'',v:'  [main 2026621] forever'},{t:'',v:'  ∞ files changed, ∞ insertions(+)'},{t:'warn',v:'  💡 next: git push'},{t:'',v:''}]);} else if(gitStep===0) out([{t:'err',v:'  nothing to commit — run "git add ." first.'}]); else out([{t:'dim',v:'  already committed. run "git push"!'}]); }
+  else if(c==='git push'){ if(gitStep===2){gitStep=3; out([{t:'',v:''},{t:'',v:'  Enumerating objects: ∞, done.'},{t:'',v:'  Writing objects: 100% (∞/∞)'},{t:'hi',v:'  To universe:forever.git'},{t:'hi',v:'  ✓ deployed to forever 🚀'},{t:'',v:''}]); matrix(); }
+    else out([{t:'err',v:'  nothing to push — complete the sequence first.'}]); }
+  else if(c==='exit') closeDev();
+  else out([{t:'err',v:'  command not found: '+c+'   (try "help")'}]);
 }
-function hideAC() { document.getElementById('dev-autocomplete').classList.remove('show'); }
-function pickAC(cmd) {
-  devInput.value = cmd;
-  hideAC();
-  devInput.focus();
+
+function matrix(){
+  const cv=document.getElementById('matrix'),term=document.getElementById('dev-term');
+  cv.width=term.offsetWidth; cv.height=term.offsetHeight; const ctx=cv.getContext('2d');
+  cv.style.opacity=.85;
+  const w=14,cols=Math.floor(cv.width/w),drops=Array(cols).fill(1),
+    ch='アイDHARSHINYPRAKASH❦∞0621FOREVER';
+  const id=setInterval(()=>{ ctx.fillStyle='rgba(6,12,7,.08)'; ctx.fillRect(0,0,cv.width,cv.height);
+    ctx.font='13px monospace';
+    drops.forEach((y,i)=>{ ctx.fillStyle=Math.random()>.95?'#fff':'#3FB950';
+      ctx.fillText(ch[Math.random()*ch.length|0],i*w,y*w);
+      if(y*w>cv.height&&Math.random()>.975) drops[i]=0; drops[i]++; }); },50);
+  setTimeout(()=>{ clearInterval(id); cv.style.transition='opacity .6s'; cv.style.opacity=0;
+    setTimeout(()=>{ ctx.clearRect(0,0,cv.width,cv.height); confettiBurst(); setTimeout(showModal,800); },650);
+  },2600);
 }
+function confettiBurst(){
+  if(!window.confetti) return;
+  const o={particleCount:120,spread:80,colors:['#6A1B9A','#CBA135','#EBCD70','#C9A6EB','#44108A']};
+  confetti({...o,origin:{x:.3,y:.6}}); setTimeout(()=>confetti({...o,origin:{x:.7,y:.6}}),300);
+  setTimeout(()=>confetti({...o,origin:{x:.5,y:.45},particleCount:80}),600);
+}
+function showModal(){ closeDev(); document.getElementById('modal').classList.add('on'); }
+function closeModal(){ document.getElementById('modal').classList.remove('on'); }
+document.getElementById('modal').addEventListener('click',e=>{ if(e.target.id==='modal') closeModal(); });
+
+const di=document.getElementById('dev-input');
+di.addEventListener('keydown',e=>{
+  if(e.key==='Enter'){ const v=di.value; di.value=''; run(v); }
+  else if(e.key==='ArrowUp'){ e.preventDefault(); if(hi<hist.length-1){hi++;di.value=hist[hi];} }
+  else if(e.key==='ArrowDown'){ e.preventDefault(); if(hi>0){hi--;di.value=hist[hi];} else {hi=-1;di.value='';} }
+  else if(e.key==='Tab'){ e.preventDefault(); const m=CMDS.find(x=>x.startsWith(di.value.toLowerCase())&&x!==di.value); if(m) di.value=m; }
+  else if(e.key==='Escape'){ closeDev(); }
+});
 </script>
 </body>
 </html>
