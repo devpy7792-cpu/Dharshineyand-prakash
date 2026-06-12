@@ -59,7 +59,7 @@ a{color:inherit}
 .script{font-family:var(--script);color:var(--terra)}
 .lead{color:var(--ink-soft);font-size:1.02rem;max-width:46ch}
 
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 6vw}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 clamp(4vw,5vw,6vw)}
 section{position:relative}
 .section-pad{padding:clamp(5rem,11vh,9rem) 0}
 
@@ -164,7 +164,7 @@ body.cursor-on #cur-ring.hot{width:54px;height:54px;background:rgba(106,27,154,.
 /* ============================================================ NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:1000;
   display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem 6vw;transition:background .4s,padding .4s,box-shadow .4s,border-color .4s;
+  padding:1.1rem clamp(4vw,5vw,6vw);transition:background .4s,padding .4s,box-shadow .4s,border-color .4s;
   border-bottom:1px solid transparent}
 nav.solid{background:rgba(251,228,216,.82);backdrop-filter:blur(14px) saturate(140%);
   border-color:var(--line);padding:.7rem 6vw;box-shadow:0 6px 30px rgba(25,0,25,.07)}
@@ -219,7 +219,7 @@ nav.solid{background:rgba(251,228,216,.82);backdrop-filter:blur(14px) saturate(1
 /* ============================================================ HERO (floral arch) */
 #hero{--archw:clamp(320px,38vw,560px);
   min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;position:relative;overflow:hidden;padding:5.2rem 4vw 2.4rem;
+  text-align:center;position:relative;overflow:hidden;padding:5.2rem clamp(4vw,5vw,6vw) 2.4rem;
   background:radial-gradient(ellipse 92% 72% at 50% 28%,var(--paper) 0%,var(--cream) 52%,var(--cream-2) 100%)}
 .hero-stage{position:relative;width:100%;display:flex;align-items:center;justify-content:center;
   height:clamp(340px,56vh,560px)}
@@ -393,7 +393,7 @@ nav.solid{background:rgba(251,228,216,.82);backdrop-filter:blur(14px) saturate(1
 
 /* ============================================================ FOOTER */
 footer{background:radial-gradient(ellipse 80% 120% at 50% -10%,#3a1f63 0%,var(--ink) 55%);
-  color:var(--cream);text-align:center;padding:clamp(4rem,8vw,6rem) 6vw 3rem;position:relative;overflow:hidden;
+  color:var(--cream);text-align:center;padding:clamp(4rem,8vw,6rem) clamp(4vw,5vw,6vw) 3rem;position:relative;overflow:hidden;
   border-top:1px solid rgba(235,205,112,.25)}
 .f-mono{font-family:var(--serif);font-weight:300;font-size:clamp(2.6rem,6vw,4rem)}
 .f-mono .amp{font-family:var(--script);color:#EBCD70;margin:0 .12em}
@@ -479,7 +479,7 @@ footer{background:radial-gradient(ellipse 80% 120% at 50% -10%,#3a1f63 0%,var(--
 /* discover — pinned scroll story: arch photo left, rotating quotes right, vines bloom */
 #discover{position:relative;height:100vh;background:linear-gradient(180deg,var(--cream-2),var(--cream))}
 body.fx #discover{height:420vh}
-.discover-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 6vw}
+.discover-sticky{position:sticky;top:0;height:100vh;height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding:0 clamp(4vw,5vw,6vw)}
 .discover-grid{position:relative;z-index:2;display:grid;align-items:center;width:100%;max-width:1020px;
   grid-template-columns:clamp(240px,30vw,350px) 1fr;gap:clamp(2.5rem,7vw,5.5rem)}
 .discover-archwrap{position:relative;width:100%;aspect-ratio:3/4.4}
@@ -531,7 +531,7 @@ body.fx #discover{height:420vh}
 .clothesline::-webkit-scrollbar{height:6px}
 .clothesline::-webkit-scrollbar-thumb{background:var(--sage);border-radius:6px}
 .clothesline-track{position:relative;display:flex;width:max-content;
-  gap:clamp(1.2rem,3vw,2.6rem);padding:66px 6vw 46px}
+  gap:clamp(1.2rem,3vw,2.6rem);padding:66px clamp(4vw,5vw,6vw) 46px}
 /* real draped twine image — JS hangs each photo at the thread's height */
 .rope-img{position:absolute;top:30px;left:0;width:100%;height:64px;object-fit:fill;
   pointer-events:none;z-index:0;filter:drop-shadow(0 3px 3px rgba(25,0,25,.18))}
@@ -618,7 +618,7 @@ body.fx #discover{height:420vh}
   .nav-links{display:none}
   .nav-burger{display:flex}
   nav.menu-open .nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;
-    background:var(--paper);padding:1.4rem 6vw;gap:1.2rem;border-bottom:1px solid var(--line)}
+    background:var(--paper);padding:1.4rem clamp(4vw,5vw,6vw);gap:1.2rem;border-bottom:1px solid var(--line)}
   .info-grid{grid-template-columns:1fr}
   .tl,.inv-grid,.venue-grid{grid-template-columns:1fr}
   .tl:nth-child(even) .tl-arch{order:0}
@@ -629,12 +629,12 @@ body.fx #discover{height:420vh}
   .inv-text .sec-title,.inv-text .lead{text-align:center}
   .inv-text .lead{margin-left:auto;margin-right:auto}
   .inv-actions,.venue-grid{justify-items:center}
-  .inv-actions{justify-content:center}
+  .inv-actions{justify-content:center;gap:.8rem}
   .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}
   .gi.wide{grid-column:span 2}
   /* discover stacks: arch above, quotes centred below */
   .discover-grid{grid-template-columns:1fr;gap:2rem;justify-items:center;text-align:center}
-  .discover-archwrap{width:clamp(180px,44vw,280px)}
+  .discover-archwrap{width:clamp(220px,60vw,340px)}
   .discover-right{align-items:center}
   .dq{align-items:center}
   .dq blockquote{max-width:30ch}
@@ -650,32 +650,67 @@ body.fx #discover{height:420vh}
 }
 /* ---- MOBILE: hero reflows to a stacked title-over-arch layout (reference image) ---- */
 @media(max-width:680px){
+  .wrap{padding:0 clamp(3.5vw,4.5vw,5vw)}
   .section-pad{padding:clamp(3.5rem,9vh,5rem) 0}
   .sec-head{margin-bottom:clamp(2rem,7vw,3rem)}
-  #hero{min-height:auto;justify-content:flex-start;padding:5.6rem 5vw 3rem;
+  #hero{min-height:auto;justify-content:flex-start;padding:5.6rem clamp(3.5vw,4.5vw,5vw) 3rem;
     --archw:clamp(240px,82vw,400px)}
   .hnames{display:none}
-  .hero-mtitle{display:block;font-size:clamp(2.6rem,12vw,4.4rem);margin-bottom:.5rem}
+  .hero-mtitle{display:block;font-size:clamp(2.6rem,12vw,4.4rem);margin-bottom:.5rem;text-align:center}
   .hero-stage{height:auto;margin-top:.4rem}
   .hero-arch{margin:0 auto}
-  .hero-cta{margin-top:1.8rem;width:100%}
-  .hero-cta .btn{flex:1;justify-content:center;min-width:200px;max-width:340px}
+  .hero-cta{margin-top:1.8rem;width:100%;justify-content:center}
+  .hero-cta .btn{flex:0 1 auto;justify-content:center;min-width:200px;max-width:100%}
   .scroll-hint{position:static;transform:none;animation:none;margin-top:1.8rem}
+  .info-card{padding:2rem 1.4rem}
+  .gal{grid-template-columns:repeat(2,1fr);grid-auto-rows:120px;gap:.6rem}
+  .clothesline-track{padding:66px clamp(3.5vw,4.5vw,5vw) 46px;gap:clamp(1rem,2vw,1.8rem)}
+  .discover-archwrap{width:clamp(240px,70vw,380px)}
+  nav{padding:.9rem clamp(3.5vw,4.5vw,5vw)}
+  nav.solid{padding:.6rem clamp(3.5vw,4.5vw,5vw)}
+  nav.menu-open .nav-links{padding:1.4rem clamp(3.5vw,4.5vw,5vw)}
+  .discover-sticky{padding:0 clamp(3.5vw,4.5vw,5vw)}
 }
 @media(max-width:520px){
+  .wrap{padding:0 clamp(3vw,4vw,5vw)}
   .music-meta{display:none}
-  .countdown{gap:.55rem}
-  .cd{min-width:0;flex:1;max-width:84px;padding:.7rem .4rem}
-  .cd b{font-size:1.7rem}
-  nav{padding:.9rem 5vw}
-  nav.solid{padding:.6rem 5vw}
-  .marquee{padding:.8rem 0}
-  .dq blockquote{font-size:1.3rem}
-  .dq .dq-mark{font-size:2.6rem}
-  .discover-quotes{min-height:11rem}
-  .pola{width:clamp(150px,52vw,190px)}
-  .btn{padding:.85rem 1.5rem;font-size:.72rem}
-  .tl-h{font-size:1.6rem}
+  .countdown{gap:.5rem;flex-wrap:wrap}
+  .cd{min-width:0;flex:1;max-width:80px;padding:.65rem .35rem}
+  .cd b{font-size:1.6rem}
+  .cd span{font-size:.52rem}
+  nav{padding:.8rem clamp(3vw,4vw,5vw)}
+  nav.solid{padding:.55rem clamp(3vw,4vw,5vw)}
+  .marquee{padding:.7rem 0;margin:0 calc(-1 * clamp(3vw,4vw,5vw))}
+  .dq blockquote{font-size:1.25rem}
+  .dq .dq-mark{font-size:2.4rem}
+  .discover-quotes{min-height:10.5rem}
+  .discover-archwrap{width:clamp(240px,80vw,360px)}
+  .discover-sticky{padding:0 clamp(3vw,4vw,5vw)}
+  .pola{width:clamp(140px,50vw,180px)}
+  .btn{padding:.8rem 1.3rem;font-size:.68rem}
+  .tl-h{font-size:1.5rem}
+  .info-card h3{font-size:.68rem}
+  .info-card .big{font-size:1.5rem}
+  .info-card p{font-size:.88rem}
+  .gal{grid-template-columns:2fr 1fr;grid-auto-rows:100px}
+  .clothesline-track{padding:60px clamp(3vw,4vw,5vw) 40px}
+  .sec-head{margin-bottom:clamp(1.8rem,5vw,2.5rem)}
+  .sec-title{font-size:clamp(2.2rem,8vw,3.5rem)}
+}
+@media(max-width:360px){
+  .wrap{padding:0 clamp(2.5vw,3.5vw,4vw)}
+  body{font-size:.95rem}
+  .btn{padding:.75rem 1rem;font-size:.65rem}
+  .cd{padding:.6rem .3rem}
+  .cd b{font-size:1.4rem}
+  .hero-mtitle{font-size:clamp(2.2rem,10vw,3.5rem)}
+  .tl-h{font-size:1.35rem}
+  .fcard{padding:.8rem 1rem}
+  .fcard h4{font-size:1rem}
+  nav{padding:.7rem clamp(2.5vw,3.5vw,4vw)}
+  .info-card{padding:1.6rem 1rem}
+  .pola{width:clamp(120px,45vw,160px);padding:10px 10px 35px}
+  .discover-sticky{padding:0 clamp(2.5vw,3.5vw,4vw)}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
